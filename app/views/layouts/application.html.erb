@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title><%= @title||"ДШВИ" %></title>
+    <%= stylesheet_link_tag "main",:media => "all"  %>
+    <%= javascript_include_tag :all %>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--></head>
+
+<body>
+  <header>
+    <div id="header">
+    <p>ДЕТСКАЯ ШКОЛА<br>
+      ВИЗУАЛЬНЫХ ИСКУССТВ</p>
+    <input type="search" results="10" placeholder="Поиск..." />
+    <div class="logo"><img src="/images/fotohaus190.png" width="190" height="26" alt="fotohaus" longdesc="http://fotohaus.ru"></div>
+    <nav>
+    <ul>
+    <li> ШКОЛА
+    </li>
+    <li> КУРСЫ
+    </li>
+    <li><%= link_to "ПРЕПОДАВАТЕЛИ", teachers_path %>
+    </li>
+    <li>НОВОСТИ
+    </li>
+     <li>КОНТАКТЫ
+    </li>
+    </ul>
+    </nav>
+    </div>
+  </header>
+<div class="container">  
+     <%= yield %>
+  <!-- end .container --></div>
+  <footer>
+    <div class="menu">
+    <span>
+    <p>
+      ШКОЛА</p>
+      <dl>
+      	<dt>Первый год
+        </dt>
+        <dd>Гаврилов
+        </dd>
+        <dd>Зеленский
+        </dd>
+        <dd>Лиховид
+        </dd>
+        <dd>Паромов
+        </dd>
+        <dd>Симон
+        </dd>
+      </dl>
+      <dl>
+      	<dt>Второй год
+        </dt>
+        <dd>Паромов
+        </dd>
+        <dd>Лиховид
+        </dd>
+        <dd>Зеленский
+        </dd>
+      </dl>  
+      <dl>
+      	<dt>Третий год
+        </dt>
+        <dd>Лиховид
+        </dd>
+        <dd>Симон1
+        </dd>
+      </dl>            
+    </span><span><p>
+      КУРСЫ</p>      <dl>
+      	<dt>Фотография
+        </dt>
+        <dd>Первая ступень
+        </dd>
+        <dd>Вторая ступень
+        </dd>
+        <dd>По выходным
+        </dd>
+        <dd>По рабочим
+        </dd>
+        <dd>Старшая группа
+        </dd>
+        <dd>Младшая группа
+        </dd>
+      </dl> 
+            	<dt>Анимация
+        </dt>
+        <dd>Студия < 10 лет
+        </dd>
+        <dd>Студия > 10 лет
+        </dd>
+      </dl>
+      <dt>Киношкола
+        </dt>
+      <dt>Индивидуальные занятия
+      </dt>
+      <dt>Авторские курсы
+        </dt>
+        <dd>«Непостановочная
+фотография»
+        </dd>
+        <dd>«Портрет в атмосфере»
+        </dd>
+         <dd>«Свадебная фотография»
+        </dd>
+      </span><span><p>
+    ПРОЕКТЫ</p>
+    <dt>Орленок 2011
+        </dt>
+     <dt>Лето 2012
+       </dt>  
+</p><p>
+    ВЫПУСКНИКИ</p>
+    </span>
+    <span>
+      <p>
+    <%= link_to "ПРЕПОДАВАТЕЛИ", teachers_path %></p>
+    <dt>Максим СИМОН
+        </dt>
+    <dt>Мария ЛИХОВИД
+        </dt>
+    <dt>Сергей ГАВРИЛОВ
+        </dt>
+     <dt>Даниил ЗЕЛЕНСКИЙ
+        </dt>
+     <dt>Евгения МАРКОВА
+        </dt>
+    <dt>Александр ПАРОМОВ
+        </dt>
+    <dt>Виктория УШКАНОВА
+        </dt>
+    <dt>Виктория СПИРЯГИНА
+        </dt>
+     <dt>Дарья МАЛЫШЕВА
+        </dt>
+     <dt>Юрий ИВАЩЕНКО
+        </dt>   
+     <dt>Антон ЕРОШИН
+        </dt>               
+    </span>
+    <span><p>
+    СВЯЗЬ</p>
+    <dt>Подписка на новости
+        </dt>
+    <dt>Страница ВКонтакте
+        </dt>
+    <dt>Страница Facebook
+        </dt>
+     <dt>Адрес в Москве
+        </dt>
+     <dt>Обратный звонок
+        </dt>
+    <dt>Написать письмо
+        </dt>      
+</p><p>
+    ВЫСТАВКИ</p>
+     <dt>«Филион» 2011
+        </dt>
+     <dt>«Метрополис» 2010
+        </dt>
+    <dt>«Филион» 2010
+        </dt>  
+</span>
+    </div>
+  </footer>
+  
+</body>
+</html>

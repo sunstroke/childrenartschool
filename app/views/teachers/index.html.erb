@@ -1,0 +1,27 @@
+<section>
+<h1>Список всех преподавателей</h1>
+
+<table>
+  <tr>
+    <th>Полное имя</th>
+    <th>короткая ссылка</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @teachers.each do |teacher| %>
+  <tr>
+    <td><%= teacher.fullname %></td>
+    <td><%= teacher.link %></td>
+    <td><%= link_to 'Показать полную информацию', teacher %></td>
+    <td><%= link_to 'Редактировать', edit_teacher_path(teacher) %></td>
+    <td><%= link_to 'Удалить', teacher, :confirm => 'Вы уверены?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Создать нового преподавателя', new_teacher_path %>
+</section>

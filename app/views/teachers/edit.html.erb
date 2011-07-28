@@ -4,3 +4,4 @@
 
 <%= link_to 'Показать', @teacher %> |
 <%= link_to 'Назад', teachers_path %>
+<%= link_to 'Удалить', @teacher, :confirm => 'Вы уверены?', :method => :delete %>

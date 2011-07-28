@@ -17,6 +17,6 @@ test:
 
 production:
  adapter: postgresql
- database: photocross
+ database: schoolf
  pool: 5
  username: webmaster

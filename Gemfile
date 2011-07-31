@@ -27,7 +27,7 @@ gem 'capistrano'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
-gem 'carrierwave'
+gem 'carrierwave', ">= 0.5.6"
 gem "paperclip", "~> 2.3"
 #gem "russian"
 #gem 'rails-i18n'

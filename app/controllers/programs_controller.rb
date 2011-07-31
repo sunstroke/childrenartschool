@@ -14,11 +14,11 @@ class ProgramsController < ApplicationController
   # GET /programs/1.xml
   def show
     @program = Program.find(params[:id])
-    #render :layout => 'admin'
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @program }
-    end
+    render :layout => 'admin'
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.xml  { render :xml => @program }
+    # end
   end
 
   # GET /programs/new

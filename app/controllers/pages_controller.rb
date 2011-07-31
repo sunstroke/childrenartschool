@@ -14,11 +14,11 @@ class PagesController < ApplicationController
   # GET /pages/1.xml
   def show
     @page = Page.find(params[:id])
-#    render :layout => 'admin'
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @page }
-    end
+    render :layout => 'admin'
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.xml  { render :xml => @page }
+    # end
   end
 
   # GET /pages/new

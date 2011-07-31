@@ -1,4 +1,10 @@
+#buttons
+  %a.prev{:href=>"#"}Назад
+  %a.next{:href=>"#"}Вперед
+  %br.clear/
 #slider
-  - @banners.each do |b|
-    = image_tag b.image_url
+  %ul
+    - @banners.each do |b|
+      %li
+        = image_tag b.image_url
 #slider_container

@@ -1007,20 +1007,72 @@ nav ul a:hover {
 }
 
 /* line 1, ../../app/stylesheets/partials/_slider.sass */
+ul, li, h4, h3, h2, h1, p {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* line 7, ../../app/stylesheets/partials/_slider.sass */
 #slider {
   position: absolute;
   top: 0px;
   left: 0px;
-}
-/* line 5, ../../app/stylesheets/partials/_slider.sass */
-#slider img {
+  overflow: hidden;
   width: 1265px;
+  display: block;
+}
+/* line 14, ../../app/stylesheets/partials/_slider.sass */
+#slider ul {
+  width: 5000px;
+  display: block;
+}
+/* line 17, ../../app/stylesheets/partials/_slider.sass */
+#slider ul li {
+  float: left;
+  display: block;
+}
+/* line 20, ../../app/stylesheets/partials/_slider.sass */
+#slider ul li img {
+  width: 1260px;
+  display: block;
 }
 
-/* line 7, ../../app/stylesheets/partials/_slider.sass */
+/* line 23, ../../app/stylesheets/partials/_slider.sass */
 #slider_container {
   position: relative;
   height: 700px;
+}
+
+/* line 26, ../../app/stylesheets/partials/_slider.sass */
+#buttons {
+  position: absolute;
+  top: 400px;
+  left: 10%;
+  margin: 0 auto;
+  width: 1205px;
+  z-index: 1000;
+}
+/* line 33, ../../app/stylesheets/partials/_slider.sass */
+#buttons a {
+  margin: 10px 10px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(arrows.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+}
+/* line 41, ../../app/stylesheets/partials/_slider.sass */
+#buttons .prev {
+  float: left;
+  left: 15px;
+}
+/* line 44, ../../app/stylesheets/partials/_slider.sass */
+#buttons .next {
+  float: right;
+  background-position: -30px 0;
+  right: 15px;
 }
 
 /*/mediaquery*/

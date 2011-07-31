@@ -11,6 +11,17 @@
 # была возможность минимальной локализации приложения на русский язык.
 
 ru:
+  web-app-theme: 
+    save: Сохранить
+    cancel: Отменить
+    list: Список
+    edit: Редактировать
+    new: Создать
+    show: Показать
+    delete: Удалить
+    confirm: Вы уверены?
+    created_at: Создано
+    all: Все  
   date:
     formats:
       default: "%d.%m.%Y"
@@ -276,7 +287,6 @@ ru:
   # In rails 3 errors is top-level namespace
   errors:
     format: "%{attribute} %{message}"
-
     messages:
       inclusion: "имеет непредусмотренное значение"
       exclusion: "имеет зарезервированное значение"
@@ -319,6 +329,7 @@ ru:
       about: "несколько слов о"
       fullname: "полное имя"
       video:  "видео"
+      url: "ссылка"
       
   activerecord:
     models:

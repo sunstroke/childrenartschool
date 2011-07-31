@@ -1,6 +1,21 @@
 <section >
-  <div class="slide">
-    <%= image_tag @teacher.full_photo.url  %>
+  <div id="slider" class="slide">
+    <div id="mask-gallery">
+      <ul id="gallery">
+        <% Teacher.all.each do |teacher| %>
+          <li><%= image_tag teacher.full_photo.url %>
+          </li>
+        <% end %>
+      </ul>
+    </div>      
+    <div id="mask-excerpt"> 
+  	<ul id="excerpt"> 
+      <% Teacher.all.each do |teacher| %>
+        <li><%= teacher.fullname %>
+        </li>
+      <% end %>
+  	</ul> 
+  	</div>
   </div>
 </section>
 <p id="notice"><%= notice %></p>
@@ -25,10 +40,10 @@
 
 </p>
 
-<p>
+<div>
   <b>Видео:</b>
-  <% @teacher.video %>
-</p>
+  <%= raw(@teacher.video) %>
+</div>
 
 
 <%= link_to 'Редактировать', edit_teacher_path(@teacher) %> |

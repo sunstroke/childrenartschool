@@ -1,4 +1,6 @@
 Schoolf::Application.routes.draw do
+
+  resources :welcomes
   resources :teachers
 
   get "home/index"

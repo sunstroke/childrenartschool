@@ -3,11 +3,12 @@ class TeachersController < ApplicationController
   # GET /teachers.xml
   def index
     @teachers = Teacher.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @teachers }
-    end
+    render :layout => 'admin'
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.xml  { render :xml => @teachers }
+#    end
+    
   end
 
   # GET /teachers/1
@@ -19,6 +20,7 @@ class TeachersController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @teacher }
     end
+    # render :layout => 'admin'
   end
 
   # GET /teachers/new
@@ -26,15 +28,17 @@ class TeachersController < ApplicationController
   def new
     @teacher = Teacher.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @teacher }
-    end
+    # respond_to do |format|
+    #   format.html # new.html.erb
+    #   format.xml  { render :xml => @teacher }
+    # end
+    render :layout => 'admin'    
   end
 
   # GET /teachers/1/edit
   def edit
     @teacher = Teacher.find(params[:id])
+    render :layout => 'admin'    
   end
 
   # POST /teachers

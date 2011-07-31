@@ -133,7 +133,7 @@ footer {
 	position: relative;/* this gives IE6 hasLayout to properly clear */
 	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
 	color: #fff;
-	position: fixed;
+	position: relative;
 	width: 100%;
 	bottom:0;	
 	border: none;
@@ -177,6 +177,7 @@ section {
 	margin: -200px 0 0 -40px;
 	overflow:hidden;
 	}
+
 .slide img {
 	display: block;
 	float: left;

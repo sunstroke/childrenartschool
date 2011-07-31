@@ -1,0 +1,77 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", teachers_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_teacher_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", teacher_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.teacher.fullname", :default => t("activerecord.labels.fullname", :default => "Fullname"))
+          \:
+        = @teacher.fullname
+      %p
+        %b
+          = t("activerecord.attributes.teacher.link", :default => t("activerecord.labels.link", :default => "Link"))
+          \:
+        = @teacher.link
+      %p
+        %b
+          = t("activerecord.attributes.teacher.about", :default => t("activerecord.labels.about", :default => "About"))
+          \:
+        = @teacher.about
+      %p
+        %b
+          = t("activerecord.attributes.teacher.portfolio_id", :default => t("activerecord.labels.portfolio_id", :default => "Portfolio"))
+          \:
+        = @teacher.portfolio_id
+      %p
+        %b
+          = t("activerecord.attributes.teacher.video", :default => t("activerecord.labels.video", :default => "Video"))
+          \:
+        = @teacher.video
+      %p
+        %b
+          = t("activerecord.attributes.teacher.full_photo_file_name", :default => t("activerecord.labels.full_photo_file_name", :default => "Full photo file name"))
+          \:
+        = @teacher.full_photo_file_name
+      %p
+        %b
+          = t("activerecord.attributes.teacher.full_photo_content_type", :default => t("activerecord.labels.full_photo_content_type", :default => "Full photo content type"))
+          \:
+        = @teacher.full_photo_content_type
+      %p
+        %b
+          = t("activerecord.attributes.teacher.full_photo_file_size", :default => t("activerecord.labels.full_photo_file_size", :default => "Full photo file size"))
+          \:
+        = @teacher.full_photo_file_size
+      %p
+        %b
+          = t("activerecord.attributes.teacher.full_photo_updated_at", :default => t("activerecord.labels.full_photo_updated_at", :default => "Full photo updated at"))
+          \:
+        = @teacher.full_photo_updated_at
+      %p
+        %b
+          = t("activerecord.attributes.teacher.avatar_file_name", :default => t("activerecord.labels.avatar_file_name", :default => "Avatar file name"))
+          \:
+        = @teacher.avatar_file_name
+      %p
+        %b
+          = t("activerecord.attributes.teacher.avatar_content_type", :default => t("activerecord.labels.avatar_content_type", :default => "Avatar content type"))
+          \:
+        = @teacher.avatar_content_type
+      %p
+        %b
+          = t("activerecord.attributes.teacher.avatar_file_size", :default => t("activerecord.labels.avatar_file_size", :default => "Avatar file size"))
+          \:
+        = @teacher.avatar_file_size
+      %p
+        %b
+          = t("activerecord.attributes.teacher.avatar_updated_at", :default => t("activerecord.labels.avatar_updated_at", :default => "Avatar updated at"))
+          \:
+        = @teacher.avatar_updated_at
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_teacher_path(@teacher), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), teacher_path(@teacher), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

@@ -1,8 +1,11 @@
 Schoolf::Application.routes.draw do
-
+  resources :groups
+  resources :pages
+  resources :people
+  resources :programs
   resources :welcomes
   resources :teachers
-
+#  get "admin"
   get "home/index"
 
   # The priority is based upon order of creation:

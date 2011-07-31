@@ -24,6 +24,14 @@
               %a{:href => welcomes_path} Welcomes
             %li{:class => controller.controller_path == 'teachers' ? 'active' : '' }
               %a{:href => teachers_path} Teachers
+            %li{:class => controller.controller_path == 'pages' ? 'active' : '' }
+              %a{:href => pages_path} Pages
+            %li{:class => controller.controller_path == 'groups' ? 'active' : '' }
+              %a{:href => groups_path} Groups
+            %li{:class => controller.controller_path == 'people' ? 'active' : '' }
+              %a{:href => people_path} People
+            %li{:class => controller.controller_path == 'programs' ? 'active' : '' }
+              %a{:href => programs_path} Programs
       #wrapper.wat-cf
         .flash
           - flash.each do |type, message|

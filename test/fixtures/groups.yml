@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  open: false
+  program_id: 1
+  teacher_id: 1
+  prim: MyText
+  calendar: MyText
+
+two:
+  name: MyString
+  open: false
+  program_id: 1
+  teacher_id: 1
+  prim: MyText
+  calendar: MyText

@@ -1,0 +1,34 @@
+.group
+  = f.label :name, t("activerecord.attributes.group.name", :default => "Name"), :class => :label
+  = f.text_field :name, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :open, t("activerecord.attributes.group.open", :default => "Open"), :class => :label
+  = f.check_box :open, :class => 'check_box'
+  %span.description Ex: a simple text
+.group
+  = f.label :program_id, t("activerecord.attributes.group.program_id", :default => "Program"), :class => :label
+  = f.text_field :program_id, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :teacher_id, t("activerecord.attributes.group.teacher_id", :default => "Teacher"), :class => :label
+  = f.text_field :teacher_id, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :price, t("activerecord.attributes.group.price", :default => "Price"), :class => :label
+  = f.text_field :price, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :prim, t("activerecord.attributes.group.prim", :default => "Prim"), :class => :label
+  = f.text_area :prim, :class => 'text_area'
+  %span.description Ex: a simple text
+.group
+  = f.label :calendar, t("activerecord.attributes.group.calendar", :default => "Calendar"), :class => :label
+  = f.text_area :calendar, :class => 'text_area'
+  %span.description Ex: a simple text
+.group.navform.wat-cf
+  %button.button{:type => "submit"}
+    = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
+    = t("web-app-theme.save", :default => "Save")
+  %span.text_button_padding= t("web-app-theme.or", :default => "or")
+  = link_to t("web-app-theme.cancel", :default => "Cancel"), groups_path, :class => "text_button_padding link_button"

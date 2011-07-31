@@ -8,9 +8,13 @@ jQuery(function( $ ){
  * In this case, clicking the images, scrolls to them.
  * No target in this case, so the selectors are absolute.
  */
+$('#header').width($(window).width()*0.95);
+$('#header').css('margin-left',$(window).width()*0.025);
+$('#main').width($(window).width());
 $('#slider').width($(window).width());
-$(' #buttons').width($(window).width()*0.9);
+$('#buttons').width($(window).width()*0.9);
 $('#slider li, #slider li img').width($('#slider').width());	
+$('#slider_container').height($('#slider ul li').height());
 $('#slider ul').width($('#slider').width()*$('#slider li').length);	
 $('#slider').serialScroll({
 	items:'li',
@@ -18,11 +22,12 @@ $('#slider').serialScroll({
 	next:'#main a.next',
 	offset:0, //when scrolling to photo, stop 230 before reaching it (from the left)
 	start:0, //as we are centering it, start at the 2nd
-	duration:1200,
+	duration:2200,
+	interval: 3500,
 	force:true,
 	stop:true,
 	lock:false,
-	cycle:true, //don't pull back once you reach the end
+	cycle:false, //don't pull back once you reach the end
 	easing:'easeOutQuart', //use this easing equation for a funny effect
 	jump: true //click on the images to scroll to them
 });

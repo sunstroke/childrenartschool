@@ -5,9 +5,9 @@ gem 'rails', '3.0.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-#        gem 'pg', :require => 'pg'
+
 # gem 'sqlite3'
-gem 'carrierwave'
+
 gem "compass", ">= 0.11.5"
 gem "haml"
 gem "html5-boilerplate"
@@ -27,6 +27,7 @@ gem 'capistrano'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
+gem 'carrierwave'
 gem "paperclip", "~> 2.3"
 #gem "russian"
 #gem 'rails-i18n'
@@ -41,6 +42,7 @@ gem 'hpricot'
 gem 'ruby_parser'
  end
 group :production do
+gem 'pg', :require => 'pg'
 gem 'web-app-theme', '>= 0.6.2'
 gem 'hpricot'
 gem 'ruby_parser'

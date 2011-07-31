@@ -39,7 +39,7 @@ namespace :deploy do
   desc "Task that run current migrations"
   task :migrate, :roles => :db do
     # run "cd #{deploy_to} ; PATH=$PATH:/var/lib/gems/1.8/bin RAILS_ENV=production rake db:migrate"
-    run "cd #{deploy_to} ; RAILS_ENV=production rake db:migrate"
+    run "cd #{deploy_to} && RAILS_ENV=production rake db:migrate"
    # run "cd #{deploy_to} ; mongrel_rails restart "
   end
   

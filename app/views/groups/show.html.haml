@@ -35,7 +35,7 @@
         %b
           = t("activerecord.attributes.group.prim", :default => t("activerecord.labels.prim", :default => "Prim"))
           \:
-        = @group.prim
+        = simple_format(@group.prim)
       %p
         %b
           = t("activerecord.attributes.group.calendar", :default => t("activerecord.labels.calendar", :default => "Calendar"))

@@ -5,4 +5,4 @@ tmp/
 db/schema.rb
 public/attachments/*
 *.DS_Store
-
+Gemfile.lock

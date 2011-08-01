@@ -1,0 +1,26 @@
+  <div id="slider">
+    <%= image_tag @teacher.full_photo.url %>
+    </div>      
+  </div>
+<p>
+  <b>Полное имя:</b>
+  <%= @teacher.fullname %>
+</p>
+
+<p>
+  <%= simple_format(@teacher.about) %>
+</p>
+
+<p>
+  <b>Портфолио:</b>
+
+</p>
+
+<div>
+  <b>Видео:</b>
+  <%= raw(@teacher.video) %>
+</div>
+
+
+<%= link_to 'Редактировать', edit_teacher_path(@teacher) %> |
+<%= link_to 'Назад', teachers_path %>

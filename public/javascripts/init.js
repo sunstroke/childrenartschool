@@ -23,7 +23,7 @@ $('#slider').serialScroll({
 	offset:0, //when scrolling to photo, stop 230 before reaching it (from the left)
 	start:0, //as we are centering it, start at the 2nd
 	duration:2200,
-	interval: 3500,
+	interval: 35000,
 	force:true,
 	stop:true,
 	lock:false,

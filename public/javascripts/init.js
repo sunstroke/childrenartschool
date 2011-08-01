@@ -24,7 +24,7 @@ $('#slider').serialScroll({
 	start:0, //as we are centering it, start at the 2nd
 	duration:2200,
 	interval: 35000,
-	force:true,
+	force:dalse,
 	stop:true,
 	lock:false,
 	cycle:false, //don't pull back once you reach the end

@@ -6,4 +6,7 @@
   %ul
     - @banners.each do |b|
       %li
-        = image_tag b.image_url
+        -if !b.url?
+          = image_tag b.image_url
+        -else
+          = link_to image_tag (b.image_url) , b.url

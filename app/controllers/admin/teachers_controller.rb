@@ -45,7 +45,7 @@ class Admin::TeachersController < ApplicationController
 
     respond_to do |format|
       if @teacher.save
-        format.html { redirect_to(@teacher, :notice => 'Teacher was successfully created.') }
+        format.html { redirect_to(admin_teacher_path(@teacher), :notice => 'Teacher was successfully created.') }
         format.xml  { render :xml => @teacher, :status => :created, :location => @teacher }
       else
         format.html { render :action => "new" }
@@ -61,7 +61,7 @@ class Admin::TeachersController < ApplicationController
 
     respond_to do |format|
       if @teacher.update_attributes(params[:teacher])
-        format.html { redirect_to(@teacher, :notice => 'Teacher was successfully updated.') }
+        format.html { redirect_to(admin_teacher_path(@teacher), :notice => 'Teacher was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -46,7 +46,7 @@ class Admin::WelcomesController < ApplicationController
 
     respond_to do |format|
       if @welcome.save
-        format.html { redirect_to(@welcome, :notice => 'Welcome was successfully created.') }
+        format.html { redirect_to(admin_welcome_path(@welcome), :notice => 'Welcome was successfully created.') }
         format.xml  { render :xml => @welcome, :status => :created, :location => @welcome }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class Admin::WelcomesController < ApplicationController
 
     respond_to do |format|
       if @welcome.update_attributes(params[:welcome])
-        format.html { redirect_to(@welcome, :notice => 'Welcome was successfully updated.') }
+        format.html { redirect_to(admin_welcome_path(@welcome), :notice => 'Welcome was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

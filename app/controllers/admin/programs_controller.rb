@@ -41,7 +41,7 @@ class Admin::ProgramsController < ApplicationController
   # POST /admin/programs
   # POST /admin/programs.xml
   def create
-    @program = Program.new(params[:admin_program])
+    @program = Program.new(params[:program])
 
     respond_to do |format|
       if @program.save
@@ -60,7 +60,7 @@ class Admin::ProgramsController < ApplicationController
     @program = Program.find(params[:id])
 
     respond_to do |format|
-      if @program.update_attributes(params[:admin_program])
+      if @program.update_attributes(params[:program])
         format.html { redirect_to(@program, :notice => 'Program was successfully updated.') }
         format.xml  { head :ok }
       else

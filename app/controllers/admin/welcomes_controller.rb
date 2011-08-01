@@ -42,7 +42,7 @@ class Admin::WelcomesController < ApplicationController
   # POST /admin/welcomes
   # POST /admin/welcomes.xml
   def create
-    @welcome = Welcome.new(params[:admin_welcome])
+    @welcome = Welcome.new(params[:welcome])
 
     respond_to do |format|
       if @welcome.save
@@ -61,7 +61,7 @@ class Admin::WelcomesController < ApplicationController
     @welcome = Welcome.find(params[:id])
 
     respond_to do |format|
-      if @welcome.update_attributes(params[:admin_welcome])
+      if @welcome.update_attributes(params[:welcome])
         format.html { redirect_to(@welcome, :notice => 'Welcome was successfully updated.') }
         format.xml  { head :ok }
       else

@@ -41,7 +41,7 @@ class Admin::GroupsController < ApplicationController
   # POST /admin/groups
   # POST /admin/groups.xml
   def create
-    @group = Group.new(params[:admin_group])
+    @group = Group.new(params[:group])
 
     respond_to do |format|
       if @group.save
@@ -60,7 +60,7 @@ class Admin::GroupsController < ApplicationController
     @group = Group.find(params[:id])
 
     respond_to do |format|
-      if @group.update_attributes(params[:admin_group])
+      if @group.update_attributes(params[:group])
         format.html { redirect_to(@group, :notice => 'Group was successfully updated.') }
         format.xml  { head :ok }
       else

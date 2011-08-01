@@ -41,7 +41,7 @@ class Admin::PagesController < ApplicationController
   # POST /admin/pages
   # POST /admin/pages.xml
   def create
-    @page = Page.new(params[:admin_page])
+    @page = Page.new(params[:page])
 
     respond_to do |format|
       if @page.save
@@ -60,7 +60,7 @@ class Admin::PagesController < ApplicationController
     @page = Page.find(params[:id])
 
     respond_to do |format|
-      if @page.update_attributes(params[:admin_page])
+      if @page.update_attributes(params[:page])
         format.html { redirect_to(@page, :notice => 'Page was successfully updated.') }
         format.xml  { head :ok }
       else

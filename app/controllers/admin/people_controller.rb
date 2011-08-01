@@ -41,7 +41,7 @@ class Admin::PeopleController < ApplicationController
   # POST /admin/people
   # POST /admin/people.xml
   def create
-    @person = Person.new(params[:admin_person])
+    @person = Person.new(params[:person])
 
     respond_to do |format|
       if @person.save
@@ -60,7 +60,7 @@ class Admin::PeopleController < ApplicationController
     @person = Person.find(params[:id])
 
     respond_to do |format|
-      if @person.update_attributes(params[:admin_person])
+      if @person.update_attributes(params[:person])
         format.html { redirect_to(@person, :notice => 'Person was successfully updated.') }
         format.xml  { head :ok }
       else

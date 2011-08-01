@@ -41,7 +41,7 @@ class Admin::TeachersController < ApplicationController
   # POST /admin/teachers
   # POST /admin/teachers.xml
   def create
-    @teacher = Teacher.new(params[:admin_teacher])
+    @teacher = Teacher.new(params[:teacher])
 
     respond_to do |format|
       if @teacher.save
@@ -60,7 +60,7 @@ class Admin::TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
 
     respond_to do |format|
-      if @teacher.update_attributes(params[:admin_teacher])
+      if @teacher.update_attributes(params[:teacher])
         format.html { redirect_to(@teacher, :notice => 'Teacher was successfully updated.') }
         format.xml  { head :ok }
       else

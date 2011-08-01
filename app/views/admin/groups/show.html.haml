@@ -1,0 +1,47 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admin_groups_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_group_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_group_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.admin_group.name", :default => t("activerecord.labels.name", :default => "Name"))
+          \:
+        = @group.name
+      %p
+        %b
+          = t("activerecord.attributes.admin_group.open", :default => t("activerecord.labels.open", :default => "Open"))
+          \:
+        = @group.open
+      %p
+        %b
+          = t("activerecord.attributes.admin_group.program_id", :default => t("activerecord.labels.program_id", :default => "Program"))
+          \:
+        = @group.program_id
+      %p
+        %b
+          = t("activerecord.attributes.admin_group.teacher_id", :default => t("activerecord.labels.teacher_id", :default => "Teacher"))
+          \:
+        = @group.teacher_id
+      %p
+        %b
+          = t("activerecord.attributes.admin_group.price", :default => t("activerecord.labels.price", :default => "Price"))
+          \:
+        = @group.price
+      %p
+        %b
+          = t("activerecord.attributes.admin_group.prim", :default => t("activerecord.labels.prim", :default => "Prim"))
+          \:
+        = @group.prim
+      %p
+        %b
+          = t("activerecord.attributes.admin_group.calendar", :default => t("activerecord.labels.calendar", :default => "Calendar"))
+          \:
+        = @group.calendar
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_group_path(@group), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_group_path(@group), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<%= image_tag(@welcome.image_url) %>
+<%= image_tag(@welcome.image_url) if @welcome.image?%>
 
 <%= link_to 'Edit', edit_welcome_path(@welcome) %> |
 <%= link_to 'Back', welcomes_path %>

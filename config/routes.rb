@@ -1,4 +1,16 @@
 Schoolf::Application.routes.draw do
+  # Sample resource route within a namespace:
+namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  resources :groups
+  resources :pages
+  resources :people
+  resources :programs
+  resources :welcomes
+  resources :teachers
+end
+    
   resources :groups
   resources :pages
   resources :people

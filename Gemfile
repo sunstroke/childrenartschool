@@ -42,7 +42,7 @@ gem 'hpricot'
 gem 'ruby_parser'
  end
 group :production do
-#gem 'pg', '>=0.11.0'
+gem 'pg', '>=0.11.0'
 gem 'web-app-theme', '>= 0.6.2'
 gem 'hpricot'
 gem 'ruby_parser'

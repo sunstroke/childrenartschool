@@ -21,17 +21,18 @@
         #main-navigation
           %ul.wat-cf
             %li{:class => controller.controller_path == 'admin/programs' ? 'active' : '' }
-              %a{:href => admin_programs_path} Programs
+              %a{:href => admin_programs_path} Учебные программы
             %li{:class => controller.controller_path == 'admin/teachers' ? 'active' : '' }
-              %a{:href => admin_teachers_path} Teachers
-            %li{:class => controller.controller_path == 'admin/welcomes' ? 'active' : '' }
-              %a{:href => admin_welcomes_path} Welcomes
-            %li{:class => controller.controller_path == 'admin/people' ? 'active' : '' }
-              %a{:href => admin_people_path} People
-            %li{:class => controller.controller_path == 'admin/pages' ? 'active' : '' }
-              %a{:href => admin_pages_path} Pages
+              %a{:href => admin_teachers_path} Преподаватели
             %li{:class => controller.controller_path == 'admin/groups' ? 'active' : '' }
-              %a{:href => admin_groups_path} Groups
+              %a{:href => admin_groups_path} Группы              
+            %li{:class => controller.controller_path == 'admin/welcomes' ? 'active' : '' }
+              %a{:href => admin_welcomes_path} Баннеры на главную
+            %li{:class => controller.controller_path == 'admin/people' ? 'active' : '' }
+              %a{:href => admin_people_path} Ученики
+            %li{:class => controller.controller_path == 'admin/pages' ? 'active' : '' }
+              %a{:href => admin_pages_path} Страницы
+
 
       #wrapper.wat-cf
         .flash

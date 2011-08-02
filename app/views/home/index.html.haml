@@ -10,5 +10,8 @@
         %div{:style=>"position: absolute; top: 200px; left:100px;z-index:200;"}
           = simple_format(b.text)
           .link_to_banner
-            =b.name
+            -if b.url?
+              =link_to b.name, b.url
+            -else
+              =b.name
         

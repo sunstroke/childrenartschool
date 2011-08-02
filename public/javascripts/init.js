@@ -31,7 +31,7 @@ $('#slider').serialScroll({
 	lazy:true,
 	cycle:true, //don't pull back once you reach the end
 
-	jump: true //click on the images to scroll to them
+	jump: false //click on the images to scroll to them
 });
 
 /**

@@ -7,7 +7,7 @@
   .content
     %h2.title
       = t("web-app-theme.edit", :default => "Edit")
-      Program
+      программу
     .inner
       = form_for @program, :url => admin_program_path(@program), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f}

@@ -6,7 +6,7 @@
   .content
     %h2.title
       = t("web-app-theme.new", :default => "New")
-      Group
+      группу
     .inner
       = form_for :group, :url => admin_groups_path, :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f}

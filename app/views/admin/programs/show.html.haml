@@ -8,22 +8,22 @@
     .inner
       %p
         %b
-          = t("activerecord.attributes.admin_program.name", :default => t("activerecord.labels.name", :default => "Name"))
+          = t("activerecord.attributes.admin_program.name", :default => t("activerecord.labels.name", :default => "Название"))
           \:
         = @program.name
       %p
         %b
-          = t("activerecord.attributes.admin_program.annotation", :default => t("activerecord.labels.annotation", :default => "Annotation"))
+          = t("activerecord.attributes.admin_program.annotation", :default => t("activerecord.labels.annotation", :default => "Краткое содержание программы"))
           \:
-        = @program.annotation
+        = simple_format(@program.annotation)
       %p
         %b
-          = t("activerecord.attributes.admin_program.type", :default => t("activerecord.labels.type", :default => "Type"))
+          = t("activerecord.attributes.admin_program.type", :default => t("activerecord.labels.type", :default => "Тип"))
           \:
         = @program.type
       %p
         %b
-          = t("activerecord.attributes.admin_program.annotation", :default => t("activerecord.labels.annotation", :default => "Группы"))
+          = t("activerecord.attributes.admin_program.annotation", :default => t("activerecord.labels.annotation", :default => "Созданные группы для этой программы"))
           \:
           %br/
         -@program.groups.each do |g|

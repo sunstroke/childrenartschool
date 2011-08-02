@@ -7,7 +7,7 @@
   .content
     %h2.title
       = t("web-app-theme.edit", :default => "Edit")
-      Welcome
+      баннер
     .inner
       = form_for @welcome, :url => admin_welcome_path(@welcome), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f}

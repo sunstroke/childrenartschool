@@ -8,17 +8,17 @@
     .inner
       %p
         %b
-          = t("activerecord.attributes.admin_page.name", :default => t("activerecord.labels.name", :default => "Name"))
+          = t("activerecord.attributes.admin_page.name", :default => t("activerecord.labels.name", :default => "Заголовок"))
           \:
         = @page.name
       %p
         %b
-          = t("activerecord.attributes.admin_page.label", :default => t("activerecord.labels.label", :default => "Label"))
+          = t("activerecord.attributes.admin_page.label", :default => t("activerecord.labels.label", :default => "короткая ссылка"))
           \:
         = @page.label
       %p
         %b
-          = t("activerecord.attributes.admin_page.text", :default => t("activerecord.labels.text", :default => "Text"))
+          = t("activerecord.attributes.admin_page.text", :default => t("activerecord.labels.text", :default => "Текст"))
           \:
         = simple_format(@page.text)
       .wat-cf

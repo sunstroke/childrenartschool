@@ -7,7 +7,7 @@
   .content
     %h2.title
       = t("web-app-theme.edit", :default => "Edit")
-      Person
+      ученика
     .inner
       = form_for @person, :url => admin_person_path(@person), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f}

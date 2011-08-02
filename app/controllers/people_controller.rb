@@ -14,22 +14,23 @@ class PeopleController < ApplicationController
   # GET /people/1.xml
   def show
     @person = Person.find(params[:id])
-    render :layout => 'admin'
-    # respond_to do |format|
-    #   format.html # show.html.erb
-    #   format.xml  { render :xml => @person }
-    # end
+    # render :layout => 'admin'
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @person }
+    end
   end
 
   # GET /people/new
   # GET /people/new.xml
   def new
     @person = Person.new
-    render :layout => 'admin'
-    # respond_to do |format|
-    #   format.html # new.html.erb
-    #   format.xml  { render :xml => @person }
-    # end
+    @groups=Group.all(:conditions=>['open=?',true])
+    # render :layout => 'admin'
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @person }
+    end
   end
 
   # GET /people/1/edit

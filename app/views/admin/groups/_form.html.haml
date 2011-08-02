@@ -19,8 +19,9 @@
   = f.text_field :price, :class => 'text_field'
   %span.description Ex: a simple text
 .group
+  = redactor("#group_prim")
   = f.label :prim, t("activerecord.attributes.group.prim", :default => "Prim"), :class => :label
-  = f.text_area :prim, :class => 'text_area'
+  = f.text_area :prim, :class => 'text_area', :style=>"height: 300px; width: 99%;"
   %span.description Ex: a simple text
 .group
   = f.label :calendar, t("activerecord.attributes.group.calendar", :default => "Calendar"), :class => :label

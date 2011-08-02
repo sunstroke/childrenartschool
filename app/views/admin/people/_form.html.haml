@@ -1,27 +1,34 @@
 .group
-  = f.label :fullname, t("activerecord.attributes.person.fullname", :default => "Fullname"), :class => :label
+  = f.label :fullname, t("activerecord.attributes.person.fullname", :default => "Полное имя"), :class => :label
   = f.text_field :fullname, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: Иванов Иван Иванович
 .group
-  = f.label :type, t("activerecord.attributes.person.type", :default => "Type"), :class => :label
+  = f.label :type, t("activerecord.attributes.person.type", :default => "Тип обучения"), :class => :label
   = f.text_field :type, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: школа/курсы и т.д.
+
 .group
-  = f.label :zachetka, t("activerecord.attributes.person.zachetka", :default => "Zachetka"), :class => :label
+  = f.label :current_group, t("activerecord.attributes.person.current_group", :default => "Текущая группа"), :class => :label
+  = collection_select(:person, :current_group, Group.all(:conditions=>['open=?',true]), :id, :name, :prompt => 'Выберите группу')  
+  %span.description Ex: Мастерская Васечкина
+  
+.group
+  = f.label :zachetka, t("activerecord.attributes.person.zachetka", :default => "Зачетка"), :class => :label
   = f.text_field :zachetka, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: 254 Иванов Иван (пока не работает, не заполнять!!)
 .group
-  = f.label :tel, t("activerecord.attributes.person.tel", :default => "Tel"), :class => :label
+  = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона"), :class => :label
   = f.text_field :tel, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: +79265554433
 .group
-  = f.label :birthday, t("activerecord.attributes.person.birthday", :default => "Birthday"), :class => :label
-  = f.datetime_select :birthday, :class => 'datetime_select'
-  %span.description Ex: a simple text
+  = f.label :birthday, t("activerecord.attributes.person.birthday", :default => "Дата рождения"), :class => :label
+  = f.date_select :birthday, :class => 'datetime_select'
+  %span.description Ex: 1 апреля 1995 года
 .group
-  = f.label :about, t("activerecord.attributes.person.about", :default => "About"), :class => :label
+  = redactor("#person_about")
+  = f.label :about, t("activerecord.attributes.person.about", :default => "Информация об ученике"), :class => :label
   = f.text_area :about, :class => 'text_area'
-  %span.description Ex: a simple text
+  %span.description Ex: 
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

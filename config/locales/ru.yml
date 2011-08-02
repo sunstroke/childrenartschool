@@ -22,6 +22,10 @@ ru:
     confirm: Вы уверены?
     created_at: Создано
     all: Все  
+    or: или
+    Name: "название (как заголовок)"
+    Label: 'метка, используется для быстрой навигации'
+    page: Страницу
   date:
     formats:
       default: "%d.%m.%Y"
@@ -121,6 +125,7 @@ ru:
       default: "%a, %d %b %Y, %H:%M:%S %z"
       short: "%d %b, %H:%M"
       long: "%d %B %Y, %H:%M"
+      brth: "%d %B %Y"
 
     am: "утра"
     pm: "вечера"

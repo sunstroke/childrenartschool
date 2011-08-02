@@ -27,23 +27,33 @@ gem 'capistrano'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
+
 gem 'carrierwave', ">= 0.5.6"
+gem 'mini_magick'
+gem 'flash_cookie_session'
 gem "paperclip", "~> 2.3"
+gem 'jquery-rails', '>= 1.0.12'
+
 #gem "russian"
 #gem 'rails-i18n'
+
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
+
+gem "nifty-generators", :group => :development
 group :development, :test do
-#   gem 'webrat'
-gem 'sqlite3'
-gem 'web-app-theme', '>= 0.6.2'
-gem 'hpricot'
-gem 'ruby_parser'
- end
+  #   gem 'webrat'
+  gem 'sqlite3'
+  gem 'web-app-theme', '>= 0.6.2'
+  gem 'hpricot'
+  gem 'ruby_parser'
+end
+ 
+ 
 group :production do
-gem 'pg', '>=0.11.0'
-gem 'web-app-theme', '>= 0.6.2'
-gem 'hpricot'
-gem 'ruby_parser'
- end
+  gem 'pg', '>=0.11.0'
+  gem 'web-app-theme', '>= 0.6.2'
+  gem 'hpricot'
+  gem 'ruby_parser'
+end

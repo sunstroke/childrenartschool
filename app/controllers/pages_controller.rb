@@ -20,6 +20,11 @@ class PagesController < ApplicationController
     #   format.xml  { render :xml => @page }
     # end
   end
+  def view
+    @page = Page.find_by_label(params[:label])
+    
+    render :action=>"show"
+  end
 
   # GET /pages/new
   # GET /pages/new.xml

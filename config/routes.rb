@@ -18,6 +18,9 @@ end
   resources :welcomes
   resources :teachers
 #  get "admin"
+
+  match ':label', :to=>'pages#view'
+  
   get "home/index"
 
   # The priority is based upon order of creation:

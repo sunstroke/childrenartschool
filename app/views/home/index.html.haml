@@ -2,11 +2,13 @@
   %a.prev{:href=>"#"}Назад
   %a.next{:href=>"#"}Вперед
   %br.clear/
-#slider
+#slider{:style=>"position: absolute;"}
   %ul
-    - @banners.each do |b|
-      %li
-        -if !b.url?
-          = image_tag b.image_url
-        -else
-          = link_to image_tag (b.image_url) , b.url
+    -@banners.each do |b|
+      %li{:style=>"position: relative;"}
+        =image_tag b.image_url
+        %div{:style=>"position: absolute; top: 200px; left:100px;z-index:200;"}
+          = simple_format(b.text)
+          .link_to_banner
+            =b.name
+        

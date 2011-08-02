@@ -1,6 +1,14 @@
 class Teacher < ActiveRecord::Base
   has_many :groups
+  has_many :program, :through=>:groups
   has_attached_file :full_photo,
+                    :styles => {
+                      :i1600=>"1600x1000#",
+                      :i1440=>"1440x900#",                      
+                      :i1280=>"1280x800#",
+                      :i1024=>"1024x640#",
+                      :i800=>"800x500#"
+                    },
                    :url           => "/attachments/trachers/:id/:attachment/:style/:basename.:extension",
                    :path          => ":rails_root/public:url",
                    :default_url   => "/images/stripes1.jpg"

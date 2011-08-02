@@ -41,6 +41,13 @@
           = t("activerecord.attributes.admin_teacher.avatar_file_name", :default => t("activerecord.labels.avatar_file_name", :default => "Портрет"))
           \:
         = image_tag @teacher.avatar.url
+      %p
+        %b
+          = t("activerecord.attributes.admin_teacher.avatar_file_name", :default => t("activerecord.labels.avatar_file_name", :default => "Группы преподавателя"))
+          \:        
+        -@teacher.groups.each do |g|
+          = image_tag g.teacher.full_photo.url, :style=>"width: 100px;"
+          = g.name        
       .wat-cf
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_teacher_path(@teacher), :class => "button"
         = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_teacher_path(@teacher), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"

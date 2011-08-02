@@ -1,21 +1,26 @@
-%p
-  детская школа
-  %br/
-  визуальных искусств
-%input{:placeholder => "Поиск...", :results => "10", :type => "search"}/
-.logo
-  %img{:alt => "fotohaus", :height => "26", :longdesc => "http://fotohaus.ru", :src => "/images/fotohaus190.png", :width => "190"}/
-%nav
-  %ul
-    %li
-      ШКОЛА
-    %li
-      КУРСЫ
-    %li
-      ПРЕПОДАВАТЕЛИ
-    %li
-      НОВОСТИ
-    %li
-      КОНТАКТЫ
-    %li
-      <a href="http://2010.school-f.ru">СТАРАЯ ВЕРСИЯ САЙТА</a>
+#nav-wrapper
+  #navigation
+    %p
+      Детская школа визуальных искусств  
+    #search
+      %form
+        %input#searchtxt{:placeholder => "Поиск...", :results => "10", :type => "search"}/
+      .logo
+        %img{:alt => "fotohaus", :height => "26", :longdesc => "http://fotohaus.ru", :src => "/images/fotohaus190.png", :width => "190"}/
+        
+    %nav#menu
+      %ul
+        %li
+          ШКОЛА
+        %li
+          КУРСЫ
+        %li
+          СЕМИНАРЫ
+        %li
+          ПРЕПОДАВАТЕЛИ
+        %li
+          КОНТАКТЫ
+        %li
+          &nbsp; &nbsp; &nbsp;
+        %li
+          <a href="http://2010.school-f.ru">СТАРАЯ ВЕРСИЯ САЙТА</a>

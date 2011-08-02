@@ -3,7 +3,4 @@
   %a.next{:href=>"#"}Вперед
   %br.clear/
 #slider
-  %ul
-    - Teacher.all.each do |b|
-      %li
-        = image_tag b.full_photo.url
+  = image_tag @teacher.full_photo.url

@@ -1,6 +1,5 @@
 # Load the rails application
 require File.expand_path('../application', __FILE__)
-
 # Initialize the rails application
 Schoolf::Application.initialize!
 ActionView::Base.field_error_proc = Proc.new do |html_tag, instance| 
@@ -9,4 +8,6 @@ ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
   else
     html_tag
   end
+  
+
 end

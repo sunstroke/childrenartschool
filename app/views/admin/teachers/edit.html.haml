@@ -9,6 +9,6 @@
       = t("web-app-theme.edit", :default => "Edit")
       проподавателя
     .inner
-      = form_for @teacher, :url => admin_teacher_path(@teacher), :html => { :class => :form } do |f|
+      = form_for @teacher, :url => admin_teacher_path(@teacher), :html => { :class => :form, :multipart=>true } do |f|
         = render :partial => "form", :locals => {:f => f}
 - content_for :sidebar, render(:partial => 'sidebar')

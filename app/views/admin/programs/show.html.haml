@@ -27,6 +27,7 @@
           \:
           %br/
         -@program.groups.each do |g|
+          = image_tag g.teacher.full_photo.url, :style=>"width: 100px;"
           = g.name
           %br/
       .wat-cf

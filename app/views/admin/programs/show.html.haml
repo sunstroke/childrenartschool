@@ -21,6 +21,14 @@
           = t("activerecord.attributes.admin_program.type", :default => t("activerecord.labels.type", :default => "Type"))
           \:
         = @program.type
+      %p
+        %b
+          = t("activerecord.attributes.admin_program.annotation", :default => t("activerecord.labels.annotation", :default => "Группы"))
+          \:
+          %br/
+        -@program.groups.each do |g|
+          = g.name
+          %br/
       .wat-cf
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_program_path(@program), :class => "button"
         = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_program_path(@program), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"

@@ -12,7 +12,7 @@
   %span.description Ex: a simple text
 .group
   = f.label :teacher_id, t("activerecord.attributes.group.teacher_id", :default => "Teacher"), :class => :label
-  = collection_select(:group, :teacher_id, Teacher.all, :id, :name, :prompt => 'Выберите преподавателя')  
+  = collection_select(:group, :teacher_id, Teacher.all, :id, :fullname, :prompt => 'Выберите преподавателя')  
   %span.description Ex: a simple text
 .group
   = f.label :price, t("activerecord.attributes.group.price", :default => "Price"), :class => :label

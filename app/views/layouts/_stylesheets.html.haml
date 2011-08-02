@@ -1,5 +1,6 @@
 -# CSS: implied media="all"
+= stylesheet_link_tag "web-app-theme/base", "web-app-theme/override"
 = stylesheet_link_tag 'style', :media => 'all'
-= stylesheet_link_tag "web-app-theme/base", "web-app-theme/override", :cache => true
+
 -# Append your own using content_for :stylesheets
 = yield :stylesheets

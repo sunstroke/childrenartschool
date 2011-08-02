@@ -7,11 +7,12 @@
     -@banners.each do |b|
       %li{:style=>"position: relative;"}
         =image_tag b.image_url
-        %div{:style=>"position: absolute; top: 200px; left:100px;z-index:200;"}
-          = simple_format(b.text)
-          .link_to_banner
-            -if b.url?
-              =link_to b.name, b.url
-            -else
-              =b.name
+        #caption_wrapper{:style=>"position: absolute; top: 200px;z-index:200;"}
+          #caption
+            = simple_format(b.text)
+            .link_to_banner
+              -if b.url?
+                =link_to b.name, b.url
+              -else
+                =b.name
         

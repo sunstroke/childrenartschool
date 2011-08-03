@@ -19,7 +19,7 @@ end
   resources :teachers
 #  get "admin"
 
-  match ':label', :to=>'pages#view'
+  match ':label', :to=>'pages#view', :as=>"view"
   
   get "home/index"
 

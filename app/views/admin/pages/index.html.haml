@@ -13,7 +13,7 @@
           %th.first ID
           %th
             = t("activerecord.attributes.admin_page.name", :default => t("activerecord.labels.name", :default => "Name"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th= t("web-app-theme.label", :default => "Короткая ссылка (страница на сайте)")
           %th.last &nbsp;
         - @pages.each do |page|
           %tr{:class => cycle("odd", "even")}
@@ -22,7 +22,7 @@
             %td
               = link_to page.name, admin_page_path(page)
             %td
-              = page.created_at
+              = link_to page.label, view_path(page.label) if page.label?
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_page_path(page)
               |

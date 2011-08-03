@@ -14,13 +14,17 @@ class GroupsController < ApplicationController
   # GET /groups/1.xml
   def show
     @group = Group.find(params[:id])
-    render :layout => 'admin'
-    # respond_to do |format|
-    #   format.html # show.html.erb
-    #   format.xml  { render :xml => @group }
-    # end
+    # render :layout => 'admin'
+     respond_to do |format|
+       format.html # show.html.erb
+       format.xml  { render :xml => @group }
+     end
   end
-
+  def view
+    @group = Group.find_by_label(params[:label])
+    
+    render :action=>"show"
+  end
   # GET /groups/new
   # GET /groups/new.xml
   def new

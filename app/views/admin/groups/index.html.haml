@@ -13,7 +13,7 @@
           %th.first ID
           %th
             = t("activerecord.attributes.admin_group.name", :default => t("activerecord.labels.name", :default => "Name"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th= t("web-app-theme.label", :default => "Короткая ссылка")
           %th.last &nbsp;
         - @groups.each do |group|
           %tr{:class => cycle("odd", "even")}
@@ -22,7 +22,7 @@
             %td
               = link_to group.name, admin_group_path(group)
             %td
-              = group.created_at
+              = link_to group.label, view_group_path(group.label) if group.label?
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_group_path(group)
               |

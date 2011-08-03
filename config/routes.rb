@@ -1,5 +1,6 @@
 Schoolf::Application.routes.draw do
   # Sample resource route within a namespace:
+
 namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
@@ -10,17 +11,24 @@ namespace :admin do
   resources :welcomes
   resources :teachers
 end
-    
-  resources :groups
+
+  match 'groups/:label', :to=>'groups#view', :as=>"view_group"        
+
+  resources :groups do
+    resources :people
+  end
+  
+
+  
   resources :pages
-  resources :people
+  resources :people    
   resources :programs
   resources :welcomes
   resources :teachers
 #  get "admin"
 
-  match ':label', :to=>'pages#view', :as=>"view"
-  
+  match ':label', :to=>'pages#view', :as=>"view_page"
+
   get "home/index"
 
   # The priority is based upon order of creation:

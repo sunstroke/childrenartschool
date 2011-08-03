@@ -3,11 +3,12 @@ class PeopleController < ApplicationController
   # GET /people.xml
   def index
     @people = Person.all
-    render :layout => 'admin'
-    # respond_to do |format|
-    #   format.html # index.html.erb
-    #   format.xml  { render :xml => @people }
-    # end
+    @group = Group.find(params[:group_id])        
+    # render :layout => 'admin'
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @people }
+    end
   end
 
   # GET /people/1
@@ -24,9 +25,10 @@ class PeopleController < ApplicationController
   # GET /people/new
   # GET /people/new.xml
   def new
-    @person = Person.new
-    @groups=Group.all(:conditions=>['open=?',true])
-    # render :layout => 'admin'
+    @group = Group.find(params[:group_id])
+    @person = Person.new(:group=>@group)
+    #@groups=Group.all(:conditions=>['open=?',true])
+     # render :layout => 'admin'
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @person }
@@ -42,8 +44,9 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.xml
   def create
+    @group = Group.find(params[:group_id])    
     @person = Person.new(params[:person])
-
+    
     respond_to do |format|
       if @person.save
         format.html { redirect_to(@person, :notice => 'Person was successfully created.') }

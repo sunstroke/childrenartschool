@@ -1,7 +1,11 @@
 .group
   = f.label :name, t("activerecord.attributes.group.name", :default => "Название группы"), :class => :label
   = f.text_field :name, :class => 'text_field'
-  %span.description Ex: Мастерская Гаврилова ШК12
+  %span.description Ex: Мастерская Гаврилова Ш12
+.group
+  = f.label :label, t("activerecord.attributes.group.label", :default => "Короткая ссылка"), :class => :label
+  = f.text_field :label, :class => 'text_field'
+  %span.description Ex: sh12 , группа будет доступна по адресу /groups/sh12  
 .group
   = f.label :open, t("activerecord.attributes.group.open", :default => "Открыта?"), :class => :label
   = f.check_box :open, :class => 'check_box'
@@ -27,6 +31,14 @@
   = f.label :calendar, t("activerecord.attributes.group.calendar", :default => "Расписание занятий"), :class => :label
   = f.text_area :calendar, :class => 'text_area'
   %span.description Ex: указывается пока в виде Пн 18:00-20:00
+.group
+  = f.label :vk, t("activerecord.attributes.group.vk", :default => "Название группы vkontakte"), :class => :label
+  = f.text_field :vk, :class => 'text_field'
+  %span.description Ex: идентификатор, например club29029221   
+.group
+  = f.label :fb, t("activerecord.attributes.group.fb", :default => "Название группы facebook"), :class => :label
+  = f.text_field :fb, :class => 'text_field'
+  %span.description Ex: идентификатор , например 133635153391913
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

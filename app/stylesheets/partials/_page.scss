@@ -78,13 +78,21 @@ header {
         float: left;
         padding-top: 20px;
       }
-      p {
+      p{
+        a {
+          color: #fd8500;
+          font-size: 40px;
+          float: left;  
+          line-height: 0.8;      
+          text-decoration: none;
+        }
         color: #fd8500;
         font-size: 40px;
         width: 880px;
         float: left;  
         line-height: 0.8;      
         padding-left: 13px;
+        text-decoration: none;
       }
     }
   }

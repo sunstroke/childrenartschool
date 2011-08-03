@@ -22,7 +22,7 @@
             %td
               = link_to page.name, admin_page_path(page)
             %td
-              -#= link_to page.label, view_path(page.label) if page.label?
+              = link_to page.label, view_path(page.label) if page.label?
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_page_path(page)
               |

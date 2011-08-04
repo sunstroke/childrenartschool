@@ -32,11 +32,11 @@
   = f.text_area :calendar, :class => 'text_area'
   %span.description Ex: указывается пока в виде Пн 18:00-20:00
 .group
-  = f.label :vk, t("activerecord.attributes.group.vk", :default => "Название группы vkontakte"), :class => :label
+  = f.label :vk, t("activerecord.attributes.group.vk", :default => "Идентификатор группы vkontakte"), :class => :label
   = f.text_field :vk, :class => 'text_field'
   %span.description Ex: идентификатор, например если ссылка club29029221, то идентификатор 29029221
 .group
-  = f.label :fb, t("activerecord.attributes.group.fb", :default => "Название группы facebook"), :class => :label
+  = f.label :fb, t("activerecord.attributes.group.fb", :default => "Идентификатор группы facebook"), :class => :label
   = f.text_field :fb, :class => 'text_field'
   %span.description Ex: идентификатор , например 133635153391913
 .group.navform.wat-cf

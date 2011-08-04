@@ -18,7 +18,7 @@
       - if @group.calendar?
         %h2
           Расписание занятий
-        = @group.calendar
+        = simple_format(@group.calendar)
         %br/
       - if @group.price?        
         %h2

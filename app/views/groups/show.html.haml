@@ -26,6 +26,8 @@
           Стоимость обучения
         = number_to_currency(@group.price.abs, :precision => 0) if @group.price?
         %br/
+      %br/
+      %br/
       %h2
         Хочу учиться
       = link_to "Подать заявку", new_group_person_path(@group)      

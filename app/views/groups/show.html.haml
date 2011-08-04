@@ -1,13 +1,39 @@
 %section#section
   #info
     %h2
-      Программа обучения
-    = simple_format(@group.program.annotation) if @group.program_id?
+      = @group.program.name
+      (
+      = @group.name
+      )
+    -if @group.prim?
+      = @group.prim
+      %hr
+    .col{:style=>"float:left; width: 300px;"}
+      - if @group.program_id? 
+        %h2
+          Учебная программа
+        = simple_format(@group.program.annotation) if @group.program_id?
+        %br/
+    .col{:style=>"float:left; width: 300px;"}
+      - if @group.calendar?
+        %h2
+          Расписание занятий
+        = @group.calendar
+        %br/
+      - if @group.price?        
+        %h2
+          Стоимость обучения
+        = number_to_currency(@group.price.abs, :precision => 0) if @group.price?
+        %br/
+      %h2
+        Хочу учиться
+      = link_to "Подать заявку", new_group_person_path(@group)      
+    
   %aside#side.clearfix
-    = image_tag @group.teacher.avatar.url, :style=>"width: 300px;float: right; margin-right: 10px;"
-    = @group.name
-    = link_to "Подать заявку", new_group_person_path(@group)
-    %br
-    = @group.price
-    р.
+    = image_tag @group.teacher.avatar.url, :style=>"width: 300px; "
+    %br/
+    = @group.teacher.fullname
+    -if @group.vk?
+      %br/
+      = render "vk", :object => @group
   .clearfix

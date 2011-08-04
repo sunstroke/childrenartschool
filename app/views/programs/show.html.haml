@@ -1,27 +1,32 @@
 .block
-  .secondary-navigation
-    %ul.wat-cf
-      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", programs_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_program_path
-      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", program_path
   .content
     .inner
       %p
         %b
-          = t("activerecord.attributes.program.name", :default => t("activerecord.labels.name", :default => "Name"))
+          = t("activerecord.attributes.admin_program.name", :default => t("activerecord.labels.name", :default => "Название"))
           \:
         = @program.name
       %p
         %b
-          = t("activerecord.attributes.program.annotation", :default => t("activerecord.labels.annotation", :default => "Annotation"))
+          = t("activerecord.attributes.admin_program.annotation", :default => t("activerecord.labels.annotation", :default => "Краткое содержание программы"))
           \:
         = simple_format(@program.annotation)
       %p
         %b
-          = t("activerecord.attributes.program.type", :default => t("activerecord.labels.type", :default => "Type"))
+          = t("activerecord.attributes.admin_program.type", :default => t("activerecord.labels.type", :default => "Тип"))
           \:
         = @program.type
-      .wat-cf
-        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_program_path(@program), :class => "button"
-        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), program_path(@program), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
-- content_for :sidebar, render(:partial => 'sidebar')
+      %p
+        %b
+          = t("activerecord.attributes.admin_program.annotation", :default => t("activerecord.labels.annotation", :default => "Созданные группы для этой программы"))
+          \:
+          %br/
+        -@program.groups.each do |g|
+          .group_block{:style=>"position: relative;width: 200px; float: left;margin-right: 10px;"}
+            .img_cal{:style=>"position: relative;"}
+              = image_tag g.teacher.full_photo.url, :style=>"width: 200px;"
+              #cal
+                = simple_format(g.calendar)
+            = g.name
+            %br/
+        .clearfix

@@ -1,6 +1,6 @@
 .block
   .content
-    .inner
+    .inner{:style=>"float: left;"}
       %p
         %b
           = t("activerecord.attributes.admin_program.name", :default => t("activerecord.labels.name", :default => "Название"))
@@ -21,12 +21,13 @@
           = t("activerecord.attributes.admin_program.annotation", :default => t("activerecord.labels.annotation", :default => "Созданные группы для этой программы"))
           \:
           %br/
-        -@program.groups.each do |g|
-          .group_block{:style=>"position: relative;width: 200px; float: left;margin-right: 10px;"}
-            .img_cal{:style=>"position: relative;"}
-              = image_tag g.teacher.full_photo.url, :style=>"width: 200px;"
-              #cal
-                = simple_format(g.calendar)
-            -#= g.name
-            %br/
-        .clearfix
+    #grouplist
+      -@program.groups.each do |g|
+        .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
+          .img_cal{:style=>"position: relative;"}
+            = image_tag g.teacher.full_photo.url, :style=>"width: 200px;"
+            #cal
+              = simple_format(g.calendar)
+          -#= g.name
+          %br/
+    .clearfix

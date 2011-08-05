@@ -5,18 +5,15 @@
   -if @programs!=nil
     #grouplist
       -@programs.each do |@program|
-        %b
-          =@program.name
-        -@program.groups.each do |g|
-          .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
-            .img_cal{:style=>"position: relative;"}
-              = link_to image_tag( g.teacher.full_photo.url, :style=>"width: 200px;"), view_group_path(g.label)
-              #cal
-                = simple_format(g.calendar)
-            -#= g.name
-            %br/
-        %br/
-        %br/
-        %br/
-        %br.clearfix                        
+        %div{:style=>"margin-bottom: 150px;"}
+          %b{:style=>"color: #FC8100;"}
+            =@program.name
+          -@program.groups.each do |g|
+            .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
+              .img_cal{:style=>"position: relative;"}
+                = link_to image_tag( g.teacher.full_photo.url, :style=>"width: 200px;"), view_group_path(g.label)
+                #cal
+                  = simple_format(g.calendar)
+              -#= g.name
+              %br/
 = render "sticky"

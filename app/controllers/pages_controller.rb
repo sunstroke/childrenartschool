@@ -22,10 +22,8 @@ class PagesController < ApplicationController
   end
   def view
     @page = Page.find_by_label(params[:label])
-    if params[:label]="school"
-      @programs=Program.find_all_by_program_type("school")
-    end
-    
+    @programs=Program.find_all_by_program_type(@page.program_type)    
+
     render :action=>"show"
   end
 

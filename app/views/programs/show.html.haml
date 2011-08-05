@@ -25,7 +25,7 @@
       -@program.groups.each do |g|
         .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
           .img_cal{:style=>"position: relative;"}
-            = image_tag g.teacher.full_photo.url, :style=>"width: 200px;"
+            = link_to image_tag( g.teacher.full_photo.url, :style=>"width: 200px;"), view_group_path(g.label)
             #cal
               = simple_format(g.calendar)
           -#= g.name

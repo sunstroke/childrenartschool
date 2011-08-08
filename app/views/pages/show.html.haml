@@ -1,19 +1,23 @@
 %section#section
   %aside#sidemenu
-  %article#default{:style=>"float:left;width: 550px;"}
+  %article#default
+    -if @programs!=nil
+      #grouplist
+        %span{:style=>"color: #607890;"}
+          ПОДАТЬ ЗАЯВКУ НА ОБУЧЕНИЕ:
+          %br/
+        -@programs.each do |@program|
+          %div{:style=>"margin-bottom: 120px;clear: both;"}
+            -if @program.groups.count>0
+              %b{:style=>"color: #FC8100;"}
+                =@program.name
+            -@program.groups.each do |g|
+              .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
+                .img_cal{:style=>"position: relative;"}
+                  = link_to image_tag( g.teacher.full_photo.url, :style=>"width: 200px;"), new_group_person_path(g)
+                  #cal
+                    = simple_format(g.calendar)
+                = link_to "Записаться", new_group_person_path(g)
+                %br/
     = simple_format@page.text
-  -if @programs!=nil
-    #grouplist
-      -@programs.each do |@program|
-        %div{:style=>"margin-bottom: 120px;clear: both;"}
-          %b{:style=>"color: #FC8100;"}
-            =@program.name
-          -@program.groups.each do |g|
-            .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
-              .img_cal{:style=>"position: relative;"}
-                = link_to image_tag( g.teacher.full_photo.url, :style=>"width: 200px;"), view_group_path(g.label)
-                #cal
-                  = simple_format(g.calendar)
-              -#= g.name
-              %br/
 = render "sticky"

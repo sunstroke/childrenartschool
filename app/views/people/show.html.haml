@@ -27,3 +27,9 @@
         = t("activerecord.attributes.person.about", :default => t("activerecord.labels.about", :default => "Дополнительная информация"))
         \:
       = @person.about
+      %p
+        %b
+          Страница группы
+          \:
+        = link_to @person.group.name,  view_group_path(@person.group.label)
+      

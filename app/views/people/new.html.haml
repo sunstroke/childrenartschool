@@ -1,6 +1,26 @@
 -content_for :stylesheets do
   = stylesheet_link_tag 'web-app-theme/base1', "/stylesheets/web-app-theme/override"
 %section#section  
+  #grouplist
+    %h3
+      = @group.program.name
+    = image_tag( @group.teacher.full_photo.url, :style=>"width: 200px;")      
+    = @group.name
+    -if @group.prim?
+      = @group.prim
+    - if @group.calendar?
+      %h3
+        Расписание занятий
+      = simple_format(@group.calendar)
+    - if @group.price?        
+      %h3
+        Стоимость обучения
+      = number_to_currency(@group.price.abs, :precision => 0) if @group.price?
+      = @group.desc
+      - if @group.program_id? 
+        %h3
+          Учебная программа
+        = simple_format(@group.program.annotation) if @group.program_id?          
   .contentt{:style=>"width: 600px;padding-left: 13px;"}
     %h2.title
       Подать заявку на обучение
@@ -39,4 +59,3 @@
             = t("web-app-theme.save", :default => "Save")
           %span.text_button_padding= t("web-app-theme.or", :default => "or")
           = link_to t("web-app-theme.cancel", :default => "Cancel"), group_people_path(@group), :class => "text_button_padding link_button"
-

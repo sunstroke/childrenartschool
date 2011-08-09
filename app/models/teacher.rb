@@ -1,6 +1,7 @@
 class Teacher < ActiveRecord::Base
   has_many :groups
   has_many :program, :through=>:groups
+  validates_presence_of :full_photo, :message => "не может быть пустым"
   has_attached_file :full_photo,
                     :styles => {
                       :i1600=>"1600x1000#",

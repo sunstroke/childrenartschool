@@ -8,7 +8,8 @@ class Teacher < ActiveRecord::Base
                       :i1440=>"1440x900#",                      
                       :i1280=>"1280x800#",
                       :i1024=>"1024x640#",
-                      :i800=>"800x500#"
+                      :i800=>"800x500#",
+                      :small=>"200x200>"
                     },
                    :url           => "/attachments/trachers/:id/:attachment/:style/:basename.:extension",
                    :path          => ":rails_root/public:url",

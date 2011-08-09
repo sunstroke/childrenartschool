@@ -6,9 +6,9 @@
       = @group.program.name
     = image_tag( @group.teacher.full_photo.url, :style=>"width: 200px;")      
     = @group.name
-    %br
+    %br.clearfix
     -if @group.prim?
-      = @group.prim
+      = simple_format(@group.prim)
     - if @group.calendar?
       %h3
         Расписание занятий

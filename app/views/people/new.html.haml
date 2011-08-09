@@ -21,7 +21,7 @@
       - if @group.program_id? 
         %h3
           Учебная программа
-        = @group.program.annotation if @group.program_id?          
+        = raw(@group.program.annotation) if @group.program_id?          
   .contentt{:style=>"width: 600px;padding-left: 13px;"}
     %h2.title
       Подать заявку на обучение

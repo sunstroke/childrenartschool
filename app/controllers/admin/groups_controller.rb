@@ -3,7 +3,7 @@ class Admin::GroupsController < ApplicationController
   # GET /admin/groups.xml
    layout'admin'
   def index
-    @groups = Group.all
+    @groups = Group.find(:all,:order=>["program_id ASC, position ASC"])
 
     respond_to do |format|
       format.html # index.html.erb

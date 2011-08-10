@@ -3,7 +3,7 @@ class Admin::ProgramsController < ApplicationController
   # GET /admin/programs.xml
  layout'admin'  
   def index
-    @programs = Program.all
+    @programs = Program.find(:all,:order=>["program_type ASC, position ASC"])
 
     respond_to do |format|
       format.html # index.html.erb

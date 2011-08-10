@@ -12,6 +12,8 @@
         %tr
           %th.first ID
           %th
+            Позиция
+          %th
             = t("activerecord.attributes.admin_program.name", :default => t("activerecord.labels.name", :default => "Name"))
           %th= t("web-app-theme.program_type", :default => "Тип программы")
           %th.last &nbsp;
@@ -19,6 +21,8 @@
           %tr{:class => cycle("odd", "even")}
             %td
               = program.id
+            %td
+              = program.position              
             %td
               = link_to program.name, admin_program_path(program)
             %td

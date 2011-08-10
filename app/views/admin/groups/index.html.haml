@@ -14,15 +14,24 @@
           %th
             = t("activerecord.attributes.admin_group.name", :default => t("activerecord.labels.name", :default => "Name"))
           %th= t("web-app-theme.label", :default => "Короткая ссылка")
+          %th
+            Позиция
+          %th
+            Уч программа
           %th.last &nbsp;
         - @groups.each do |group|
           %tr{:class => cycle("odd", "even")}
             %td
-              = group.id
+              = group.id              
             %td
               = link_to group.name, admin_group_path(group)
             %td
               = link_to group.label, view_group_path(group.label) if group.label?
+            %td
+              = group.position              
+            %td
+              = group.program.name
+              
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_group_path(group)
               |

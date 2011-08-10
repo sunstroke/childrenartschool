@@ -4,6 +4,9 @@
       %span{:style=>"color: #607890;"}
         ПОДАТЬ ЗАЯВКУ НА ОБУЧЕНИЕ:
         %br/
+      %div{:style=>"margin-bottom: 120px;clear: both;"}
+        %b{:style=>"color: #FC8100;"}
+          =@program.name
         -@program.groups.each do |g|
           .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
             .img_cal{:style=>"position: relative;"}

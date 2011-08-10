@@ -22,7 +22,8 @@
             %td
               = link_to teacher.fullname, admin_teacher_path(teacher)
             %td
-              = teacher.created_at
+              = image_tag teacher.full_photo.url(:small)
+              = image_tag teacher.avatar.url(:small)              
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_teacher_path(teacher)
               |

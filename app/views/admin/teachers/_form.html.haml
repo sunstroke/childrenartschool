@@ -8,7 +8,7 @@
   %span.description Ex: vika
 .group
   = f.label :about, t("activerecord.attributes.teacher.about", :default => "Информация о преподавателе"), :class => :label
-  = f.text_area :about, :class => 'text_area'
+  = f.cktext_area :about, :class => 'text_area'
   %span.description Ex: родился/учился/женился
 .group
   = f.label :portfolio_id, t("activerecord.attributes.teacher.portfolio_id", :default => "Портфолио"), :class => :label
@@ -16,7 +16,7 @@
   %span.description Ex: a simple text
 .group
   = f.label :video, t("activerecord.attributes.teacher.video", :default => "Видео"), :class => :label
-  = f.text_area :video, :class => 'text_area'
+  = f.cktext_area :video, :class => 'text_area'
   %span.description Ex: код с сайта, нп  vimeo
 .group
   = f.label :full_photo, t("activerecord.attributes.teacher.full_photo_file_name", :default => "Большая картинка для преподавателя"), :class => :label

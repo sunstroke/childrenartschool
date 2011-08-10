@@ -20,5 +20,5 @@
                 = link_to "Записаться", new_group_person_path(g)
                 %br/
     %span{:style=>"width: 350px;"}
-      = simple_format@page.text
+      = raw(@page.text)
 = render "sticky"

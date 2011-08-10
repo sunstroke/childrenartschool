@@ -1,6 +1,6 @@
 %section#section
   %aside#sidemenu
-  %article#default
+  %article#default.clearfix
     -if @programs!=nil
       #grouplist{:style=>"clear: both; margin-left: 10px;"}
         %span{:style=>"color: #607890;"}
@@ -19,7 +19,6 @@
                     = simple_format(g.calendar)
                 = link_to "Записаться", new_group_person_path(g)
                 %br/
-      .clearfix
     %span{:style=>"width: 350px;"}
       = raw(@page.text)
 = render "sticky"

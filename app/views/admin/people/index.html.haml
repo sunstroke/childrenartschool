@@ -13,7 +13,8 @@
           %th.first ID
           %th
             = t("activerecord.attributes.admin_person.fullname", :default => t("activerecord.labels.fullname", :default => "Fullname"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th= t("web-app-theme.birthday", :default => "Возраст")
+          %th="Группа"
           %th.last &nbsp;
         - @people.each do |person|
           %tr{:class => cycle("odd", "even")}
@@ -22,7 +23,9 @@
             %td
               = link_to person.fullname, admin_person_path(person)
             %td
-              = person.created_at
+              = age(person.birthday)
+            %td
+              = person.group.name
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_person_path(person)
               |

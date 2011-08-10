@@ -67,6 +67,7 @@ jQuery(function( $ ){
 				$('#header').css('margin-left',$(window).width()*0.025);
 				 */
 					$('#main').width($(window).width());
+					$('#footer .menu').width($(window).width()*0.9);					
 					$('#slider').width($(window).width());
 					$('#buttons').width($(window).width()*0.9);
 					$('#caption li,#slider li, #slider li img').width($('#slider').width());	

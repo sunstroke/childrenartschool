@@ -5,6 +5,12 @@
 // probably be customized for each site
 //-----------------------------------------------
 
+.js #jsnotice { display: none; }
+.no-js #jsnotice { 
+  display: block; 
+  z-index: 100;
+  position: absolute;}
+
 body, select, input, textarea {
   color: $font-color;
   // Set your base font here, to apply evenly

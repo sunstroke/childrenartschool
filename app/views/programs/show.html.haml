@@ -10,7 +10,7 @@
         %b
           = t("activerecord.attributes.admin_program.annotation", :default => t("activerecord.labels.annotation", :default => "Краткое содержание программы"))
           \:
-        = simple_format(@program.annotation)
+        = @program.annotation
       %p
         %b
           = t("activerecord.attributes.admin_program.type", :default => t("activerecord.labels.type", :default => "Тип"))

@@ -19,6 +19,7 @@
                     = simple_format(g.calendar)
                 = link_to "Записаться", new_group_person_path(g)
                 %br/
+      .clearfix
     %span{:style=>"width: 350px;"}
       = raw(@page.text)
 = render "sticky"

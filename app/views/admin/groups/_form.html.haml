@@ -16,11 +16,11 @@
   %span.description Ex: учебные группы упорядочиваются по возрастанию номеров, при отображении на странице, н.п. /school  
 .group
   = f.label :start, t("activerecord.attributes.person.start", :default => "Дата начала занятий"), :class => :label
-  = f.date_field :start, :class=>"date", :style=>"width: 100px;"
+  = f.text_field :start, :class=>"date", :style=>"width: 100px;"
   %span.description Ex: 1 апреля 1995 года  
 .group
   = f.label :finish, t("activerecord.attributes.person.finish", :default => "Дата окончания занятий"), :class => :label
-  = f.date_field :finish, :class=>"date", :style=>"width: 100px;"
+  = f.text_field :finish, :class=>"date", :style=>"width: 100px;"
   %span.description Ex: 1 апреля 1995 года  
 %script
   $(":date").dateinput();

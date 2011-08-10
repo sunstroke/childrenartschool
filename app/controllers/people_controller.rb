@@ -49,6 +49,7 @@ class PeopleController < ApplicationController
     
     respond_to do |format|
       if @person.save
+        UserMailer.welcome_email(@person).deliver        
         format.html { redirect_to(@person, :notice => 'Person was successfully created.') }
         format.xml  { render :xml => @person, :status => :created, :location => @person }
       else

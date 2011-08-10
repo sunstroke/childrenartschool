@@ -8,7 +8,7 @@
     <h1>На сайте новая заявка от <%= @user.fullname %></h1>
     <p>Поздравляем!</p>    
     <p>Чтобы посмотреть более полную информацию пройдите по ссылке    </p>
-    <p><%= link_to @user.fullname, admin_person_path(@user)%>
+    <p><%= link_to @user.fullname, admin_person_url(@user)%>
     </p>
 
   </body>

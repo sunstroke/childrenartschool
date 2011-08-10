@@ -21,11 +21,26 @@
 
 
 
+- if !google_api_key.blank?
+  = javascript_include_tag "//www.google.com/jsapi?key=#{google_api_key}"
+  :javascript
+    google.load(#{ remote_jquery("1.6") });
+- else
+  = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/#{ local_jquery("1.6") }"
+   
+
+  -# fall back to local jQuery if necessary
+  :javascript
+    window.jQuery || document.write("<script src='/javascripts/jquery.min.js'>\x3C/script>")
+
 
 -# All JavaScript at the bottom, except for Modernizr and Respond.
 -# Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
-= javascript_include_tag 'modernizr.min', 'respond.min'
-
+= javascript_include_tag 'modernizr.min', 'respond.min','jquery.lazyload.mini'
+%script
+  $("img").lazyload({      
+  effect      : "fadeIn"
+  });
 = yield :head
     
 

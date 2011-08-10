@@ -4,7 +4,7 @@
   #grouplist
     %h3
       = @group.program.name
-    = image_tag( @group.teacher.full_photo.url, :style=>"width: 200px;")      
+    = image_tag( @group.teacher.full_photo.url(:small), :style=>"width: 200px;")      
     = @group.name
     %br.clearfix
     -if @group.prim?

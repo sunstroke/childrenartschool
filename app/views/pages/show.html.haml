@@ -14,7 +14,7 @@
             -@program.groups.each do |g|
               .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
                 .img_cal{:style=>"position: relative;"}
-                  = link_to image_tag( g.teacher.full_photo.url, :style=>"width: 200px;"), new_group_person_path(g)
+                  = link_to image_tag( g.teacher.full_photo.url(:small), :style=>"width: 200px;"), new_group_person_path(g)
                   #cal
                     = simple_format(g.calendar)
                 = link_to "Записаться", new_group_person_path(g)

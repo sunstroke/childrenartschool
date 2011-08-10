@@ -11,7 +11,7 @@ class Teacher < ActiveRecord::Base
                       :i800=>"800x500#",
                       :small=>"200x200>"
                     },
-                   :url           => "/attachments/trachers/:id/:attachment/:style/:basename.:extension",
+                   :url           => "/attachments/teachers/:id/:attachment/:style/:basename.:extension",
                    :path          => ":rails_root/public:url",
                    :default_url   => "/images/stripes1.jpg"
   has_attached_file :avatar,

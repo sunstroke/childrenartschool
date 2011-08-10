@@ -13,7 +13,7 @@
       - if @group.program_id? 
         %h2
           Учебная программа
-        = simple_format(@group.program.annotation) if @group.program_id?
+        = raw(@group.program.annotation) if @group.program_id?
         %br/
     .col{:style=>"float:left; width: 300px;"}
       - if @group.calendar?

@@ -4,6 +4,12 @@ var redactor = {
   focus: true, 
   path: '/redactor/', 
   image_upload: '/manage/photos', 
-  pathCss: '../stylesheets/', 
-  css: ['style.css'] 
+  pathCss: 'css/', 
+  css: ['base.css'] 
 }
+$(function() { 
+$.datepicker.setDefaults($.datepicker.regional['ru']);	
+ $(".date").datepicker({dateFormat:'yy-mm-dd'});
+
+
+});

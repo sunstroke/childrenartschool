@@ -408,3 +408,9 @@ button.button:active, a.button:active {
 .link_button{
   cursor: pointer;
 }
+.even {
+  background: #dde;
+}
+.odd {
+  background: white;
+}

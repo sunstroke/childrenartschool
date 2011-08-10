@@ -3,8 +3,8 @@
   = f.text_field :fullname, :class => 'text_field'
   %span.description Ex: Иванов Иван Иванович
 .group
-  = f.label :type, t("activerecord.attributes.person.type", :default => "Тип обучения"), :class => :label
-  = f.text_field :type, :class => 'text_field'
+  = f.label :role_type, t("activerecord.attributes.person.role_type", :default => "Тип обучения"), :class => :label
+  = f.text_field :role_type, :class => 'text_field'
   %span.description Ex: школа/курсы и т.д.
 
 .group
@@ -22,11 +22,11 @@
   %span.description Ex: +79265554433
 .group
   = f.label :mail, t("activerecord.attributes.person.mail", :default => "Адрес электронной почты"), :class => :label
-  = f.text_field :mail, :class => 'text_field'
+  = f.email_field :mail, :class => 'text_field'
   %span.description Ex: mail@mail.com  
 .group
   = f.label :birthday, t("activerecord.attributes.person.birthday", :default => "Дата рождения"), :class => :label
-  = f.date_select :birthday, :class => 'datetime_select'
+  = f.date_select :birthday,:start_year=>Time.now.year-21, :end_year=>Time.now.year, :class => 'datetime_select'
   %span.description Ex: 1 апреля 1995 года
 .group
   = redactor("#person_about")

@@ -3,6 +3,6 @@ class Person < ActiveRecord::Base
   validates_presence_of :fullname, :message => "не может быть пустым"
   validates_presence_of :tel,  :message => "не может быть пустым"
   validates_presence_of :current_group,  :message => "должна быть выбрана"
-  validates_format_of :mail, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i , :message => "не верный формат"
+  #validates_format_of :mail, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i , :message => "не верный формат"
   
 end

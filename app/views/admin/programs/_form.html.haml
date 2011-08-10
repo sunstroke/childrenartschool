@@ -3,6 +3,14 @@
   = f.text_field :name, :class => 'text_field'
   %span.description Ex: Первый год обучения
 .group
+  = f.label :duration, t("activerecord.attributes.program.duration", :default => "Дительность обучения"), :class => :label
+  = f.number_field :duration, :class => 'text_field', :style=>"width: 100px;"
+  %span.description Ex: указывается количество учебных часов
+.group
+  = f.label :position, t("activerecord.attributes.program.position", :default => "Порядок"), :class => :label
+  = f.text_field :position, :class => 'text_field'
+  %span.description Ex: учебные программы упорядочиваются по возрастанию номеров, при отображении на странице, н.п. /school 
+.group
   = f.label :annotation, t("activerecord.attributes.program.annotation", :default => "Аннотация"), :class => :label
   = f.text_area :annotation, :class => 'text_area'
   %span.description Ex: краткое содержание программы

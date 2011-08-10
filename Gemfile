@@ -33,6 +33,7 @@ gem 'mini_magick'
 gem 'flash_cookie_session'
 gem "paperclip", "~> 2.3"
 gem 'jquery-rails', '>= 1.0.12'
+gem "ckeditor", "~> 3.6.0"
 
 #gem "russian"
 #gem 'rails-i18n'

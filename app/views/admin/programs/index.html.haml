@@ -13,7 +13,7 @@
           %th.first ID
           %th
             = t("activerecord.attributes.admin_program.name", :default => t("activerecord.labels.name", :default => "Name"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th= t("web-app-theme.program_type", :default => "Тип программы")
           %th.last &nbsp;
         - @programs.each do |program|
           %tr{:class => cycle("odd", "even")}
@@ -22,7 +22,7 @@
             %td
               = link_to program.name, admin_program_path(program)
             %td
-              = program.created_at
+              = program.program_type
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_program_path(program)
               |

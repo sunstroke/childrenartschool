@@ -20,6 +20,7 @@
           %tr{:class => cycle("odd", "even")}
             %td
               = person.id
+              = l person.created_at , :format=>:brth
             %td
               = link_to person.fullname, admin_person_path(person)
             %td

@@ -21,11 +21,11 @@
 .group
   = f.label :full_photo, t("activerecord.attributes.teacher.full_photo_file_name", :default => "Большая картинка для преподавателя"), :class => :label
   = f.file_field :full_photo, :class => 'text_field'
-  %span.description Ex: размер 1600px на 1200px , показывается на полный экран
+  %span.description Ex: размер 1600px на 1000px 72dpi , показывается на полный экран
 .group
   = f.label :avatar, t("activerecord.attributes.teacher.avatar_file_name", :default => "Портрет"), :class => :label
   = f.file_field :avatar, :class => 'text_field'
-  %span.description Ex: картинка 600 на 800 для отображения на других страницах
+  %span.description Ex: картинка 600 на 800  72dpi для отображения на других страницах
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

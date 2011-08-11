@@ -5,7 +5,7 @@
 #nav-wrapper
   #navigation
     %p
-      = link_to 'Детская школа визуальных искусств','/'
+      = link_to_unless_current 'Детская школа визуальных искусств','/'
     #search
       %form
         %input#searchtxt{:placeholder => "Поиск...", :results => "10", :type => "search"}/
@@ -15,15 +15,15 @@
     %nav#menu
       %ul
         %li
-          = link_to 'ШКОЛА',"/school"
+          = link_to_unless_current 'ШКОЛА',"/school"
         %li
-          = link_to 'КУРСЫ',"/courses"
+          = link_to_unless_current 'КУРСЫ',"/courses"
         %li
-          = link_to "СЕМИНАРЫ", "/workshop"
+          = link_to_unless_current "СЕМИНАРЫ", "/workshop"
         %li
           ПРЕПОДАВАТЕЛИ
         %li
-          = link_to "КОНТАКТЫ", "/contacts"
+          = link_to_unless_current "КОНТАКТЫ", "/contacts"
         %li
           &nbsp; &nbsp; &nbsp;
         %li

@@ -1,6 +1,8 @@
 Schoolf::Application.routes.draw do
   # Sample resource route within a namespace:
 match '/teachers' , :to => redirect("http://2010.school-f.ru/teachers")
+match '/photocourses' , :to => redirect("http://2010.school-f.ru/photocourses")
+
 namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)

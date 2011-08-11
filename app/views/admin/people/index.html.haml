@@ -12,6 +12,8 @@
         %tr
           %th.first ID
           %th
+            Дата создания
+          %th          
             = t("activerecord.attributes.admin_person.fullname", :default => t("activerecord.labels.fullname", :default => "Fullname"))
           %th= t("web-app-theme.birthday", :default => "Возраст")
           %th="Группа"
@@ -20,6 +22,7 @@
           %tr{:class => cycle("odd", "even")}
             %td
               = person.id
+            %td
               = l person.created_at , :format=>:brth
             %td
               = link_to person.fullname, admin_person_path(person)

@@ -13,10 +13,9 @@
     #container
       #main{ :role => 'main' }
         = render "layouts/flashes"
-
       #container-footer  
-      %footer#footer{:style=>"margin-top:250px;"}
-        = render "layouts/footer"   
+    %footer#footer
+      = render "layouts/footer"   
 
     -# Javascript at the bottom for fast page loading
     = render "layouts/javascripts"

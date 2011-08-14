@@ -1,27 +1,27 @@
 .group
   = f.label :name, t("activerecord.attributes.welcome.name", :default => "Название"), :class => :label
   = f.text_field :name, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: Будет написано на плашке с оранжевым фоном
 .group
   = f.label :visible, t("activerecord.attributes.welcome.visible", :default => "Показывать?"), :class => :label
   = f.check_box :visible, :class => 'check_box'
-  %span.description Ex: a simple text
+  %span.description  показывать / не показывать этот баннер на главной странице
 .group
   = f.label :url, t("activerecord.attributes.welcome.url", :default => "Ссылка"), :class => :label
   = f.text_field :url, :class => 'text_field'
-  %span.description Ex: /pages/3
+  %span.description Ex: /pages/3 
 .group
   = f.label :text, t("activerecord.attributes.welcome.text", :default => "Сопроводительный текст"), :class => :label
   = f.text_area :text, :class => 'text_area'
-  %span.description Ex: a simple text
+  %span.description Ex: текст на баннере, то, что в теге span будет оранжевым цветом, строчки разделять двумя Enter
 .group
   = f.label :position, t("activerecord.attributes.welcome.position", :default => "Порядок"), :class => :label
   = f.text_field :position, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: порядок показа баннеров на главной
 .group
   = f.label :image, t("activerecord.attributes.welcome.image", :default => "Баннер"), :class => :label
   = f.file_field :image, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: картинка баннера 1600 на 100
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

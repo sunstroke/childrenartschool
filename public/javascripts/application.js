@@ -36,7 +36,3 @@ jQuery(function($){
 	$.datepicker.setDefaults($.datepicker.regional['ru']);
 	
 });
-
-$("#copyright").click(function () {
-$("#footmen").toggle("slow");
-});

@@ -56,11 +56,7 @@ input:invalid, textarea:invalid {
 body {
         margin: 0;
         padding: 0;
-        background-color: white;
-        -webkit-font-smoothing: antialiased;        
-        font-smooth: always;
-        text-rendering: optimizeLegibility;        
-        text-shadow: 0px 0px 1px #aaa;        
+        background-color: white;        
 }
 
 #container {
@@ -70,6 +66,7 @@ body {
 }
 #menu {
   clear: both;
+  text-shadow: 0px 0px 1px #aaa;  
 }
 header {
   #nav-wrapper {

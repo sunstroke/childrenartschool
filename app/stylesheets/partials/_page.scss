@@ -120,7 +120,7 @@ margin: 0px auto ; /* the auto value on the sides, coupled with the width, cente
 
 	position: relative;/* this gives IE6 hasLayout to properly clear */
 	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
-	color: #fff;
+	color: #666;
 	position: relative;
 	width: 100%;
 	bottom:0;	
@@ -154,8 +154,13 @@ margin: 0px auto ; /* the auto value on the sides, coupled with the width, cente
                 display: block;
                 width: 180px;
                 }
-                a,a:hover{
+                a{
+                  color: #999;
+                  text-decoration: none;
+                }
+                a:hover{
                 	color: #fff;
+                  text-decoration: none;                	
                 }
         }
 

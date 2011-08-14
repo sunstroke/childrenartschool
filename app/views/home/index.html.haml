@@ -9,7 +9,10 @@
         =image_tag b.image_url
         #caption_wrapper{:style=>"position: absolute; top: 200px;z-index:200;"}
           #caption
-            = simple_format(b.text)
+            -if b.url?          
+              =link_to simple_format(b.text),  b.url
+            -else
+              = simple_format(b.text)
             .link_to_banner
               -if b.url?
                 =link_to b.name, b.url

@@ -27,7 +27,8 @@
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_teacher_path(teacher)
               |
-              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_teacher_path(teacher)} |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_teacher_path(teacher)}
+              |
               \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_teacher_path(teacher), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
       .actions-bar.wat-cf
         .actions

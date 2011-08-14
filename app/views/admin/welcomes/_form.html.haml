@@ -13,7 +13,7 @@
 .group
   = f.label :text, t("activerecord.attributes.welcome.text", :default => "Сопроводительный текст"), :class => :label
   = f.text_area :text, :class => 'text_area'
-  %span.description Ex: текст на баннере, то, что в теге span будет оранжевым цветом, строчки разделять двумя Enter
+  %span.description Ex: здесь нужен очень короткий текст, 10 - 20 символов, он показывается на баннере, на подложке.. Текст второй строчки должен быть заключен в команды (<span>... </span>)
 .group
   = f.label :position, t("activerecord.attributes.welcome.position", :default => "Порядок"), :class => :label
   = f.text_field :position, :class => 'text_field'
@@ -21,7 +21,7 @@
 .group
   = f.label :image, t("activerecord.attributes.welcome.image", :default => "Баннер"), :class => :label
   = f.file_field :image, :class => 'text_field'
-  %span.description Ex: картинка баннера 1600 на 100
+  %span.description Ex: Картинка в формате jpg, gif, png, размером 1600х1000, разрешением 72dpi
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

@@ -34,4 +34,9 @@ jQuery(function($){
 		showMonthAfterYear: false,
 		yearSuffix: ''};
 	$.datepicker.setDefaults($.datepicker.regional['ru']);
+	
+});
+
+$("#copyright").click(function () {
+$("#footmen").toggle("slow");
 });

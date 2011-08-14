@@ -10,7 +10,8 @@
       %form
         %input#searchtxt{:placeholder => "Поиск...", :results => "10", :type => "search"}/
       .logo
-        %img{:alt => "fotohaus", :height => "26", :longdesc => "http://fotohaus.ru", :src => "/images/fotohaus190.png", :width => "190"}/
+        %a{:href=>"http://fotohaus.ru"}
+          %img{:alt => "fotohaus", :height => "26", :longdesc => "http://fotohaus.ru", :src => "/images/fotohaus190.png", :width => "190", :style=>"border: 0;"}/
         
     %nav#menu
       %ul

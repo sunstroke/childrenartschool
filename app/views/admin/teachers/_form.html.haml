@@ -16,7 +16,7 @@
   %span.description Ex: a simple text
 .group
   = f.label :video, t("activerecord.attributes.teacher.video", :default => "Видео"), :class => :label
-  = f.cktext_area :video, :class => 'text_area'
+  = f.text_area :video, :class => 'text_area'
   %span.description Ex: код с сайта, нп  vimeo
 .group
   = f.label :full_photo, t("activerecord.attributes.teacher.full_photo_file_name", :default => "Большая картинка для преподавателя"), :class => :label

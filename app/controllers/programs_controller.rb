@@ -14,6 +14,7 @@ class ProgramsController < ApplicationController
   # GET /programs/1.xml
   def show
     @program = Program.find(params[:id])
+    @title="Учебная программа: "+@program.name         
     # render :layout => 'admin'
     respond_to do |format|
       format.html # show.html.erb

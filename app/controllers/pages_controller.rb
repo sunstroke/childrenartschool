@@ -25,7 +25,7 @@ class PagesController < ApplicationController
     if @page.program_type!=""
       @programs=Program.find_all_by_program_type(@page.program_type,:order=>["position ASC"])    
     end
-
+        @title=@page.name
     render :action=>"show"
   end
 

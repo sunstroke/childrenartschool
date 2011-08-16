@@ -26,6 +26,13 @@
   $(":date").dateinput();
   $(":range").rangeinput();  
 .group
+  = f.label "Возраст", :class => :label
+  %input{:type=>"text",:id=>"amount", :style=>"border:0; color:#f6931f; font-weight:bold;"}
+  #slider-range
+  %span.description Ex: диапазон возрастов детей в группе  
+  = f.hidden_field :age_start
+  = f.hidden_field :age_finish  
+.group
   = f.label :program_id, t("activerecord.attributes.group.program_id", :default => "Учебная программа"), :class => :label
   = collection_select(:group, :program_id, Program.all, :id, :name, :prompt => 'Выберите программу')  
   %span.description Ex: программа должна быть создана заранее

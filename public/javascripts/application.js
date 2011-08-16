@@ -10,6 +10,19 @@ var redactor = {
 $(function() { 
 $.datepicker.setDefaults($.datepicker.regional['ru']);	
  $(".date").datepicker({dateFormat:'yy-mm-dd'});
+	$( "#slider-range" ).slider({
+			range: true,
+			min: 5 ,
+			max: 21,
+			values: [ $("#group_age_start").val(), $("#group_age_finish").val() ],
+			slide: function( event, ui ) {
+				$( "#amount" ).val(  ui.values[ 0 ] + " - " + ui.values[ 1 ]+" лет" );
+			}
+		});
+		$( "#amount" ).val(  $( "#slider-range" ).slider( "values", 0 ) +
+			" - " + $( "#slider-range" ).slider( "values", 1 )+" лет" );
+		$("#group_age_start").val($( "#slider-range" ).slider( "values", 0 ));
+		$("#group_age_finish").val($( "#slider-range" ).slider( "values", 1 ));			
 });
 
 /* Russian (UTF-8) initialisation for the jQuery UI date picker plugin. */

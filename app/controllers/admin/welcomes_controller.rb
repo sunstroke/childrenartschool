@@ -4,7 +4,7 @@ class Admin::WelcomesController < ApplicationController
  layout 'admin'  
  
   def index
-    @welcomes = Welcome.all
+    @welcomes = Welcome.find(:all,:order=>["position ASC"])
 
     respond_to do |format|
       format.html # index.html.erb

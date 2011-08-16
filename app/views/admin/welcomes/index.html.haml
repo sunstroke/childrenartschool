@@ -6,14 +6,15 @@
   .content
     %h2.title
       = t("web-app-theme.all", :default => "All")
-      баннеры
+      баннер
     .inner
       %table.table
         %tr
           %th.first ID
           %th
             = t("activerecord.attributes.admin_welcome.name", :default => t("activerecord.labels.name", :default => "Name"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th
+            Порядок
           %th.last &nbsp;
         - @welcomes.each do |welcome|
           %tr{:class => cycle("odd", "even")}
@@ -22,7 +23,7 @@
             %td
               = link_to welcome.name, admin_welcome_path(welcome)
             %td
-              = welcome.created_at
+              = welcome.position
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_welcome_path(welcome)
               |

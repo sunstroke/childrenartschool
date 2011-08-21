@@ -268,7 +268,12 @@ input.checkbox {
   border-style: solid;
 	border-color: #444444;
 }
-
+.fieldWithErrors input.text_field, .fieldWithErrors textarea.text_area {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+	border-color: red;
+}
 /* lists */
 
 ul.list {

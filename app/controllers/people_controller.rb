@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+before_filter :setup_negative_captcha, :only => [:new, :create]  
   # GET /people
   # GET /people.xml
   def index
@@ -46,17 +47,20 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.xml
   def create
-    @group = Group.find(params[:group_id])    
-    @person = Person.new(params[:person])
     
+    @group = Group.find(params[:group_id])    
+#    @person = Person.new(params[:person])
+    @person = Person.new(@captcha.values) #Decrypted params   
     respond_to do |format|
-      if @person.save
+      if @captcha.valid? && @person.save
+        @person.update_attributes(params[:person])
         UserMailer.welcome_email(@person).deliver        
         format.html { redirect_to(@person, :notice => 'Person was successfully created.') }
         format.xml  { render :xml => @person, :status => :created, :location => @person }
       else
+        flash[:notice] = @captcha.error if @captcha.error 
         format.html { render :action => "new" }
-        format.xml  { render :xml => @person.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @captcha.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -88,4 +92,13 @@ class PeopleController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+       def setup_negative_captcha
+         @captcha = NegativeCaptcha.new(
+           :secret => '90f36c6e333640f5a8fc2016fa4637062c3fdc23636ee03d8974d3b251090d8981dc759c36fe12bff820dd33f1cf993f029bfc62ac9d908b352309a2d2129862', #A secret key entered in environment.rb.  'rake secret' will give you a good one.
+           :spinner => request.remote_ip, 
+           :fields => [:fullname,:current_group,:tel,:mail,:about], #Whatever fields are in your form 
+           :params => params)
+       end
 end

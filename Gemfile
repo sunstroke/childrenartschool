@@ -34,7 +34,9 @@ gem 'flash_cookie_session'
 gem "paperclip", "~> 2.3"
 gem 'jquery-rails', '>= 1.0.12'
 gem "ckeditor", "~> 3.6.0"
+#gem "omniauth" 
 
+gem 'negative-captcha', :git => 'git://github.com/stefants/negative-captcha.git'
 gem "russian"
 #gem 'rails-i18n'
 

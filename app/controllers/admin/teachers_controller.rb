@@ -3,6 +3,7 @@ class Admin::TeachersController < ApplicationController
   # GET /admin/teachers.xml
  layout'admin'  
   def index
+
     @teachers = Teacher.all
 
     respond_to do |format|

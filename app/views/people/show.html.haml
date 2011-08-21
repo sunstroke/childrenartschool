@@ -21,7 +21,7 @@
       %b
         = t("activerecord.attributes.person.birthday", :default => t("activerecord.labels.birthday", :default => "Дата рождения"))
         \:
-      = l @person.birthday , :format=>:brth
+      = l @person.birthday , :format=>:brth if @person.birthday
     %p
       %b
         = t("activerecord.attributes.person.about", :default => t("activerecord.labels.about", :default => "Дополнительная информация"))

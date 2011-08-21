@@ -35,18 +35,18 @@
         %b
           = t("activerecord.attributes.admin_teacher.full_photo_file_name", :default => t("activerecord.labels.full_photo_file_name", :default => "Большая фотография"))
           \:
-        = image_tag @teacher.full_photo.url
+        = image_tag @teacher.full_photo.url if @teacher.full_photo.url
       %p
         %b
           = t("activerecord.attributes.admin_teacher.avatar_file_name", :default => t("activerecord.labels.avatar_file_name", :default => "Портрет"))
           \:
-        = image_tag @teacher.avatar.url
+        = image_tag @teacher.avatar.url if @teacher.avatar.url
       %p
         %b
           = t("activerecord.attributes.admin_teacher.avatar_file_name", :default => t("activerecord.labels.avatar_file_name", :default => "Группы преподавателя"))
           \:        
         -@teacher.groups.each do |g|
-          = image_tag g.teacher.full_photo.url, :style=>"width: 100px;"
+          = image_tag g.teacher.full_photo_url(:small), :style=>"width: 100px;"
           = g.name        
       .wat-cf
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_teacher_path(@teacher), :class => "button"

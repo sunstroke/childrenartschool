@@ -27,28 +27,29 @@
       Подать заявку на обучение
     .inner
       = form_for ([@group,@person], :html => { :class => :form } ) do |f|
+        = raw negative_captcha(@captcha) 
         .group
-          = f.label :fullname, t("activerecord.attributes.person.fullname", :default => "Полное имя ученика"), :class => :label
-          = f.text_field :fullname, :class => 'text_field'
+          = f.label  :fullname, t("activerecord.attributes.person.fullname", :default => "Полное имя ученика"), :class => :label
+          = f.negative_text_field @captcha, :fullname, :class => 'text_field'
           %span.description Ex: Иванов Иван
         .group
           = f.label :current_group, t("activerecord.attributes.person.current_group", :default => "группа"), :class => :label
-          = f.hidden_field :current_group, :value=>@group.id
+          = f.negative_hidden_field @captcha, :current_group, :value=>@group.id
           = @group.program.name
           (
           = @group.name           
           )
         .group
           = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class => :label
-          = f.text_field :tel, :class => 'text_field'
+          = f.negative_text_field @captcha, :tel, :class => 'text_field'
           %span.description Ex: +79265554433 (Иванова Татьяна)
         .group
-          = f.label :mail, t("activerecord.attributes.person.mail", :default => "Адрес электронной почты"), :class => :label
-          = f.text_field :mail, :class => 'text_field'
+          = f.negative_label @captcha, :mail, t("activerecord.attributes.person.mail", :default => "Адрес электронной почты"), :class => :label
+          = f.negative_text_field @captcha, :mail, :class => 'text_field'
           %span.description Ex: mail@mail.com 
         .group
           = f.label :sub_group, t("activerecord.attributes.group.sub_group", :default => "Подписка на новости группы"), :class => :label
-          = f.check_box :sub_group, :class => 'check_box'
+          = f.check_box  :sub_group, :class => 'check_box'
           %span.description  Вам на почту будут приходить актуальные новости группы. Любые изменения или дополнения. Вы всегда будете в курсе последних событий.
         .group
           = f.label :sub_all, t("activerecord.attributes.group.sub_all", :default => "Подписка на новости школы"), :class => :label
@@ -60,8 +61,8 @@
           %span.description Ex: 1 апреля 1995 года
         .group
           = redactor("#person_about")
-          = f.label :about, t("activerecord.attributes.person.about", :default => "Дополнительная информация"), :class => :label
-          = f.text_area :about, :class => 'text_area'
+          = f.negative_label @captcha, :about, t("activerecord.attributes.person.about", :default => "Дополнительная информация"), :class => :label
+          = f.negative_text_area @captcha, :about, :class => 'text_area'
         .group.navform.wat-cf
           %button.button{:type => "submit"}
             = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

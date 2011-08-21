@@ -27,7 +27,7 @@
             %td
               = link_to person.fullname, admin_person_path(person)
             %td
-              = age(person.birthday)
+              = age(person.birthday) if @person
             %td
               = person.group.name
             %td.last

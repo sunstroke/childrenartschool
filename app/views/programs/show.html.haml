@@ -2,7 +2,7 @@
   %article#default.clearfix
     #grouplist{:style=>"clear: both; margin-left: 10px;"}
       %span{:style=>"color: #607890;"}
-        ПОДАТЬ ЗАЯВКУ НА ОБУЧЕНИЕ:
+        ВЫБЕРИТЕ ГРУППУ:
         %br/
       %div{:style=>"margin-bottom: 120px;clear: both;"}
         %b{:style=>"color: #FC8100;"}
@@ -10,10 +10,10 @@
         -@program.groups.each do |g|
           .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
             .img_cal{:style=>"position: relative;"}
-              = link_to image_tag( g.teacher.full_photo.url(:small), :style=>"width: 200px;"), new_group_person_path(g)
+              = link_to image_tag( g.teacher.full_photo.url(:small), :style=>"width: 200px;"), group_path(g)
               #cal
-                = simple_format(g.calendar)
-            = link_to "Записаться", new_group_person_path(g)
+                =link_to simple_format(g.calendar), group_path(g)
+            = link_to "Записаться", new_group_person_path(g), :class=>"button"
             %br/
     %span{:style=>"width: 350px;"}
       %h1= @program.name

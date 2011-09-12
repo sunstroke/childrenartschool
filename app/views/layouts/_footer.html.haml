@@ -4,73 +4,79 @@
   %span
     %p
       =link_to "ШКОЛА","/school"
-    %dl
-      %dt
+    %ul
+      %li
         = link_to "Первый год","/programs/1"
-      %dd
-        = link_to "Гаврилов","/groups/sh14"
-      %dd
-        = link_to "Зеленский","/groups/sh13"
-      %dd
-        = link_to "Лиховид","/groups/sh12"
-      %dd
-        = link_to "Паромов","/groups/sh18"
-      %dd
-        = link_to "Симон","/groups/sh11"
-    %dl
-      %dt
+        %ul
+          %li
+            = link_to "Гаврилов","/groups/sh14"
+          %li
+            = link_to "Зеленский","/groups/sh13"
+          %li
+            = link_to "Лиховид","/groups/sh12"
+          %li
+            = link_to "Паромов","/groups/sh18"
+          %li
+            = link_to "Симон","/groups/sh11"
+    %ul
+      %li
         = link_to "Второй год","/programs/2"
-      %dd        
-        = link_to "Гаврилов","/groups/sh24"        
-      %dd
-        = link_to "Паромов","/groups/sh28"
-      %dd
-        = link_to "Лиховид","/groups/sh22"
-      %dd
-        = link_to "Зеленский","/groups/sh23"
-    %dl
-      %dt
+        %ul
+          %li        
+            = link_to "Гаврилов","/groups/sh24"        
+          %li
+            = link_to "Паромов","/groups/sh28"
+          %li
+            = link_to "Лиховид","/groups/sh22"
+          %li
+            = link_to "Зеленский","/groups/sh23"
+    %ul
+      %li
         = link_to "Третий год","/programs/3"
-      -#%dd
-        = link_to "Лиховид","/groups/sh32"
-      %dd
-        = link_to "Симон","/groups/sh31"
+        %ul
+          -#%dd
+            = link_to "Лиховид","/groups/sh32"
+          %li
+            = link_to "Симон","/groups/sh31"
   %span
     %p
       = link_to "ФОТОКУРСЫ","/courses"
-    %dl
-      %dt
+    %ul
+      %li
         = link_to "Первая ступень","/programs/6"
-      %dd
-        =link_to "По выходным", "/groups/cours12"
-      %dd
-        =link_to "По рабочим","/groups/cours11"
-      %dt
+        %ul
+          %li
+            =link_to "По выходным", "/groups/cours12"
+          %li
+            =link_to "По рабочим","/groups/cours11"
+      %li
         = link_to "Вторая ступень","/programs/5"
-      %dd
-        = link_to "По выходным", "/groups/cours22"
-      %dd
-        = link_to "По рабочим","/groups/cours21"
-      %dt
+        %ul
+          %li
+            = link_to "По выходным", "/groups/cours22"
+          %li
+            = link_to "По рабочим","/groups/cours21"
+      %li
         Авторские курсы
-      %dd
-        =link_to "«Непостановочная фотография»","/groups/22"
-      %dd
-        «Портрет в атмосфере»
-      %dd
-        «Свадебная фотография»
+        %ul
+          %li
+            =link_to "«Непостановочная фотография»","/groups/22"
+          %li
+            «Портрет в атмосфере»
+          %li
+            «Свадебная фотография»
   %span
     %p
       =link_to "МУЛЬТИПЛИКАЦИОННЫЕ КУРСЫ","/animation"
-    %dl
-      %dt
-        
-      %dd
-        = link_to "Песочная анимация","/groups/pesok"
-      %dd
-        = link_to "Anime курс","/groups/anime"
-      %dd
-        = link_to "Мультклуб","/groups/multclub"        
+    %ul
+      %li
+        %ul
+          %li
+            = link_to "Песочная анимация","/groups/pesok"
+          %li
+            = link_to "Anime курс","/groups/anime"
+          %li
+            = link_to "Мультклуб","/groups/multclub"        
     %p        
       &nbsp
     %dt
@@ -80,76 +86,76 @@
   %span
     %p
       =link_to "ПРЕПОДАВАТЕЛИ","/teachersall"
-    %dl  
-      %dt
+    %ul  
+      %li
         Максим СИМОН
-      %dt
+      %li
         Мария ЛИХОВИД
-      %dt
+      %li
         Сергей ГАВРИЛОВ
-      %dt
+      %li
         Даниил ЗЕЛЕНСКИЙ
-      %dt
+      %li
         Евгения МАРКОВА
-      %dt
+      %li
         Александр ПАРОМОВ
-      %dt
+      %li
         Виктория УШКАНОВА
-      %dt
+      %li
         Виктория СПИРЯГИНА
-      %dt
+      %li
         Дарья МАЛЫШЕВА
-      %dt
+      %li
         Юрий ИВАЩЕНКО
-      %dt
+      %li
         Антон ЕРОШИН
   %span
     %p
       СВЯЗЬ
-    %dl  
-      %dt
+    %ul  
+      %li
         Подписка на новости
-      %dt
+      %li
         = link_to "Страница ВКонтакте","http://vkontakte.ru/school_f"
-      %dt
+      %li
         = link_to "Страница Facebook","http://www.facebook.com/group.php?gid=151694381512817"
-      %dt
+      %li
         Адрес в Москве
-      %dt
+      %li
         Обратный звонок
-      %dt
+      %li
         Написать письмо
-      %dt
+      %li
         =link_to "СТАРАЯ ВЕРСИЯ САЙТА", "http://2010.school-f.ru"
     %br        
     %p
       ВЫСТАВКИ
-    %dl  
-      %dt
+    %ul  
+      %li
         «Филион» 2011
-      %dt
+      %li
         «Метрополис» 2010
-      %dt
+      %li
         «Филион» 2010
   %span
     %p
       ПРОЕКТЫ
-    %dl
-      %dt
+    %ul
+      %li
         Орленок 2011
-      %dt
+      %li
         Лето 2012
     %br
     %p{:style=>"display:none;"}
       СЕЗОНЫ
-    %dl{:style=>"display:none;"}  
-      %dt
+    %ul{:style=>"display:none;"}  
+      %li
         2011    
-      %dt
+      %li
         =link_to "2010","http://2010.school-f.ru"
-      %dt
+      %li
         2009
-      %dt
+      %li
         2008
-      %dt
+      %li
         2007        

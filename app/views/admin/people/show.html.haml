@@ -16,6 +16,11 @@
           = t("activerecord.attributes.person.current_group", :default => t("activerecord.labels.zachetka", :default => "группа"))
           \:
         = @person.group.name
+        %p
+          %b
+            = t("activerecord.attributes.person.current_group", :default => t("activerecord.labels.mail", :default => "Email"))
+            \:
+          = @person.group.mail        
       %p
         %b
           = t("activerecord.attributes.person.tel", :default => t("activerecord.labels.tel", :default => "Номер телефона для связи"))

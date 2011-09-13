@@ -35,7 +35,7 @@
         %b
           = t("activerecord.attributes.admin_group.prim", :default => t("activerecord.labels.prim", :default => "Prim"))
           \:
-        = @group.prim
+        = raw(@group.prim)
       %p
         %b
           = t("activerecord.attributes.admin_group.calendar", :default => t("activerecord.labels.calendar", :default => "Calendar"))

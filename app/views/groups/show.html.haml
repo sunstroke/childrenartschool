@@ -7,7 +7,7 @@
       = @group.name
       )
     -if @group.prim?
-      = @group.prim
+      = raw(@group.prim)
       %hr
     .col{:style=>"float:left; width: 300px;"}
       - if @group.program_id? 

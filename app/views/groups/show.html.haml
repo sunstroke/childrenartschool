@@ -27,11 +27,15 @@
         = number_to_currency(@group.price.abs, :precision => 0) if @group.price?
         = @group.desc
         %br/
+        %br/
+      %h2
+        Возраст учеников
+      #{@group.age_start} - #{@group.age_finish} лет
       %br/
-      %br/
+      %br/      
       %h2
         Хочу учиться
-      = link_to "Подать заявку", new_group_person_path(@group)      
+      = link_to "Подать заявку", new_group_person_path(@group), :class=>"button"    
     
   %aside#side.clearfix
     = image_tag @group.teacher.avatar.url, :style=>"width: 300px; "

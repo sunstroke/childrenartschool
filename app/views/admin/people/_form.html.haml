@@ -12,7 +12,7 @@
   = collection_select(:person, :current_group, Group.all(:conditions=>['open=?',true]), :id, :name, :prompt => 'Выберите группу')  
   %span.description Ex: Мастерская Васечкина
   
-.group
+-#.group
   = f.label :zachetka, t("activerecord.attributes.person.zachetka", :default => "Зачетка"), :class => :label
   = f.text_field :zachetka, :class => 'text_field'
   %span.description Ex: 254 Иванов Иван (пока не работает, не заполнять!!)

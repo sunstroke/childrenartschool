@@ -4,7 +4,15 @@ class Admin::PeopleController < ApplicationController
  layout'admin'  
   def index
     @people = Person.find(:all, :order=>["current_group ASC"])
-
+    @count=@people.count
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @people }
+    end
+  end
+  def subscribe
+    @people = Person.find(:all, :order=>["current_group ASC"], :conditions=>["sub_group = ? OR sub_all = ?",true,true])
+    @count=@people.count
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @people }

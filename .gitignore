@@ -4,6 +4,7 @@ log/*.log
 tmp/
 db/schema.rb
 public/attachments/*
+public/uploads/*
 *.DS_Store
 Gemfile.lock
 public/stylesheets/style.css

@@ -16,7 +16,7 @@
             Дата создания
           %th          
             = t("activerecord.attributes.admin_person.fullname", :default => t("activerecord.labels.fullname", :default => "Fullname"))
-          %th= t("web-app-theme.birthday", :default => "Возраст")
+          %th= "email"
           %th="Группа"
           %th="Подписан на общие новости"
           %th="Подписан на новости группы"                    
@@ -30,7 +30,7 @@
             %td
               = link_to person.fullname, admin_person_path(person)
             %td
-              = age(person.birthday) if @person
+              = @person.mail
             %td
               = person.current_group
             %td

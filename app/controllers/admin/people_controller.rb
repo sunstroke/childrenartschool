@@ -11,7 +11,7 @@ class Admin::PeopleController < ApplicationController
     end
   end
   def subscribe
-    @people = Person.find(:all, :order=>["current_group ASC"], :conditions=>["sub_group = ? OR sub_all = ?",true,true])
+    @people = Person.find(:all, :order=>["current_group ASC"], :conditions=>["(sub_group = ? OR sub_all = ?) AND mail!=?",true,true,nil])
     @count=@people.count
     respond_to do |format|
       format.html # index.html.erb

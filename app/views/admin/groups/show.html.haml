@@ -47,7 +47,7 @@
           \:
           %br/
         -@group.people.each do |g|
-          = link_to g.fullname, admin_person_path(g)
+          = link_to g.fullname, edit_admin_person_path(g)
           &nbsp;&nbsp;&nbsp;&nbsp;
           = g.mail
           &nbsp;&nbsp;&nbsp;&nbsp;

@@ -8,6 +8,5 @@ ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
   else
     html_tag
   end
-  
 
 end

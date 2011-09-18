@@ -19,7 +19,6 @@ $.datepicker.setDefaults($.datepicker.regional['ru']);
 				$( "#amount" ).val(  ui.values[ 0 ] + " - " + ui.values[ 1 ]+" лет" );
 				$("#group_age_start").val(ui.values[ 0 ]);
 				$("#group_age_finish").val(ui.values[ 1 ]);			
-				
 			}
 		});
 		$( "#amount" ).val(  $( "#slider-range" ).slider( "values", 0 ) +

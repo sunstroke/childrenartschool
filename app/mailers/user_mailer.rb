@@ -4,5 +4,10 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail(:to => "k.sunstroke@gmail.com, ekaterina.motyleva@school-f.ru, children@school-f.ru",
          :subject => "Новая заявка в группу #{@user.group.name}")
-  end  
+  end 
+  def welcome_subscribe(user)
+    @user=user
+    mail(:to => user.email ,
+         :subject => "Вы подписались на новости сайта school-f.ru")    
+  end 
 end

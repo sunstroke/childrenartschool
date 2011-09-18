@@ -47,7 +47,7 @@
           \:
           %br/
         -@group.people.each do |g|
-          = g.fullname
+          = link_to g.fullname, admin_person_path(g)
           = g.tel
           %br/
        

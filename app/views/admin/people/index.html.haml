@@ -4,6 +4,7 @@
       %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admin_people_path
       %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_person_path
       %li= link_to "Подписчики", admin_subscribe_path
+    %nav#filter
   .content
     %h2.title
       = t("web-app-theme.all", :default => "All")
@@ -20,7 +21,7 @@
           %th="Группа"
           %th.last &nbsp;
         - @people.each do |person|
-          %tr{:class => cycle("odd", "even")}
+          %tr{:class => cycle("odd", "even")+" g"+person.current_group.to_s}
             %td
               = person.id
             %td
@@ -34,7 +35,8 @@
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_person_path(person)
               |
-              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_person_path(person)} |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_person_path(person)} 
+              |
               \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_person_path(person), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
       .actions-bar.wat-cf
         .actions

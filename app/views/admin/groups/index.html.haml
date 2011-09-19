@@ -35,7 +35,8 @@
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_group_path(group)
               |
-              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_group_path(group)} |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_group_path(group)} 
+              |
               \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_group_path(group), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
       .actions-bar.wat-cf
         .actions

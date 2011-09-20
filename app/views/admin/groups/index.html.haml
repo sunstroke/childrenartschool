@@ -40,4 +40,15 @@
               \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_group_path(group), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
       .actions-bar.wat-cf
         .actions
-- content_for :sidebar, render(:partial => 'sidebar')
+- content_for :sidebar do
+  .block
+    %h3 Типы групп
+    %ul.navigation
+      %li
+        %a{:href => "/admin/groups?tag=school"} Школа 
+      %li
+        %a{:href => "/admin/groups?tag=courses"} Фотокурсы
+      %li
+        %a{:href => "/admin/groups?tag=animation"} Анимация
+      %li
+        %a{:href => "/admin/groups"} Все

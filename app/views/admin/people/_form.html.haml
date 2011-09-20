@@ -42,9 +42,9 @@
   = f.text_area :about, :class => 'text_area'
   %span.description Ex: 
 .group
-  = f.label :failure, t("activerecord.attributes.group.failure", :default => "Отказались?"), :class => :label
+  = f.label :failure, t("activerecord.attributes.group.failure", :default => "убрать в архив"), :class => :label
   = f.check_box :failure, :class => 'check_box'
-  %span.description  Если ребенок отказался обучаться в этой группе, нужно это отметить  
+  %span.description  Если ребенок отказался обучаться в этой группе ставим галку  
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

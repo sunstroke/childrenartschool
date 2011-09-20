@@ -3,13 +3,22 @@ class Admin::PeopleController < ApplicationController
   # GET /admin/people.xml
  layout'admin'  
   def index
-    @people = Person.find(:all, :order=>["current_group ASC"])
+    @people = Person.find(:all, :order=>["current_group ASC"],:conditions=>["failure = ?",false])
     @count=@people.count
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @people }
     end
   end
+  def archive
+    @people = Person.find(:all, :order=>["current_group ASC"],:conditions=>["failure = ?",true])
+    @count=@people.count
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @people }
+    end
+  end
+  
   def subscribe
     @people = Person.find(:all, :order=>["current_group ASC"], :conditions=>["(sub_group = ? OR sub_all = ?) AND mail > ? ",true,true,""])
     @count=@people.count

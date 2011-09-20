@@ -36,7 +36,8 @@ namespace :admin do
   #     # (app/controllers/admin/products_controller.rb)
   resources :groups
   resources :pages
-  match 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"          
+  match 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"      
+  match 'people/archive', :to=>'people#archive', :as=>"archive"            
   resources :people
   resources :programs
   resources :welcomes

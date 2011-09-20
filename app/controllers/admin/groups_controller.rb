@@ -3,7 +3,14 @@ class Admin::GroupsController < ApplicationController
   # GET /admin/groups.xml
    layout'admin'
   def index
-    @groups = Group.find(:all,:order=>["program_id ASC, position ASC"])
+    tag=params[:tag]
+    if tag!=nil
+      @program = Program.find (:all, :conditions=>['program_type = ?',tag], :select=>"id")
+      @groups = Group.find(:all,:order=>["program_id ASC, position ASC"], :conditions=>['program_id IN (?)',@program])      
+    else      
+      @groups = Group.find(:all,:order=>["program_id ASC, position ASC"])
+    end
+
 
     respond_to do |format|
       format.html # index.html.erb

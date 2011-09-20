@@ -3,7 +3,7 @@ class Admin::PeopleController < ApplicationController
   # GET /admin/people.xml
  layout'admin'  
   def index
-    @people = Person.find(:all, :order=>["current_group ASC"])
+    @people = Person.find(:all, :order=>["current_group ASC"],:conditions=>["failure = ?",false])
     @count=@people.count
     respond_to do |format|
       format.html # index.html.erb

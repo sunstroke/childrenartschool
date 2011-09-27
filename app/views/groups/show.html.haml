@@ -9,13 +9,13 @@
     -if @group.prim?
       = raw(@group.prim)
       %hr
-    .col{:style=>"float:left; width: 300px;"}
+    .col{:style=>"float:left; width: 500px; text-align: left;"}
       - if @group.program_id? 
         %h2
           Учебная программа
         = raw(@group.program.annotation) if @group.program_id?
         %br/
-    .col{:style=>"float:left; width: 300px;"}
+    .col{:style=>"float:left; width: 200px;"}
       - if @group.calendar?
         %h2
           Расписание занятий

@@ -9,7 +9,7 @@
 
 .group
   = f.label :current_group, t("activerecord.attributes.person.current_group", :default => "Текущая группа"), :class => :label
-  = collection_select(:person, :current_group, Group.all(:conditions=>['open=?',true]), :id, :name, :prompt => 'Выберите группу')  
+  = collection_select(:person, :current_group, Group.all, :id, :name, :prompt => 'Выберите группу')  
   %span.description Ex: Мастерская Васечкина
   
 -#.group

@@ -30,9 +30,9 @@
             %td
               = link_to person.fullname, admin_person_path(person)
             %td
-              = age(person.birthday) if @person
+              = age(person.birthday) if person
             %td
-              = person.group.name
+              = person.group.name if person.group
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_person_path(person)
               |

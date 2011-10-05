@@ -32,10 +32,11 @@
         Возраст учеников
       #{@group.age_start} - #{@group.age_finish} лет
       %br/
-      %br/      
-      %h2
-        Хочу учиться
-      = link_to "Подать заявку", new_group_person_path(@group), :class=>"button"    
+      %br/
+      - if @group.open?      
+        %h2
+          Хочу учиться
+        = link_to "Подать заявку", new_group_person_path(@group), :class=>"button"    
     
   %aside#side.clearfix
     = image_tag @group.teacher.avatar.url, :style=>"width: 300px; "

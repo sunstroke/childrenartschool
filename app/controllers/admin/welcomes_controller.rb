@@ -4,14 +4,21 @@ class Admin::WelcomesController < ApplicationController
  layout 'admin'  
  
   def index
-    @welcomes = Welcome.find(:all,:order=>["position ASC"])
+    @welcomes = Welcome.find(:all,:order=>["position ASC"], :conditions=>["visible=?",true])
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @welcomes }
     end
   end
+  def noactive
+    @welcomes = Welcome.find(:all,:order=>["position ASC"], :conditions=>["visible!=?",true])
 
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @welcomes }
+    end
+  end
   # GET /admin/welcomes/1
   # GET /admin/welcomes/1.xml
   def show

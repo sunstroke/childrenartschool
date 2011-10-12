@@ -3,6 +3,7 @@
     %ul.wat-cf
       %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admin_welcomes_path
       %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_welcome_path
+      %li= link_to "Не активные", admin_noactive_banner_path      
   .content
     %h2.title
       = t("web-app-theme.all", :default => "All")

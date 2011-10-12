@@ -40,6 +40,7 @@ namespace :admin do
   match 'people/archive', :to=>'people#archive', :as=>"archive"            
   resources :people
   resources :programs
+  match 'welcomes/noactive', :to=>'welcomes#noactive', :as=>"noactive_banner"        
   resources :welcomes
   resources :teachers
 end

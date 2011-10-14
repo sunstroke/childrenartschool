@@ -39,7 +39,7 @@
         = link_to "Подать заявку", new_group_person_path(@group), :class=>"button"    
     
   %aside#side.clearfix
-    = image_tag @group.teacher.avatar.url, :style=>"width: 300px; padding:bottom 10px;"
+    = image_tag @group.teacher.avatar.url, :style=>"width: 300px; padding-bottom: 10px;"
     %br/
     = @group.teacher.fullname
     -if @group.vk?

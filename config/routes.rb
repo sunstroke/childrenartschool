@@ -30,7 +30,7 @@ Schoolf::Application.routes.draw do
 match '/teachers' , :to => redirect("http://2010.school-f.ru/teachers")
 match '/photocourses' , :to => redirect("http://2010.school-f.ru/photocourses")
 match '/news' , :to => redirect("http://2010.school-f.ru/news")
-
+match '/admin', :to => redirect("http://school-f.ru/")
 namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)

@@ -31,19 +31,19 @@ match '/teachers' , :to => redirect("http://2010.school-f.ru/teachers")
 match '/photocourses' , :to => redirect("http://2010.school-f.ru/photocourses")
 match '/news' , :to => redirect("http://2010.school-f.ru/news")
 match '/admin', :to => redirect("http://school-f.ru/")
-# namespace :admin do
-#   #     # Directs /admin/products/* to Admin::ProductsController
-#   #     # (app/controllers/admin/products_controller.rb)
-#   resources :groups
-#   resources :pages
-#   match 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"      
-#   match 'people/archive', :to=>'people#archive', :as=>"archive"            
-#   resources :people
-#   resources :programs
-#   match 'welcomes/noactive', :to=>'welcomes#noactive', :as=>"noactive_banner"        
-#   resources :welcomes
-#   resources :teachers
-# end
+namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  resources :groups
+  resources :pages
+  match 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"      
+  match 'people/archive', :to=>'people#archive', :as=>"archive"            
+  resources :people
+  resources :programs
+  match 'welcomes/noactive', :to=>'welcomes#noactive', :as=>"noactive_banner"        
+  resources :welcomes
+  resources :teachers
+end
 
   match 'groups/:label', :to=>'groups#view', :as=>"view_group"        
 

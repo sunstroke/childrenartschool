@@ -15,7 +15,7 @@
         %b
           = t("activerecord.attributes.admin_page.label", :default => t("activerecord.labels.label", :default => "короткая ссылка"))
           \:
-        = @page.label
+        = link_to @page.label,"/"+@page.label
       %p
         %b
           = t("activerecord.attributes.admin_page.text", :default => t("activerecord.labels.text", :default => "Текст"))

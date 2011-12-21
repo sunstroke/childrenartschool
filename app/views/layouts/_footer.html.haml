@@ -30,7 +30,7 @@
             = link_to "Лиховид","/groups/sh22"
           %li
             = link_to "Зеленский","/groups/sh23"
-    %ul
+    -#%ul
       %li
         = link_to "Третий год","/programs/3"
         %ul
@@ -135,12 +135,14 @@
     %p
       ВЫСТАВКИ
     %ul  
+      -#%li
+        =link_to "Гагаринский 2011", "/exibigagarino"
       %li
-        «Филион» 2011
+        =link_to  "«Филион» 2011", "http://2010.school-f.ru/filion2011"
       %li
-        «Метрополис» 2010
+        =link_to "«Метрополис» 2010","http://2010.school-f.ru/exhib_metropolis"
       %li
-        «Филион» 2010
+        =link_to "«Филион» 2010","http://2010.school-f.ru/exhib_filion"
   .column
     %p
       ПРОЕКТЫ

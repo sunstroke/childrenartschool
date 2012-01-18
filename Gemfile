@@ -35,7 +35,7 @@ gem 'flash_cookie_session'
 gem "paperclip", "~> 2.3"
 gem 'jquery-rails', '>= 1.0.12'
 gem "ckeditor", "~> 3.6.0"
-gem 'omniauth',">= 0.2.6"
+#gem 'omniauth',">= 0.2.6"
 gem "cancan"
 gem "russian"
 

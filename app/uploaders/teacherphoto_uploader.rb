@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- encoding : utf-8 -*-
 
 class TeacherphotoUploader < CarrierWave::Uploader::Base
 include CarrierWave::Compatibility::Paperclip

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddFixToPerson < ActiveRecord::Migration
   def self.up
       change_column :people, :sub_all, :boolean, :default => true

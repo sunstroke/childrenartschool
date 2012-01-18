@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddFixToGroup < ActiveRecord::Migration
   def self.up
     change_column :groups, :age_start, :integer, :default => 11

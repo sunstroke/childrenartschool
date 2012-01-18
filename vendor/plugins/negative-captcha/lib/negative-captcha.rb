@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 if RUBY_VERSION.to_f >= 1.9
   RUBY_19 = true
   require 'digest/md5'

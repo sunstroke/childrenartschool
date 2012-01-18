@@ -1,36 +1,27 @@
+# -*- encoding : utf-8 -*-
 Schoolf::Application.routes.draw do
   
-  # Omniauth pure
-    match "/signin" => "services#signin"
-    match "/signout" => "services#signout"
+  get "password_resets/create"
 
-    match '/auth/:service/callback' => 'services#create' 
-    match '/auth/failure' => 'services#failure'
+  get "password_resets/edit"
 
-    resources :services, :only => [:index, :create, :destroy] do
-      collection do
-        get 'signin'
-        get 'signout'
-        get 'signup'
-        post 'newaccount'
-        get 'failure'
-      end
-    end
+  get "password_resets/update"
 
-    # used for the demo application only
-    resources :users, :only => [:index] do
-      collection do
-        get 'test'
-      end
-    end
-
-    # root :to => "users#index"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+  resources :users
+  resources :sessions
+  get "secret" => "home#secret", :as => "secret"
+  resources :password_resets
   
   # Sample resource route within a namespace:
 match '/teachers' , :to => redirect("http://2010.school-f.ru/teachers")
 match '/photocourses' , :to => redirect("http://2010.school-f.ru/photocourses")
 match '/news' , :to => redirect("http://2010.school-f.ru/news")
 match '/admin', :to => redirect("http://school-f.ru/")
+
+
 namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)

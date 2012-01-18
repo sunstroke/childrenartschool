@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PeopleController < ApplicationController
 before_filter :setup_negative_captcha, :only => [:new, :create]  
   # GET /people

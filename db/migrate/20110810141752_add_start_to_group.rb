@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddStartToGroup < ActiveRecord::Migration
   def self.up
     add_column :groups, :start, :datetime

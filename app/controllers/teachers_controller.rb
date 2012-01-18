@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class TeachersController < ApplicationController
   # GET /teachers
   # GET /teachers.xml

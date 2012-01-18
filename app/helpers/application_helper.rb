@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ApplicationHelper
     def redactor(element) 
       content_tag(:script, "$(document).ready(

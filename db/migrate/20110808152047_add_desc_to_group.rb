@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddDescToGroup < ActiveRecord::Migration
   def self.up
     add_column :groups, :desc, :string

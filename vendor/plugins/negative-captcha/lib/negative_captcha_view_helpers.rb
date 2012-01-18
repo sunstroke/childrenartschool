@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module NegativeCaptchaViewHelpers
   def negative_captcha(captcha)
     [

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddMailToPerson < ActiveRecord::Migration
   def self.up
     add_column :people, :mail, :string

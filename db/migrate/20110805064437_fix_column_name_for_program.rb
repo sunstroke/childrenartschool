@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class FixColumnNameForProgram < ActiveRecord::Migration
   def self.up
     rename_column :programs, :type, :program_type

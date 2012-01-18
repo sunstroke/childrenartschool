@@ -1,11 +1,13 @@
+# -*- encoding : utf-8 -*-
 class Admin::GroupsController < ApplicationController
+  before_filter :require_login
   # GET /admin/groups
   # GET /admin/groups.xml
    layout'admin'
   def index
     tag=params[:tag]
     if tag!=nil
-      @program = Program.find (:all, :conditions=>['program_type = ?',tag], :select=>"id")
+      @program = Program.find(:all, :conditions=>['program_type = ?',tag], :select=>"id")
       @groups = Group.find(:all,:order=>["program_id ASC, position ASC"], :conditions=>['program_id IN (?)',@program])      
     else      
       @groups = Group.find(:all,:order=>["program_id ASC, position ASC"])

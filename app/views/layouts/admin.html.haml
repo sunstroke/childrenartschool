@@ -1,6 +1,7 @@
 !!!
 %html
   %head
+    %meta{ :charset => "utf-8" }/
     %title ДШВИ
     = stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/orange/style", "web-app-theme/override","jquery-ui-1.8.15.custom"
     = javascript_include_tag :defaults, "jquery-ui",:ckeditor
@@ -18,7 +19,7 @@
             %li
               %a{:href => "#"}= t("web-app-theme.settings", :default => "Settings")
             %li
-              %a.logout{:href => "/logout"}= t("web-app-theme.logout", :default => "Logout")
+              %a.logout{:href => logout_path }= t("web-app-theme.logout", :default => "Выдох")
         #main-navigation
           %ul.wat-cf
             %li{:class => controller.controller_path == 'admin/programs' ? 'active' : '' }
@@ -46,7 +47,7 @@
               %p
                 Copyright &copy; #{Time.now.year} ДШВИ.
         #sidebar
-          = link_to image_tag ("http://www.teamer.ru/i/logo.gif"), "http://www.teamer.ru/projects/40827/"
+          = link_to image_tag("http://www.teamer.ru/i/logo.gif"), "http://www.teamer.ru/projects/40827/"
           %br/
-          = link_to image_tag ("http://www.google.com/images/logos/analytics_logo.gif"), "https://www.google.com/analytics/web/#report/visitors-overview/a12319375w26363567p24972892/"
+          = link_to image_tag("http://www.google.com/images/logos/analytics_logo.gif"), "https://www.google.com/analytics/web/#report/visitors-overview/a12319375w26363567p24972892/"
           = yield :sidebar

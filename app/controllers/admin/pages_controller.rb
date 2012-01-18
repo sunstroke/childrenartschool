@@ -1,4 +1,6 @@
+# -*- encoding : utf-8 -*-
 class Admin::PagesController < ApplicationController
+  before_filter :require_login
   # GET /admin/pages
   # GET /admin/pages.xml
    layout'admin'

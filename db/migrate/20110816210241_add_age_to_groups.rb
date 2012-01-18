@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAgeToGroups < ActiveRecord::Migration
   def self.up
     add_column :groups, :age_start, :integer

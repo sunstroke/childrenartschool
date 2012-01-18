@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Teacher < ActiveRecord::Base
   has_many :groups
   has_many :program, :through=>:groups

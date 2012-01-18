@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 set :application, "schoolf"
 #set :repository,  "git@fcross.ru:photocross.git"
 set :repository,  "git://gitorious.org/school-f/school2011.git"

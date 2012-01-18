@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddLabelToGroup < ActiveRecord::Migration
   def self.up
     add_column :groups, :label, :string

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddSubscribeToPerson < ActiveRecord::Migration
   def self.up
     add_column :people, :sub_all, :boolean

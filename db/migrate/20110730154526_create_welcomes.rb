@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateWelcomes < ActiveRecord::Migration
   def self.up
     create_table :welcomes do |t|

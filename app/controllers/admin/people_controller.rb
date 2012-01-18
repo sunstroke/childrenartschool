@@ -1,4 +1,6 @@
+# -*- encoding : utf-8 -*-
 class Admin::PeopleController < ApplicationController
+  before_filter :require_login
   # GET /admin/people
   # GET /admin/people.xml
  layout'admin'  

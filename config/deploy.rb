@@ -35,7 +35,7 @@ namespace :deploy do
   end
   desc "Task that install gems"
   task :gems, :roles => :app do
-    run "cd #{deploy_to}  ; RAILS_ENV=production rake gems:install"
+    run "cd #{deploy_to}  ; RAILS_ENV=production bundle install"
   end
   desc "Task that run current migrations"
   task :migrate, :roles => :db do

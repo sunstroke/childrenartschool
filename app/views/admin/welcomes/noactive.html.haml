@@ -1,0 +1,36 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admin_welcomes_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_welcome_path
+      %li.active= link_to "Не активные", admin_noactive_banner_path      
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      баннер
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+            = t("activerecord.attributes.admin_welcome.name", :default => t("activerecord.labels.name", :default => "Name"))
+          %th
+            Порядок
+          %th.last &nbsp;
+        - @welcomes.each do |welcome|
+          %tr{:class => cycle("odd", "even")}
+            %td
+              = welcome.id
+            %td
+              = link_to welcome.name, admin_welcome_path(welcome)
+            %td
+              = welcome.position
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_welcome_path(welcome)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_welcome_path(welcome)} 
+              |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_welcome_path(welcome), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+      .actions-bar.wat-cf
+        .actions
+- content_for :sidebar, render(:partial => 'sidebar')

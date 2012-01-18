@@ -24,14 +24,10 @@ gem "html5-boilerplate"
 gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
+
 # gem 'ruby-debug'
 #gem 'ruby-debug19', :require => 'ruby-debug'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
 
 gem 'carrierwave', ">= 0.5.6"
 gem 'mini_magick'
@@ -39,23 +35,20 @@ gem 'flash_cookie_session'
 gem "paperclip", "~> 2.3"
 gem 'jquery-rails', '>= 1.0.12'
 gem "ckeditor", "~> 3.6.0"
-#gem "omniauth" 
-
-# gem 'negative-captcha' , :git => 'git://github.com/stefants/negative-captcha.git'
+gem 'omniauth',">= 0.2.6"
+gem "cancan"
 gem "russian"
-#gem 'rails-i18n'
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
 
-gem "nifty-generators", :group => :development
 group :development, :test do
   #   gem 'webrat'
+  gem "nifty-generators"  
   gem 'sqlite3'
   gem 'web-app-theme', '>= 0.6.2'
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'rspec-rails'
+  gem 'cucumber-rails'  
 end
  
  
@@ -64,4 +57,14 @@ group :production do
   gem 'web-app-theme', '>= 0.6.2'
   gem 'hpricot'
   gem 'ruby_parser'
+end
+
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'email_spec'
+  gem 'timecop'
+  gem 'launchy'
 end

@@ -2,7 +2,7 @@
 class HomeController < ApplicationController
   def index
     @banners= Welcome.all(:conditions=>['visible=?',true], :order=>:position)
-    @title=''
+    @title='Детская Школа Визуальных Искусств'
   end
 
 end

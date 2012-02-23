@@ -1,6 +1,11 @@
 # -*- encoding : utf-8 -*-
 Schoolf::Application.routes.draw do
-  
+
+  resources :photos
+  resources :slideshows do
+    resources :photos
+  end
+
   get "password_resets/create"
 
   get "password_resets/edit"

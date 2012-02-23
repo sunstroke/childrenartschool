@@ -17,6 +17,8 @@ gem "compass", ">= 0.11.5"
 gem "haml"
 gem "html5-boilerplate"
 
+gem "gritter", "0.6.3"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

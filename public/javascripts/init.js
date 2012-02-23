@@ -71,8 +71,8 @@ jQuery(function( $ ){
 					$('#buttons').width($(window).width()*0.9);
 					$('#caption li,#slider ul li, #slider ul li img').width($('#slider').width());	
 					$('#slider ul li img,#slider ul li').height((1000*$(window).width())/1600);
-					$('#main').width($(window).width());
-					$('#main').height($('#slider ul li img').height()-100);
+					//$('#main').width($(window).width());
+					//$('#main').height($('#slider ul li img').height()-100);
 					$('#slider_container').height($('#slider ul li').height());
 					$('#slider ul, #caption ul').width($('#slider').width()*$('#slider li').length);	
 					$('#slider').serialScroll({

@@ -6,19 +6,20 @@
         %span{:style=>"color: #607890;"}
           ВЫБЕРИТЕ ГРУППУ:
           %br/
-        -@programs.each do |@program|
-          %div{:style=>"margin-bottom: 120px;clear: both;"}
-            -if @program.groups.count>0
-              %b{:style=>"color: #FC8100;"}
-                =@program.name
-            -@program.groups.each do |g|
-              .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
-                .img_cal{:style=>"position: relative;"}
-                  = link_to image_tag( g.teacher.full_photo.url(:small), :style=>"width: 200px;"),  view_group_path(g.label)
-                  #cal
-                    =link_to simple_format(g.calendar), view_group_path(g.label)
-                = link_to "Записаться", new_group_person_path(g), :class=>"button"
-                %br/
+        -if @programs.count > 0
+          -@programs.each do |program|
+            %div{:style=>"margin-bottom: 120px;clear: both;"}
+              -if program.groups.count>0
+                %b{:style=>"color: #FC8100;"}
+                  =program.name
+              -program.groups.each do |g|
+                .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
+                  .img_cal{:style=>"position: relative;"}
+                    = link_to image_tag( g.teacher.full_photo.url(:small), :style=>"width: 200px;"),  view_group_path(g.label)
+                    #cal
+                      =link_to simple_format(g.calendar), view_group_path(g.label)
+                  = link_to "Записаться", new_group_person_path(g), :class=>"button"
+                  %br/
     %span{:style=>"width: 350px;"}
       = raw(@page.text)
 = render "sticky"

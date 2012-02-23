@@ -5,6 +5,7 @@
     %title ДШВИ
     = stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/orange/style", "web-app-theme/override","jquery-ui-1.8.15.custom"
     = javascript_include_tag :defaults, "jquery-ui",:ckeditor
+    = include_gritter 
     = render "layouts/redactor"
     = csrf_meta_tag
   %body
@@ -35,6 +36,10 @@
             %li{:class => controller.controller_path == 'admin/pages' ? 'active' : '' }
               %a{:href => admin_pages_path} Страницы
 
+            %li{:class => controller.controller_path == 'photos' ? 'active' : '' }
+              %a{:href => photos_path} Photos
+            %li{:class => controller.controller_path == 'slideshows' ? 'active' : '' }
+              %a{:href => slideshows_path} Slideshows
       #wrapper.wat-cf
         .flash
           - flash.each do |type, message|
@@ -51,3 +56,4 @@
           %br/
           = link_to image_tag("http://www.google.com/images/logos/analytics_logo.gif"), "https://www.google.com/analytics/web/#report/visitors-overview/a12319375w26363567p24972892/"
           = yield :sidebar
+  = yield :scripts

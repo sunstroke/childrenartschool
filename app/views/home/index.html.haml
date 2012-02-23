@@ -1,10 +1,116 @@
-#buttons
+#banner_slide
+  .slider-wrapper.theme-orman
+    #slider.nivoSlider
+      -@banners.each do |b|
+        -if b.url?
+          =link_to image_tag(b.image_url, :alt=>b.name), b.url
+        -else
+          =image_tag(b.image_url, :alt=>b.name)
+#direction
+  .h Направления
+  %article.more_item
+    %h1 
+      =link_to "Фотография","/school", :style=>"color: #FC8100;"
+    .img_direction{:style => "background: url('/images/111.png');"}      
+    %p.text_more
+      Фотография для подростков 
+      %br 
+      10 - 15 лет
+    %br
+  %article.more_item{:style => "width: 34%;"}
+    %h1 
+      =link_to "Анимация","/animation", :style=>"color: #FC8100;"
+    .img_direction{:style => "background: url('/images/bunner_school.jpg');"}      
+    %p.text_more 
+      Мультипликационная студия 
+      %br
+      для детей от 7 лет
+    %br
+  %article.more_item
+    %h1 
+      =link_to "Видео","/groups/kino", :style=>"color: #FC8100;"
+    .img_direction{:style => "background: url('/images/video.jpg');"}
+    %p.text_more 
+      Основы видеосъемки 
+      %br
+      и видеомонтажа
+    %br        
+
+#next_course
+  .h Ближайшие курсы
+  %article.item_event
+    .date
+      .month март
+      .day 1
+    .info
+      %h1
+        %a{:href => "/groups/cours17"} Фотокурсы для начинающих
+      %p
+        понедельник
+        %br/
+        15:00-18:00
+  %article.item_event
+    .date
+      .month март
+      .day 1
+    .info
+      %h1
+        %a{:href => "/groups/space"} StartUp Space
+      %p
+        вторник
+        %br/
+        17:00-20:00
+        
+  %article.item_event
+    .date
+      .month март
+      .day 14
+    .info
+      %h1
+        %a{:href => "/groups/fashion"} Fasion фотография
+      %p
+        среда
+        %br/
+        16:00-19:00
+  %article.item_event
+    .date
+      .month май
+      .day 31
+    .info
+      %h1
+        %a{:href => "/groups/orlyonok"} Летний фотолагерь
+      %p
+        ежедневно
+        %br/
+
+        
+#more
+  .h Live view
+  %article.more_item
+    %h1 Проект "Календарь 2012"
+    .img_more{:style => "background: url('/images/calendar.jpg');"}
+    %p.text_more
+      В прошлом семестре в Детской Школе Визуальных Искусств прошел конкурс ФОТО КАЛЕНДАРЕЙ на 2012 год. Календари выполняли группы второго года обучения фотошколы.      
+    %a.link_more{:href => "/exibigagarino"} Читать дальше
+  %article.more_item{:style => "width: 34%;"}
+    %h1 Работы студентов курса Anime
+    .img_more{:style => "background: url('/images/mult.jpg');"}
+    %p.text_more 
+      30 января 2012 выпускники курса анимэ представили работы, сделанные во время занятий. 
+    %a.link_more{:href => "/animation"} Читать дальше
+  %article.more_item
+    %h1 Масленица
+    .img_more{:style => "background: url('/images/masl.jpg');"}
+    %p.text_more 
+      Выезд учеников фотошколы на репортажную съемку праздника Масленицы
+
+-#buttons
   %a.prev{:href=>"#"}Назад
   %a.next{:href=>"#"}Вперед
   %br.clear/
-#slider{:style=>"position: absolute;"}
+-#slider{:style=>"position: absolute;"}
   %ul
-    -@banners.each do |b|
+    -@banners.each do |b|    
       %li{:style=>"position: relative;"}
         =image_tag b.image_url, :alt=>b.name
         .caption_wrapper{:style=>"position: absolute; top: 200px;z-index:200;"}

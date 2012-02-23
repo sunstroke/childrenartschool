@@ -1,0 +1,22 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", photos_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_photo_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", photo_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.photo.img", :default => t("activerecord.labels.img", :default => "Img"))
+          \:
+        = @photo.img
+      %p
+        %b
+          = t("activerecord.attributes.photo.slideshow_id", :default => t("activerecord.labels.slideshow_id", :default => "Slideshow"))
+          \:
+        = @photo.slideshow_id
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_photo_path(@photo), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), photo_path(@photo), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

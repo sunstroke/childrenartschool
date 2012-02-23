@@ -1,13 +1,6 @@
 #nav-wrapper
+  #logo
   #navigation
-    %p
-      = link_to_unless_current 'Детская школа визуальных искусств','/'
-    #search
-      %form
-        %input#searchtxt{:placeholder => "Поиск...", :type => "search"}/
-      .logo
-        %a{:href=>"http://fotohaus.ru", :target=>"_blank"}
-          %img{:alt => "fotohaus", :height => "26",  :src => "/images/fotohaus190.png", :width => "190", :style=>"border: 0;"}/
     %nav#menu
       %ul
         %li
@@ -16,7 +9,8 @@
           = link_to_unless_current 'КУРСЫ',"/courses"
         %li
           = link_to_unless_current "СЕМИНАРЫ", "/workshop"
-        %li
-          = link_to_unless_current "ПРЕПОДАВАТЕЛИ","/teachersall"
-        %li
-          = link_to_unless_current "КОНТАКТЫ", "/contacts"
+  #contacts
+    .logo
+      %a{:href=>"http://fotohaus.ru", :target=>"_blank"}
+        %img{:alt => "fotohaus", :height => "26",  :src => "/images/fotohaus190.png", :width => "190", :style=>"border: 0;"}/
+  

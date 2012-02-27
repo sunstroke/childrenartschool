@@ -20,6 +20,9 @@ class GroupsController < ApplicationController
      respond_to do |format|
        format.html # show.html.erb
        format.xml  { render :xml => @group }
+       format.pdf do
+         render :pdf => "file_name"
+       end       
      end
   end
   def view

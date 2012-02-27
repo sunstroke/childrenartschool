@@ -18,6 +18,7 @@ gem "haml"
 gem "html5-boilerplate"
 
 gem "gritter", "0.6.3"
+gem 'wicked_pdf'
 
 # Use unicorn as the web server
 # gem 'unicorn'

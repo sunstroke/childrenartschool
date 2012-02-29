@@ -9,4 +9,5 @@ public/uploads/*
 Gemfile.lock
 public/stylesheets/style.css
 vendor/cache/*
+.rvmrc
 

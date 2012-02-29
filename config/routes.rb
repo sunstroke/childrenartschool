@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 Schoolf::Application.routes.draw do
-  match ':label', :to=>'pages#view', :as=>"view_page"
+
   
   
   resources :photos
@@ -62,7 +62,7 @@ end
   resources :teachers
 #  get "admin"
 
-
+  match ':label', :to=>'pages#view', :as=>"view_page"
 
   get "home/index"
 

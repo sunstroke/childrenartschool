@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 Schoolf::Application.routes.draw do
   match ':label', :to=>'pages#view', :as=>"view_page"
+  
+  
   resources :photos
   resources :slideshows do
     resources :photos
@@ -39,6 +41,10 @@ namespace :admin do
   match 'welcomes/noactive', :to=>'welcomes#noactive', :as=>"noactive_banner"        
   resources :welcomes
   resources :teachers
+  resources :slideshows do
+    resources :photos
+  end
+  
 end
 
   match 'groups/:label', :to=>'groups#view', :as=>"view_group"        

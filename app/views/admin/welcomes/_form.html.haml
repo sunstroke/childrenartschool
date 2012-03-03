@@ -11,9 +11,14 @@
   = f.text_field :url, :class => 'text_field'
   %span.description Ex: /pages/3 
 .group
-  = f.label :text, t("activerecord.attributes.welcome.text", :default => "Сопроводительный текст"), :class => :label
-  = f.text_area :text, :class => 'text_area'
-  %span.description Ex: здесь нужен очень короткий текст, 10 - 20 символов, он показывается на баннере, на подложке.. Текст второй строчки должен быть заключен в команды (<span>... </span>)
+  = f.label :text, t("activerecord.attributes.welcome.text", :default => "Текст на белой плашке"), :class => :label
+  = f.text_area :text, :class => 'text_area', :style=>"height: 20px;"
+  %span.description Ex: здесь нужен очень короткий текст, 10 - 20 символов, он показывается на баннере, на подложке.. 
+.group
+  = f.label :second_text, t("activerecord.attributes.welcome.second_text", :default => "Текст на цветной плашке"), :class => :label
+  = f.text_area :second_text, :class => 'text_area', :style=>"height: 20px;"
+  %span.description Ex: здесь нужен очень короткий текст, 10 - 20 символов, он показывается на баннере, на подложке.. 
+
 .group
   = f.label :position, t("activerecord.attributes.welcome.position", :default => "Порядок"), :class => :label
   = f.text_field :position, :class => 'text_field'

@@ -1,0 +1,13 @@
+%article.more_item
+  %h1 
+    =link_to @direction.name, @direction.link, :style=>"color: #FC8100;"
+  .img_direction
+    = image_tag @direction.img_url(:thumb)
+  %p.text_more
+    = @direction.desc
+  
+%br{:style=>"clear: both;"}
+
+= link_to 'Edit', edit_direction_path(@direction) 
+|
+= link_to 'Back', directions_path 

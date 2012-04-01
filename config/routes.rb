@@ -3,6 +3,12 @@ Schoolf::Application.routes.draw do
 
   
   
+  resources :live_news
+
+  resources :lives
+
+  resources :directions
+
   resources :photos
   resources :slideshows do
     resources :photos

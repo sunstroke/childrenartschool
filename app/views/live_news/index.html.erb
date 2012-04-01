@@ -1,0 +1,33 @@
+<h1>Listing live_news</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Link</th>
+    <th>Img</th>
+    <th>Desc</th>
+    <th>Position</th>
+    <th>Visible</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @live_news.each do |live_news| %>
+  <tr>
+    <td><%= live_news.name %></td>
+    <td><%= live_news.link %></td>
+    <td><%= live_news.img %></td>
+    <td><%= live_news.desc %></td>
+    <td><%= live_news.position %></td>
+    <td><%= live_news.visible %></td>
+    <td><%= link_to 'Show', live_news %></td>
+    <td><%= link_to 'Edit', edit_live_news_path(live_news) %></td>
+    <td><%= link_to 'Destroy', live_news, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Live news', new_live_news_path %>

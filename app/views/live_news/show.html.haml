@@ -1,0 +1,11 @@
+%br
+%article.more_item
+  %h1= @live_news.name
+  .img_more{:style => "background: url(#{@live_news.img_url(:thumb)});"}
+  .text_more
+    = @live_news.desc
+  = link_to "Читать дальше", @live_news.link, :class=>"link_more" if @live_news.link?
+%br{:style=>"clear: both;"}
+= link_to 'Edit', edit_live_news_path(@live_news)
+|
+= link_to 'Back', live_news_index_path 

@@ -1,15 +1,10 @@
 # -*- encoding : utf-8 -*-
 Schoolf::Application.routes.draw do
-
   
   
-  resources :live_news
-
-  resources :lives
-
-  resources :directions
-
+  
   resources :photos
+  
   resources :slideshows do
     resources :photos
   end
@@ -40,6 +35,9 @@ namespace :admin do
   #     # (app/controllers/admin/products_controller.rb)
   resources :groups
   resources :pages
+  resources :live_news
+  resources :directions
+  
   match 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"      
   match 'people/archive', :to=>'people#archive', :as=>"archive"            
   resources :people

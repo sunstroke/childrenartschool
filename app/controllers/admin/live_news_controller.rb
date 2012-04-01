@@ -1,6 +1,8 @@
-class LiveNewsController < ApplicationController
+class Admin::LiveNewsController < ApplicationController
+  before_filter :require_login  
   # GET /live_news
   # GET /live_news.xml
+   layout'admin'    
   def index
     @live_news = LiveNews.all
 
@@ -44,7 +46,7 @@ class LiveNewsController < ApplicationController
 
     respond_to do |format|
       if @live_news.save
-        format.html { redirect_to(@live_news, :notice => 'Live news was successfully created.') }
+        format.html { redirect_to(admin_live_news_path(@live_news), :notice => 'Live news was successfully created.') }
         format.xml  { render :xml => @live_news, :status => :created, :location => @live_news }
       else
         format.html { render :action => "new" }
@@ -60,7 +62,7 @@ class LiveNewsController < ApplicationController
 
     respond_to do |format|
       if @live_news.update_attributes(params[:live_news])
-        format.html { redirect_to(@live_news, :notice => 'Live news was successfully updated.') }
+        format.html { redirect_to(admin_live_news_path(@live_news), :notice => 'Live news was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,7 +78,7 @@ class LiveNewsController < ApplicationController
     @live_news.destroy
 
     respond_to do |format|
-      format.html { redirect_to(live_news_index_url) }
+      format.html { redirect_to(admin_live_news_index_url) }
       format.xml  { head :ok }
     end
   end

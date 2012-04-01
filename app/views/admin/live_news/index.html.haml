@@ -1,0 +1,33 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admin_live_news_index_url
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_live_news_path
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      LiveNews
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+            = t("activerecord.attributes.admin_live_news.name", :default => t("activerecord.labels.name", :default => "Name"))
+          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th.last &nbsp;
+        - @live_news.each do |live_news|
+          %tr{:class => cycle("odd", "even")}
+            %td
+              = live_news.id
+            %td
+              = link_to live_news.name, admin_live_news_path(live_news)
+            %td
+              = live_news.created_at
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_live_news_path(live_news)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_live_news_path(live_news)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_live_news_path(live_news), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+      .actions-bar.wat-cf
+        .actions
+- content_for :sidebar, render(:partial => 'sidebar')

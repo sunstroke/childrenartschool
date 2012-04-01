@@ -1,0 +1,21 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admin_directions_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_direction_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_direction_path
+  .content
+    .inner
+      %article.more_item
+        %h1 
+          =link_to @direction.name, @direction.link, :style=>"color: #FC8100;"
+        .img_direction
+          = image_tag @direction.img_url(:thumb)
+        %p.text_more
+          = @direction.desc
+
+      %br{:style=>"clear: both;"}
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_direction_path(@direction), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_direction_path(@direction), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

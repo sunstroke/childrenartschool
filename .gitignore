@@ -2,6 +2,7 @@
 db/*.sqlite3
 log/*.log
 tmp/
+public/ckeditor_assets/*
 db/schema.rb
 public/attachments/*
 public/uploads/*

@@ -1,6 +1,8 @@
-class DirectionsController < ApplicationController
+class Admin::DirectionsController < ApplicationController
+  before_filter :require_login  
   # GET /directions
   # GET /directions.xml
+   layout'admin'  
   def index
     @directions = Direction.all
 
@@ -44,7 +46,7 @@ class DirectionsController < ApplicationController
 
     respond_to do |format|
       if @direction.save
-        format.html { redirect_to(@direction, :notice => 'Direction was successfully created.') }
+        format.html { redirect_to(admin_direction_path(@direction), :notice => 'Direction was successfully created.') }
         format.xml  { render :xml => @direction, :status => :created, :location => @direction }
       else
         format.html { render :action => "new" }
@@ -60,7 +62,7 @@ class DirectionsController < ApplicationController
 
     respond_to do |format|
       if @direction.update_attributes(params[:direction])
-        format.html { redirect_to(@direction, :notice => 'Direction was successfully updated.') }
+        format.html { redirect_to(admin_direction_path(@direction), :notice => 'Direction was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,7 +78,7 @@ class DirectionsController < ApplicationController
     @direction.destroy
 
     respond_to do |format|
-      format.html { redirect_to(directions_url) }
+      format.html { redirect_to(admin_directions_url) }
       format.xml  { head :ok }
     end
   end

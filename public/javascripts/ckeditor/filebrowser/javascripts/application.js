@@ -77,7 +77,8 @@ qq.FileUploaderInput = function(o){
     
     this._classes = this._options.classes;
         
-    this._button = this._createUploadButton(this._find(this._element, 'button'));        
+    this._button = this._createUploadButton(this._find(this._element, 'button'));  
+    this._path = $('meta[name="ckeditor-path"]').attr('content');
     
     //this._setupDragDrop();
     
@@ -163,7 +164,7 @@ qq.extend(qq.FileUploaderInput.prototype, {
         qq.FileUploaderBasic.prototype._onComplete.apply(this, arguments);
 
         var item = this._getItemByFileId(id);
-        var asset = result.asset;
+        var asset = result.asset ? result.asset : result;
         
         if (asset && asset.id){
             qq.addClass(item, this._classes.success);
@@ -189,7 +190,7 @@ qq.extend(qq.FileUploaderInput.prototype, {
             format_created_at: '',
             url_content: "#",
             controller: "assets",
-            url_thumb: "/javascripts/ckeditor/filebrowser/images/preloader.gif"
+            url_thumb: this._path + "/ckeditor/filebrowser/images/preloader.gif"
           };
           
           var item = $(this._options.template_id)

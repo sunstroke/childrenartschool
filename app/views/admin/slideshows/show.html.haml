@@ -16,11 +16,16 @@
           = t("activerecord.attributes.slideshow.name", :default => t("activerecord.labels.name", :default => "Name"))
           \:
         = @slideshow.name
-        - @slideshow.photos.each do |photo|
+        -# @slideshow.photos.each do |photo|
           = image_tag photo.img_url(:thumb)
           
         #galleria
           = render :partial=>"photos", :locals => {:slideshow => @slideshow}
+        %script
+          Galleria.loadTheme('/javascripts/themes/classic/galleria.classic.js');
+          $('#galleria').galleria({  transition: 'fade', 
+          });
+          
         %p
           код
         %textarea{:rows=>"10", :cols=>"45", :readonly=>true}

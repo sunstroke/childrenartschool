@@ -30,7 +30,7 @@
           код
         %textarea{:rows=>"10", :cols=>"45", :readonly=>true}
           %div{:id=>"galleria#{@slideshow.id }"}
-          = render :partial=>"photos", :locals => {:slideshow => @slideshow}
+            = render :partial=>"photos", :locals => {:slideshow => @slideshow}
           %script
             Galleria.loadTheme('/javascripts/themes/classic/galleria.classic.js');
             $('#galleria#{@slideshow.id }').galleria({  transition: 'fade', 

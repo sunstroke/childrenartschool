@@ -38,7 +38,9 @@ namespace :admin do
   resources :groups
   resources :pages
   resources :menus do
-    post :sort, :on :collection
+    collection do
+      post :sort
+    end
   end  
   resources :live_news
   resources :directions

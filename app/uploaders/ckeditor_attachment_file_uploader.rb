@@ -1,7 +1,7 @@
 # encoding: utf-8
 class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
   include Ckeditor::Backend::CarrierWave
-  CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/  
+#  CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/  
   # Include RMagick or ImageScience support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -33,11 +33,11 @@ class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
   def extension_white_list
     Ckeditor.attachment_file_types
   end
-   def filename
-        ext = File.extname(original_filename) if original_filename
-        name = File.basename(original_filename, '.*') if original_filename
-        "#{name.parameterize}#{ext}" if original_filename
-  end
+  #  def filename
+  #       ext = File.extname(original_filename) if original_filename
+  #       name = File.basename(original_filename, '.*') if original_filename
+  #       "#{name.parameterize}#{ext}" if original_filename
+  # end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

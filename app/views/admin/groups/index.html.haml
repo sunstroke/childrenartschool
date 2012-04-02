@@ -20,7 +20,7 @@
             Уч программа
           %th.last &nbsp;
         - @groups.each do |group|
-          %tr{:class => cycle("odd", "even")}
+          %tr{:class => cycle("odd", "even"),:style=>"opacity:#{(group.open) ? '1':'0.6'};"} 
             %td
               = group.id              
             %td
@@ -31,7 +31,7 @@
               = group.position              
             %td
               = group.program.name
-              
+            
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_group_path(group)
               |

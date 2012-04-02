@@ -1,9 +1,9 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", slideshows_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_slideshow_path
-      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", slideshow_path
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admin_slideshows_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", admin_new_slideshow_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_slideshow_path
   .content
     .inner
       %p
@@ -19,6 +19,6 @@
         - @slideshow.photos.each do |photo|
           = image_tag photo.img_url(:thumb)
       .wat-cf
-        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_slideshow_path(@slideshow), :class => "button"
-        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), slideshow_path(@slideshow), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), admin_edit_slideshow_path(@slideshow), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_slideshow_path(@slideshow), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
 - content_for :sidebar, render(:partial => 'sidebar')

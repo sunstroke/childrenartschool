@@ -1,4 +1,4 @@
-.photo[photo]
-  = image_tag photo.image_url(:thumb) if photo.image?
-  -#= link_to "Delete", slideshow_photo_path(@slideshow, photo), :method => :delete, :confirm => "Are you sure?", :remote => :true
+.photo[photo]{:style=>"float: left; width: 200px;"}
+  = image_tag photo.img_url(:thumb) if photo.img?
+  = link_to "Delete", slideshow_photo_path(@slideshow, photo), :method => :delete, :confirm => "Are you sure?", :remote => :true
 

@@ -35,11 +35,8 @@
               %a{:href => admin_people_path} Ученики
             %li{:class => controller.controller_path == 'admin/pages' ? 'active' : '' }
               %a{:href => admin_pages_path} Страницы
-
-            %li{:class => controller.controller_path == 'photos' ? 'active' : '' }
-              %a{:href => photos_path} Photos
-            %li{:class => controller.controller_path == 'slideshows' ? 'active' : '' }
-              %a{:href => slideshows_path} Slideshows
+            %li{:class => controller.controller_path == 'admin/slideshows' ? 'active' : '' }
+              %a{:href => admin_slideshows_path} Slideshows
             %li{:class => controller.controller_path == 'admin/directions' ? 'active' : '' }
               %a{:href => admin_directions_path} Directions
             %li{:class => controller.controller_path == 'admin/live_news' ? 'active' : '' }

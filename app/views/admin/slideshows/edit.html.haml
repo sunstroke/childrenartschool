@@ -2,16 +2,15 @@
   .secondary-navigation
     %ul.wat-cf
       %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", slideshows_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_slideshow_path
-      %li.active= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_slideshow_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_slideshow_path
+      %li.active= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_slideshow_path
   .content
     %h2.title
       = t("web-app-theme.edit", :default => "Edit")
       Slideshow
     .inner
-      = form_for @slideshow, :url => slideshow_path(@slideshow), :html => { :class => :form } do |f|
+      = form_for @slideshow, :url => admin_slideshow_path(@slideshow), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f}
-
       - key = Rails.application.config.session_options[:key]
       = content_for :scripts do
         = javascript_include_tag "swfobject", "jquery.uploadify"
@@ -38,9 +37,9 @@
           });
 
       #photos
-        -# = render :partial => 'photos/photo', :collection => @slideshow.photos
+        = render :partial => 'photos/photo', :collection => @slideshow.photos
         - unless @slideshow.new_record?
           = fields_for Photo.new do |f|
-            = f.file_field :img, :rel => slideshow_photos_path(@slideshow)
+            = f.file_field :img, :rel => admin_slideshow_photos_path(@slideshow)
 
 - content_for :sidebar, render(:partial => 'sidebar')

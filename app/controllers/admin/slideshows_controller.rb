@@ -1,7 +1,6 @@
-# -*- encoding : utf-8 -*-
 class Admin::SlideshowsController < ApplicationController
 
-  before_filter :require_login  
+before_filter :require_login    
      layout'admin'  
   def index
     @slideshows = Slideshow.all
@@ -18,7 +17,7 @@ class Admin::SlideshowsController < ApplicationController
   def create
     @slideshow = Slideshow.new(params[:slideshow])
     if @slideshow.save
-      redirect_to slideshow_url(@slideshow), :notice => "Successfully created slideshow."
+      redirect_to edit_admin_slideshow_url(@slideshow), :notice => "Successfully created admin/slideshow."
     else
       render :action => 'new'
     end
@@ -35,7 +34,7 @@ class Admin::SlideshowsController < ApplicationController
     end
     
     if @slideshow.update_attributes(params[:slideshow])
-      redirect_to slideshow_url(@slideshow), :notice  => "Successfully updated slideshow."
+      redirect_to admin_slideshow_url(@slideshow), :notice  => "Successfully updated admin/slideshow."
     else
       render :action => 'edit'
     end
@@ -44,6 +43,6 @@ class Admin::SlideshowsController < ApplicationController
   def destroy
     @slideshow = Slideshow.find(params[:id])
     @slideshow.destroy
-    redirect_to slideshows_url, :notice => "Successfully destroyed slideshow."
+    redirect_to admin_slideshows_url, :notice => "Successfully destroyed admin/slideshow."
   end
 end

@@ -11,7 +11,6 @@
     .inner
       = form_for @slideshow, :url => slideshow_path(@slideshow), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f}
-
       - key = Rails.application.config.session_options[:key]
       = content_for :scripts do
         = javascript_include_tag "swfobject", "jquery.uploadify"
@@ -38,7 +37,7 @@
           });
 
       #photos
-        -# = render :partial => 'photos/photo', :collection => @slideshow.photos
+        = render :partial => 'photos/photo', :collection => @slideshow.photos
         - unless @slideshow.new_record?
           = fields_for Photo.new do |f|
             = f.file_field :img, :rel => slideshow_photos_path(@slideshow)

@@ -1,8 +1,8 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", slideshows_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_slideshow_path
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admin_slideshows_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_slideshow_path
   .content
     %h2.title
       = t("web-app-theme.all", :default => "All")
@@ -20,14 +20,14 @@
             %td
               = slideshow.id
             %td
-              = link_to slideshow.theme_id, slideshow_path(slideshow)
+              = link_to slideshow.theme_id, admin_slideshow_path(slideshow)
             %td
               = slideshow.created_at
             %td.last
-              = link_to "#{t("web-app-theme.show", :default => "Show")}", slideshow_path(slideshow)
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_slideshow_path(slideshow)
               |
-              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_slideshow_path(slideshow)} |
-              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", slideshow_path(slideshow), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_slideshow_path(slideshow)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_slideshow_path(slideshow), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
       .actions-bar.wat-cf
         .actions
 - content_for :sidebar, render(:partial => 'sidebar')

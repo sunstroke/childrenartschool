@@ -10,7 +10,7 @@ class Admin::GroupsController < ApplicationController
       @program = Program.find(:all, :conditions=>['program_type = ?',tag], :select=>"id")
       @groups = Group.find(:all,:order=>["program_id ASC, position ASC"], :conditions=>['program_id IN (?)',@program])      
     else      
-      @groups = Group.find(:all,:order=>["open ASC, program_id ASC, position ASC"])
+      @groups = Group.find(:all,:order=>["open DESC, program_id ASC, position ASC"])
     end
 
 

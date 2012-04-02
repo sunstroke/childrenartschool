@@ -9,7 +9,7 @@ gem "magic_encoding"
 
 gem 'sorcery'
 
-
+gem "acts_as_list"
 
 # gem 'sqlite3'
 
@@ -71,3 +71,4 @@ group :test do
   gem 'timecop'
   gem 'launchy'
 end
+gem "mocha", :group => :test

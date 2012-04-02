@@ -1,0 +1,13 @@
+one:
+  name: MyString
+  parent: 1
+  visible: false
+  link: MyString
+  position: 1
+
+two:
+  name: MyString
+  parent: 1
+  visible: false
+  link: MyString
+  position: 1

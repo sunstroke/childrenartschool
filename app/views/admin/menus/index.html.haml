@@ -1,0 +1,130 @@
+:css
+  div.last {
+    float:right;
+  }
+  .handle:hover{
+    cursor: move;
+  }
+
+  li div {
+    float: left;
+    margin: 10px;
+    width: auto;
+  }  
+  #menus li {
+    list-style-type: none;
+    clear: both;
+    margin-left: 10px;
+    padding: 10px;
+  }
+:javascript
+  $(document).ready(function(){
+    $('#menus').sortable({
+      axis: 'y',
+      dropOnEmpty: false,
+      handle: '.handle',
+      cursor: 'crosshair',
+      items: 'li',
+      opacity: 0.4,
+      scroll: true,
+      update: function(){
+      $.ajax({
+        type: 'post',
+        data: $('#menus').sortable('serialize'),
+        dataType: 'script',
+        complete: function(request){
+          $('#menus').effect('highlight');
+        },
+        url: '/admin/menus/sort'})
+      }
+    });
+    $('#menus1').sortable({
+      axis: 'y',
+      dropOnEmpty: false,
+      handle: '.handle',
+      cursor: 'crosshair',
+      items: 'li',
+      opacity: 0.4,
+      scroll: true,
+      update: function(){
+      $.ajax({
+        type: 'post',
+        data: $('#menus1').sortable('serialize'),
+        dataType: 'script',
+        complete: function(request){
+          $('#menus1').effect('highlight');
+        },
+        url: '/admin/menus/sort'})
+      }
+    });
+    $('#menus2').sortable({
+      axis: 'y',
+      dropOnEmpty: false,
+      handle: '.handle',
+      cursor: 'crosshair',
+      items: 'li',
+      opacity: 0.4,
+      scroll: true,
+      update: function(){
+      $.ajax({
+        type: 'post',
+        data: $('#menus2').sortable('serialize'),
+        dataType: 'script',
+        complete: function(request){
+          $('#menus2').effect('highlight');
+        },
+        url: '/admin/menus/sort'})
+      }
+    });
+    
+  });
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admin_menus_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_menu_path
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      Menus
+    .inner
+      %ul#menus
+        - @menus.each do |menu|
+          %li{:class => cycle("odd", "even") ,:id=>"menu_#{ menu.id }"}
+            %span.handle
+              [drag]
+              = link_to menu.name, menu.link
+            %div.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_menu_path(menu)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_menu_path(menu)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_menu_path(menu), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+            - if menu.children.exists?
+              %ul{:id=>"menus1"}
+                - menu.children.each do |children|
+                  %li{:class => cycle("odd", "even") ,:id=>"menu_#{ children.id }"}
+                    %span.handle
+                      [drag]
+                      = link_to children.name, children.link
+                    %div.last
+                      = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_menu_path(children)
+                      |
+                      \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_menu_path(children)} |
+                      \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_menu_path(children), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+                    - if children.children.exists?
+                      %ul{:id=>"menus2"}
+                        - children.children.each do |subchildren|
+                          %li{:class => cycle("odd", "even") ,:id=>"menu_#{ subchildren.id }"}
+                            %span.handle
+                              [drag]
+                              = link_to subchildren.name, subchildren.link
+                            %div.last
+                              = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_menu_path(subchildren)
+                              |
+                              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_menu_path(subchildren)} |
+                              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_menu_path(subchildren), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+                  
+          
+      .actions-bar.wat-cf
+        .actions
+- content_for :sidebar, render(:partial => 'sidebar')

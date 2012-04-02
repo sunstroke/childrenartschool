@@ -3,6 +3,8 @@ Schoolf::Application.routes.draw do
   
   
   
+  resources :menus 
+
   resources :photos
   
   resources :slideshows do
@@ -35,6 +37,9 @@ namespace :admin do
   #     # (app/controllers/admin/products_controller.rb)
   resources :groups
   resources :pages
+  resources :menus do
+    post :sort, on: :collection
+  end  
   resources :live_news
   resources :directions
   

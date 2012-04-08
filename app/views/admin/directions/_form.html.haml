@@ -8,7 +8,7 @@
   %span.description Ex: a simple text
 .group
   = f.label :img, t("activerecord.attributes.direction.img", :default => "Img"), :class => :label
-  = f.text_field :img, :class => 'text_field'
+  = f.file_field :img, :class => 'text_field'
   %span.description Ex: a simple text
 .group
   = f.label :desc, t("activerecord.attributes.direction.desc", :default => "Desc"), :class => :label

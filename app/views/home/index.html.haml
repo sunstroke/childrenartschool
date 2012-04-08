@@ -34,7 +34,7 @@
   -@news.each do |news|
     %article.more_item
       %h1= news.name
-      .img_more{:style => "background: url(#{news.img_url(:thumb)});"}
+      .img_more{:style => "background: url('#{news.img_url(:thumb)}');"}
       .text_more
         = news.desc
       = link_to "Читать дальше", news.link, :class=>"link_more" if news.link?

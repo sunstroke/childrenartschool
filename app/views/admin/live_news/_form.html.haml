@@ -1,3 +1,14 @@
+:css
+  .img_more {
+    margin: 20px auto;
+    border: 0px solid black;
+    border-radius: 125px;
+    -moz-border-radius: 125px;
+    -khtml-border-radius: 125px;
+    -webkit-border-radius: 125px;
+    width: 250px;
+    height: 250px;
+  }
 .group
   = f.label :name, t("activerecord.attributes.live_news.name", :default => "Name"), :class => :label
   = f.text_field :name, :class => 'text_field'
@@ -9,6 +20,9 @@
 .group
   = f.label :img, t("activerecord.attributes.live_news.img", :default => "Img"), :class => :label
   = f.file_field :img, :class => 'text_field'
+  - if @live_news.img?
+    = image_tag @live_news.img_url(:thumb)
+    .img_more{:style => "background: url('#{@live_news.img_url(:thumb)}');"}
   %span.description Ex: a simple text
 .group
   = f.label :desc, t("activerecord.attributes.live_news.desc", :default => "Desc"), :class => :label

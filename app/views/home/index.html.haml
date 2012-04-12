@@ -13,7 +13,7 @@
       %h1 
         =link_to direction.name, direction.link, :style=>"color: #FC8100;"
       .img_direction
-        = image_tag direction.img_url(:thumb)
+        =link_to image_tag(direction.img_url(:thumb)),direction.link
       %p.text_more
         = direction.desc
 

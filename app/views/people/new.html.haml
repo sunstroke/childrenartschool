@@ -26,7 +26,7 @@
     %h2.title
       Подать заявку на обучение
     .inner
-      = form_for ([@group,@person], :html => { :class => :form } ) do |f|
+      = form_for [@group,@person], :html => { :class => :form }  do |f|
         = raw negative_captcha(@captcha) 
         .group
           = f.label  :fullname, t("activerecord.attributes.person.fullname", :default => "Полное имя ученика"), :class => :label
@@ -57,7 +57,7 @@
           %span.description  Вам на почту будут приходить новости школы. Информация о новых группах, курсах, акциях и спецпредложениях.                   
         .group
           = f.label :birthday, t("activerecord.attributes.person.birthday", :default => "Дата рождения"), :class => :label
-          = f.date_select (:birthday, :start_year=>Time.now.year-21, :end_year=>Time.now.year, :class => 'datetime_select')
+          = f.date_select(:birthday, :start_year=>Time.now.year-21, :end_year=>Time.now.year, :class => 'datetime_select')
           %span.description Ex: 1 апреля 1995 года
         .group
           = redactor("#person_about")

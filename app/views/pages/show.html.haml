@@ -22,4 +22,7 @@
                   %br/
     %span{:style=>"width: 350px;"}
       = raw(@page.text)
+      %br
+      - if current_user
+        = link_to "Редактировать", edit_admin_page_path(@page) , :class=>"button"      
 = render "sticky"

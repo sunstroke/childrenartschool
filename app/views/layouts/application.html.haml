@@ -178,6 +178,10 @@
           = link_to_unless_current 'КУРСЫ',"/courses"
         %li
           = link_to_unless_current "СЕМИНАРЫ", "/workshop"
+        - if current_user
+          %li
+            = link_to_unless_current "Админка", "/admin/pages"
+          
     #contacts
       #tel{:style => "font-size: 24px;margin: 5px 0;"} +7 (495) 722-77-59
       %div

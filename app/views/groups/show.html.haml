@@ -6,13 +6,16 @@
       = @group.name
     -if @group.prim?
       = raw(@group.prim)
-      %hr
+      - if current_user
+        = link_to "Редактировать группу", edit_admin_group_path(@group) , :class=>"button"      
+      %hr      
     .col{:style=>"float:left; width: 450px; text-align: left;"}
       - if @group.program_id? 
         %h2
           Учебная программа
         = raw(@group.program.annotation) if @group.program_id?
         %br/
+        
     .col{:style=>"float:left; width: 200px;"}
       - if @group.calendar?
         %h2

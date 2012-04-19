@@ -9,6 +9,10 @@
           = link_to_unless_current 'КУРСЫ',"/courses"
         %li
           = link_to_unless_current "СЕМИНАРЫ", "/workshop"
+        - if current_user
+          %li
+            = link_to_unless_current "Админка", "/admin/pages"
+          
   #contacts
     .logo
       %a{:href=>"http://fotohaus.ru", :target=>"_blank"}

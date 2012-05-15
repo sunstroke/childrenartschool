@@ -15,9 +15,18 @@
   = f.text_area :text, :class => 'text_area', :style=>"height: 20px;"
   %span.description Ex: здесь нужен очень короткий текст, 10 - 20 символов, он показывается на баннере, на подложке.. 
 .group
+  = f.label :style_text, t("activerecord.attributes.welcome.text", :default => "Стиль белой плашки"), :class => :label
+  = f.text_field :style_text, :class => 'text_field'
+  %span.description Стиль по умолчанию такой: position: absolute; top: 50px;left: 50px;background: white;opacity: 0.6; color:black; font-size: 18pt;padding: 10px;
+  
+.group
   = f.label :second_text, t("activerecord.attributes.welcome.second_text", :default => "Текст на цветной плашке"), :class => :label
   = f.text_area :second_text, :class => 'text_area', :style=>"height: 20px;"
   %span.description Ex: здесь нужен очень короткий текст, 10 - 20 символов, он показывается на баннере, на подложке.. 
+.group
+  = f.label :style_second_text, t("activerecord.attributes.welcome.style_second_text", :default => "Стиль цветной плашки"), :class => :label
+  = f.text_field :style_second_text, :class => 'text_field'
+  %span.description Стиль по умолчанию такой: position: absolute; top: 150px; left: 50px; background: #FC8100; opacity: 0.6; color: white; font-size: 12pt;padding: 10px; 
 
 .group
   = f.label :position, t("activerecord.attributes.welcome.position", :default => "Порядок"), :class => :label
@@ -25,8 +34,10 @@
   %span.description Ex: порядок показа баннеров на главной
 .group
   = f.label :image, t("activerecord.attributes.welcome.image", :default => "Баннер"), :class => :label
-  = f.file_field :image, :class => 'text_field'
-  %span.description Ex: Картинка в формате jpg, gif, png, размером 1600х1000, разрешением 72dpi
+  = f.file_field :image, :class => 'text_field', :style=>"width: 250px; float: left; margin-right: 50px;"
+  = image_tag(@welcome.image_url, :size=>"102x40") if @welcome.image?
+  %br
+  %span.description Ex: Картинка в формате jpg, gif, png, размером 1024х400, разрешением 72dpi
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

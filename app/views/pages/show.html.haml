@@ -11,7 +11,7 @@
             %div{:style=>"margin-bottom: 120px;clear: both;"}
               -if program.groups.count>0
                 %b{:style=>"color: #FC8100;"}
-                  =program.name
+                  = link_to program.name,  view_group_path(g.label)
               -program.groups.each do |g|
                 .group_block{:style=>"position: relative;width: 200px; float: left;clear:both;margin-right: 10px;"}
                   .img_cal{:style=>"position: relative;"}

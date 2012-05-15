@@ -7,7 +7,7 @@
         -else
           =image_tag(b.image_url, :alt=>b.name, :title=>"#b#{b.id}")
     -@banners.each do |b|
-      %div{:id=>"#b#{b.id}", :style=>"display: none;"}
+      %div{:id=>"b#{b.id}", :class=>"nivo-html-caption"}
         -if b.text!=""
           -if b.style_text==""
             %div{:id=>"#text_1", :style=>"position: absolute; top: 50px;left: 50px;background: white;opacity: 0.6; color:black; font-size: 18pt;padding: 10px;"}

@@ -8,18 +8,20 @@
           =image_tag(b.image_url, :alt=>b.name, :title=>"#b#{b.id}")
     -@banners.each do |b|
       %div{:id=>"#b#{b.id}"}
-        -if b.style_text==""
-          %div{:id=>"#text_1", :style=>"position: absolute; top: 50px;left: 50px;background: white;opacity: 0.6; color:black; font-size: 18pt;padding: 10px;"}
-            = simple_format b.text          
-        - else
-          %div{:id=>"#text_1", :style=>"#{b.style_text}"}
-            =b.text
-        -if b.style_second_text==""
-          %div{:id=>"#text_2", :style=>"position: absolute; top: 150px;left: 50px;background: #FC8100;opacity: 0.6; color: white; font-size: 12pt;padding: 10px;"}
-            =b.second_text          
-        - else
-          %div{:id=>"#text_2", :style=>"#{b.style_second_text}"}
-            =b.second_text
+        -if b.text!=""
+          -if b.style_text==""
+            %div{:id=>"#text_1", :style=>"position: absolute; top: 50px;left: 50px;background: white;opacity: 0.6; color:black; font-size: 18pt;padding: 10px;"}
+              = simple_format b.text          
+          - else
+            %div{:id=>"#text_1", :style=>"#{b.style_text}"}
+              =b.text
+        -if b.second_text!=""
+          -if b.style_second_text==""
+            %div{:id=>"#text_2", :style=>"position: absolute; top: 150px;left: 50px;background: #FC8100;opacity: 0.6; color: white; font-size: 12pt;padding: 10px;"}
+              =b.second_text          
+          - else
+            %div{:id=>"#text_2", :style=>"#{b.style_second_text}"}
+              =b.second_text
 #direction
   .h Направления
   -@directions.each do |direction|

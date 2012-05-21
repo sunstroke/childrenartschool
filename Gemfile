@@ -8,7 +8,7 @@ gem "magic_encoding"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sorcery'
-
+gem 'curb-fu'
 gem "acts_as_list"
 gem 'sms24x7'
 # gem 'sqlite3'

@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+
+
 class PeopleController < ApplicationController
 before_filter :setup_negative_captcha, :only => [:new, :create]  
   # GET /people
@@ -55,8 +57,6 @@ before_filter :setup_negative_captcha, :only => [:new, :create]
     respond_to do |format|
       if @captcha.valid? && @person.save
         @person.update_attributes(params[:person])
-        SmsApi.push_msg_nologin('k.sunstroke@gmail.com', 'xKVZzSg', '79262621214', "#{@person.group.name} #{@person.fullname} #{@person.tel}", {:api_v=>'1.1', :satellite_adv=>'OBLIGATORY'})        
-        SmsApi.push_msg_nologin('k.sunstroke@gmail.com', 'xKVZzSg', '79263920920', "#{@person.group.name} #{@person.fullname} #{@person.tel}", {:api_v=>'1.1', :satellite_adv=>'OBLIGATORY'})        
         UserMailer.welcome_email(@person).deliver        
         format.html { redirect_to(@person, :notice => 'Person was successfully created.') }
         format.xml  { render :xml => @person, :status => :created, :location => @person }
@@ -97,6 +97,7 @@ before_filter :setup_negative_captcha, :only => [:new, :create]
   end
   
   private
+
        def setup_negative_captcha
          @captcha = NegativeCaptcha.new(
            :secret => '90f36c6e333640f5a8fc2016fa4637062c3fdc23636ee03d8974d3b251090d8981dc759c36fe12bff820dd33f1cf993f029bfc62ac9d908b352309a2d2129862', #A secret key entered in environment.rb.  'rake secret' will give you a good one.

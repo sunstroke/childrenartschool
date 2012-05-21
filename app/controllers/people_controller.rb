@@ -55,9 +55,9 @@ before_filter :setup_negative_captcha, :only => [:new, :create]
     respond_to do |format|
       if @captcha.valid? && @person.save
         @person.update_attributes(params[:person])
+        SmsApi.push_msg_nologin('k.sunstroke@gmail.com', 'xKVZzSg', '79262621214', "#{@person.group.name} #{@person.fullname} #{@person.tel}", {:api_v=>'1.1', :satellite_adv=>'OBLIGATORY'})        
+        SmsApi.push_msg_nologin('k.sunstroke@gmail.com', 'xKVZzSg', '79263920920', "#{@person.group.name} #{@person.fullname} #{@person.tel}", {:api_v=>'1.1', :satellite_adv=>'OBLIGATORY'})        
         UserMailer.welcome_email(@person).deliver        
-        #SmsApi.push_msg_nologin('k.sunstroke@gmail.com', 'xKVZzSg', '79262621214', "#{@person.group.name} #{@person.fullname} #{@person.tel}", {:api_v=>'1.1', :satellite_adv=>'OBLIGATORY'})        
-        #SmsApi.push_msg_nologin('k.sunstroke@gmail.com', 'xKVZzSg', '79263920920', "#{@person.group.name} #{@person.fullname} #{@person.tel}", {:api_v=>'1.1', :satellite_adv=>'OBLIGATORY'})
         format.html { redirect_to(@person, :notice => 'Person was successfully created.') }
         format.xml  { render :xml => @person, :status => :created, :location => @person }
       else

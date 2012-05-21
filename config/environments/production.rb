@@ -4,7 +4,7 @@ Schoolf::Application.configure do
 
   # The production environment is meant for finished, "live" apps.
   # Code is not reloaded between requests
-  config.cache_classes = true
+  config.cache_classes = false
 
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
@@ -46,5 +46,5 @@ Schoolf::Application.configure do
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners
-  config.active_support.deprecation = :notify
+  config.active_support.deprecation = :log
 end

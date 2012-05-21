@@ -10,7 +10,7 @@ gem "magic_encoding"
 gem 'sorcery'
 
 gem "acts_as_list"
-
+gem 'sms24x7'
 # gem 'sqlite3'
 
 gem "compass", ">= 0.11.5"

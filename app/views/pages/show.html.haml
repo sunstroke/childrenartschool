@@ -8,8 +8,8 @@
           %br/
         -if @programs.count > 0
           -@programs.each do |program|
-            %div{:style=>"margin-bottom: 120px;clear: both;"}
-              -if program.groups.count>0
+            -if program.groups.count>0            
+              %div{:style=>"margin-bottom: 120px;clear: both;"}
                 %b{:style=>"color: #FC8100;"}
                   = program.name
               -program.groups.each do |g|

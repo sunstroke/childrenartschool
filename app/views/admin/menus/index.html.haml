@@ -124,9 +124,9 @@
                               \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_menu_path(subchildren)} |
                               \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_menu_path(subchildren), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
                   
-    %ul
+    %ul{:style=>"margin-left: 10px;"}
       - @menus.each do |menu|
-        %li{:style=>"float:left; width: 200px;"}
+        %li{:style=>"float:left; width: 220px;"}
           = link_to menu.name, menu.link
           - if menu.children.exists?
             %ul{:style=>"margin-left: 10px;"}

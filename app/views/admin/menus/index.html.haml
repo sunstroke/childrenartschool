@@ -124,20 +124,20 @@
                               \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_menu_path(subchildren)} |
                               \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_menu_path(subchildren), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
                   
-%ul
-  - @menus.each do |menu|
-    %li{:style=>"float:left; width: 200px;"}
-      = link_to menu.name, menu.link
-      - if menu.children.exists?
-        %ul
-          - menu.children.each do |children|
-            %li
-              = link_to children.name, children.link
-              - if children.children.exists?
-                %ul
-                  - children.children.each do |subchildren|
-                    %li
-                      = link_to subchildren.name, subchildren.link
+    %ul
+      - @menus.each do |menu|
+        %li{:style=>"float:left; width: 200px;"}
+          = link_to menu.name, menu.link
+          - if menu.children.exists?
+            %ul
+              - menu.children.each do |children|
+                %li
+                  = link_to children.name, children.link
+                  - if children.children.exists?
+                    %ul
+                      - children.children.each do |subchildren|
+                        %li
+                          = link_to subchildren.name, subchildren.link
 
       .actions-bar.wat-cf
         .actions

@@ -129,7 +129,7 @@
         %li{:style=>"float:left; width: 200px;"}
           = link_to menu.name, menu.link
           - if menu.children.exists?
-            %ul
+            %ul{:style=>"margin-left: 10px;"}
               - menu.children.each do |children|
                 %li
                   = link_to children.name, children.link

@@ -1,7 +1,7 @@
 .group
   = f.label :name, t("activerecord.attributes.welcome.name", :default => "Название"), :class => :label
   = f.text_field :name, :class => 'text_field'
-  %span.description Ex: Будет написано на плашке с оранжевым фоном
+  %span.description Название для ориентира
 .group
   = f.label :visible, t("activerecord.attributes.welcome.visible", :default => "Показывать?"), :class => :label
   = f.check_box :visible, :class => 'check_box'

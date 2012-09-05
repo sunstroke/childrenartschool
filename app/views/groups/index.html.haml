@@ -9,8 +9,8 @@
       Педагог
     %th
       Возраст детей
-    %th
-      Навыки
+    -# %th
+    -#  Навыки
     %th
       Цена
     %th.last &nbsp;
@@ -21,12 +21,13 @@
       %td{:style=>"border: 1px solid black;"}
         = simple_format(group.calendar)
       %td{:style=>"border: 1px solid black;"}
-        #{group.start} - #{group.finish}
+      
+        #{I18n.localize(group.start, :format=>"%d.%b")} - #{I18n.localize(group.finish, :format=>"%d.%b")}
       %td{:style=>"border: 1px solid black;"}
         = group.teacher.fullname        
       %td{:style=>"border: 1px solid black;"}
         #{group.age_start} - #{group.age_finish} лет              
-      %td{:style=>"border: 1px solid black;"}
+      -#%td{:style=>"border: 1px solid black;"}
       
       %td{:style=>"border: 1px solid black;"}      
         = number_to_currency(group.price.abs, :precision => 0) if group.price?

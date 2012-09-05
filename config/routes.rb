@@ -37,11 +37,11 @@ namespace :admin do
   #     # (app/controllers/admin/products_controller.rb)
   resources :groups
   resources :pages
-  resources :menus do
-    collection do
-      post :sort
-    end
-  end  
+    resources :menus do
+      collection do
+        post :sort
+      end
+    end  
   resources :live_news
   resources :directions
   

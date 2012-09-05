@@ -4,22 +4,31 @@
     %th
       Дни занятий
     %th
+      Период обучения            
+    %th
       Педагог
     %th
       Возраст детей
     %th
       Навыки
+    %th
+      Цена
     %th.last &nbsp;
   - @groups.each do |group|
     %tr{:class => cycle("odd", "even")} 
-      %td
+      %td{:style=>"border: 1px solid black;"}
         = group.name             
-      %td
+      %td{:style=>"border: 1px solid black;"}
         = simple_format(group.calendar)
-      %td
-        = group.teacher.fullname
-      %td
-        #{@group.age_start} - #{@group.age_finish} лет              
-      %td
-      %td.last
+      %td{:style=>"border: 1px solid black;"}
+        #{group.start} - #{group.finish}
+      %td{:style=>"border: 1px solid black;"}
+        = group.teacher.fullname        
+      %td{:style=>"border: 1px solid black;"}
+        #{group.age_start} - #{group.age_finish} лет              
+      %td{:style=>"border: 1px solid black;"}
+      
+      %td{:style=>"border: 1px solid black;"}      
+        = number_to_currency(group.price.abs, :precision => 0) if group.price?
+      %td.last{:style=>"border: 1px solid black;"}
         = link_to "Подать заявку", new_group_person_path(group), :class=>"button"

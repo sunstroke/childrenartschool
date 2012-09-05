@@ -74,22 +74,22 @@
       %th.last &nbsp;
     - @groups.each do |group|
       %tr{:class => cycle("odd", "even")} 
-        %td{:style=>"border: 1px solid black;"}
+        %td{:style=>"border: 1px solid black; padding:3px;"}
           = link_to group.name, view_group_path(group.label)
-        %td{:style=>"border: 1px solid black;"}
+        %td{:style=>"border: 1px solid black; padding:3px;"}
           = simple_format(group.calendar)
-        %td{:style=>"border: 1px solid black;"}
+        %td{:style=>"border: 1px solid black; padding:3px;"}
 
           #{I18n.localize(group.start, :format=>"%d.%m")} - #{I18n.localize(group.finish, :format=>"%d.%m") if group.start&&group.finish?} 
-        %td{:style=>"border: 1px solid black;"}
+        %td{:style=>"border: 1px solid black; padding:3px;"}
           = group.teacher.fullname        
-        %td{:style=>"border: 1px solid black;"}
+        %td{:style=>"border: 1px solid black; padding:3px;"}
           #{group.age_start} - #{group.age_finish} лет              
         -#%td{:style=>"border: 1px solid black;"}
 
-        %td{:style=>"border: 1px solid black;"}      
+        %td{:style=>"border: 1px solid black; padding:3px;"}      
           = number_to_currency(group.price.abs, :precision => 0) if group.price?
-        %td.last{:style=>"border: 1px solid black;"}
+        %td.last{:style=>"border: 1px solid black; padding:3px;"}
           = link_to "Подать заявку", new_group_person_path(group)
 -#buttons
   %a.prev{:href=>"#"}Назад

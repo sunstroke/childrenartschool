@@ -54,7 +54,43 @@
       .text_more
         = news.desc
       = link_to "Читать дальше", news.link, :class=>"link_more" if news.link?
+#more
+  .h Список групп
+  %table.table
+    %tr
+      %th.first Название
+      %th
+        Дни занятий
+      %th
+        Период обучения            
+      %th
+        Педагог
+      %th
+        Возраст детей
+      -# %th
+      -#  Навыки
+      %th
+        Цена
+      %th.last &nbsp;
+    - @groups.each do |group|
+      %tr{:class => cycle("odd", "even")} 
+        %td{:style=>"border: 1px solid black;"}
+          = link_to group.name, view_group_path(group.label)
+        %td{:style=>"border: 1px solid black;"}
+          = simple_format(group.calendar)
+        %td{:style=>"border: 1px solid black;"}
 
+          #{I18n.localize(group.start, :format=>"%d.%m")} - #{I18n.localize(group.finish, :format=>"%d.%m") if group.start&&group.finish?} 
+        %td{:style=>"border: 1px solid black;"}
+          = group.teacher.fullname        
+        %td{:style=>"border: 1px solid black;"}
+          #{group.age_start} - #{group.age_finish} лет              
+        -#%td{:style=>"border: 1px solid black;"}
+
+        %td{:style=>"border: 1px solid black;"}      
+          = number_to_currency(group.price.abs, :precision => 0) if group.price?
+        %td.last{:style=>"border: 1px solid black;"}
+          = link_to "Подать заявку", new_group_person_path(group)
 -#buttons
   %a.prev{:href=>"#"}Назад
   %a.next{:href=>"#"}Вперед

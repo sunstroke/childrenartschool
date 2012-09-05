@@ -1,11 +1,11 @@
-.group
-  = f.label :theme_id, t("activerecord.attributes.slideshow.theme_id", :default => "Theme"), :class => :label
-  = f.text_field :theme_id, :class => 'text_field'
-  %span.description Ex: a simple text
+# .group
+#   = f.label :theme_id, t("activerecord.attributes.slideshow.theme_id", :default => "Theme"), :class => :label
+#   = f.text_field :theme_id, :class => 'text_field'
+#   %span.description тема
 .group
   = f.label :name, t("activerecord.attributes.slideshow.name", :default => "Name"), :class => :label
   = f.text_field :name, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description название для удобства навигации
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

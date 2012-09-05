@@ -22,7 +22,7 @@
         = simple_format(group.calendar)
       %td{:style=>"border: 1px solid black;"}
       
-        #{I18n.localize(group.start, :format=>"%d.%b")} - #{I18n.localize(group.finish, :format=>"%d.%b")}
+        #{I18n.localize(group.start, :format=>"%d.%m")} - #{I18n.localize(group.finish, :format=>"%d.%m") if group.start&&group.finish?} 
       %td{:style=>"border: 1px solid black;"}
         = group.teacher.fullname        
       %td{:style=>"border: 1px solid black;"}

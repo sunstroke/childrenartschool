@@ -26,7 +26,7 @@
         %h2
           Стоимость обучения
         = number_to_currency(@group.price.abs, :precision => 0) if @group.price?
-        = @group.desc
+        =raw( @group.desc)
         %br/
         %br/
       %h2

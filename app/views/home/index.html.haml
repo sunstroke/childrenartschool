@@ -36,7 +36,7 @@
 #next_course
   .h Ближайшие курсы
   -@groups.each do |group|
-    %article.item_event
+    %article.item_event{:style=>"height: 120px;"}
       .date
         .month= I18n.localize(group.start, :format=>"%B")
         .day= I18n.localize(group.start, :format=>"%d")

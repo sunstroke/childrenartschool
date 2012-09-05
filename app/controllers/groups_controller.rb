@@ -3,8 +3,9 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.xml
   def index
-    @groups = Group.all
-    render :layout => 'admin'
+    @groups = Group.find(:all,:order=>["program_id ASC, position ASC"], :conditions=>["open=?",true])
+    
+    # render :layout => 'admin'
     # respond_to do |format|
     #   format.html # index.html.erb
     #   format.xml  { render :xml => @groups }

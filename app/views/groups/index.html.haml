@@ -1,0 +1,25 @@
+%table.table
+  %tr
+    %th.first Название
+    %th
+      Дни занятий
+    %th
+      Педагог
+    %th
+      Возраст детей
+    %th
+      Навыки
+    %th.last &nbsp;
+  - @groups.each do |group|
+    %tr{:class => cycle("odd", "even")} 
+      %td
+        = group.name             
+      %td
+        = simple_format(group.calendar)
+      %td
+        = group.teacher.fullname
+      %td
+        #{@group.age_start} - #{@group.age_finish} лет              
+      %td
+      %td.last
+        = link_to "Подать заявку", new_group_person_path(group), :class=>"button"

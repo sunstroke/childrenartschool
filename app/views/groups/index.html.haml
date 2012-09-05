@@ -32,4 +32,4 @@
       %td{:style=>"border: 1px solid black;"}      
         = number_to_currency(group.price.abs, :precision => 0) if group.price?
       %td.last{:style=>"border: 1px solid black;"}
-        = link_to "Подать заявку", new_group_person_path(group), :class=>"button"
+        = link_to "Подать заявку", new_group_person_path(group)

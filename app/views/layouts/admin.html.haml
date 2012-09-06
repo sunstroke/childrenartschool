@@ -16,6 +16,8 @@
         #user-navigation
           %ul.wat-cf
             %li
+              = current_user.email
+            %li
               %a{:href => "#"}= t("web-app-theme.profile", :default => "Profile")
             %li
               %a{:href => "#"}= t("web-app-theme.settings", :default => "Settings")

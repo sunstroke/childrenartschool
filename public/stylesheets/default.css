@@ -91,11 +91,13 @@ position: absolute;
     font-family: Helvetica, Arial, sans-serif;
 }
 .theme-orman .nivo-caption a { 
-    color:#fff;
+    /*color:#fff;
     border-bottom:1px dotted #fff;
+*/
 }
 .theme-orman .nivo-caption a:hover { 
-    color:#fff;
+    /*color:#fff;
+*/
 }
 
 .theme-orman .ribbon {

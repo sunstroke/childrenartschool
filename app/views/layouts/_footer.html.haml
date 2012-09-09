@@ -1,6 +1,21 @@
 #copyright    
   Copyright &copy; #{Date.today.year}
 #footmen.menu
+  %ul{:style=>"margin-left: 10px;"}
+    - Menu.where("parent is ?", nil).order("position").each do |menu|
+      %li{:style=>"float:left; width: 220px; margin-bottom:10px;"}
+        = link_to menu.name, menu.link
+        - if menu.children.exists?
+          %ul{:style=>"margin-left: 10px;"}
+            - menu.children.each do |children|
+              %li
+                = link_to children.name, children.link
+                - if children.children.exists?
+                  %ul
+                    - children.children.each do |subchildren|
+                      %li
+                        = link_to subchildren.name, subchildren.link
+-#
   .column
     %p
       =link_to "ШКОЛА","/school"

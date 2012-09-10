@@ -4,5 +4,6 @@
 User-agent: *
 Disallow: /admin/*
 Disallow: /groups/*/people
+Disallow: /people/*
 Host: school-f.ru
 

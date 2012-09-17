@@ -28,7 +28,8 @@ class GroupsController < ApplicationController
   end
   def view
     @group = Group.find_by_label(params[:label])
-    @title="Группа "+@group.name            
+    @title=@group.name+", "+@group.program.name
+    # render :layout => 'admin'           
     render :action=>"show"
   end
   # GET /groups/new

@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
   # GET /groups/1.xml
   def show
     @group = Group.find(params[:id])
-    @title="Группа "+@group.name        
+    @title=@group.name+", "+@group.program.name
     # render :layout => 'admin'
      respond_to do |format|
        format.html # show.html.erb

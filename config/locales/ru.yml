@@ -13,6 +13,17 @@
 ru:
   Page: страницу
   Program: программу
+  Direction: направление
+  Group: группу
+  Live_news: live view
+  Menu: пункт меню
+  Person: ученика
+  Photo:  фотографию
+  Service: сервис
+  Slideshow: слайдшоу
+  Teacher: преподавателя
+  User: пользователя
+  Welcome: баннер
   create: создал
   update: изменил
   destroy: удалил

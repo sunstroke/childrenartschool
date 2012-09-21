@@ -35,6 +35,7 @@ match '/admin', :to => redirect("http://school-f.ru/")
 namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
+  resources :users
   resources :groups
   resources :pages
     resources :menus do

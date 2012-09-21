@@ -6,7 +6,7 @@
         <% @audits.each do |audit|%>
           <%= l(audit.created_at, :format=>"%d/%m %I:%M")%>
           <%= raw (audit.comment )%>
-          <%= simple_format (audit.audited_changes )%>
+          <%= simple_format (audit.audited_changes.html_safe )%>
           <br/>
         <% end %>
 

@@ -43,7 +43,7 @@ class Admin::DirectionsController < ApplicationController
   # POST /directions.xml
   def create
     @direction = Direction.new(params[:direction])
-
+    current_user
     respond_to do |format|
       if @direction.save
         format.html { redirect_to(admin_direction_path(@direction), :notice => 'Direction was successfully created.') }

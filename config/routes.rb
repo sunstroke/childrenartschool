@@ -1,8 +1,8 @@
 # -*- encoding : utf-8 -*-
 Schoolf::Application.routes.draw do
   
-  
-  
+  resource :dashboard
+
   resources :menus 
 
   resources :photos

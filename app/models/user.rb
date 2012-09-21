@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class User < ActiveRecord::Base
+  audited
   authenticates_with_sorcery!
   
   attr_accessible :email, :password, :password_confirmation

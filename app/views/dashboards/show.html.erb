@@ -1,0 +1,17 @@
+<div class="block" id="block-text">  
+  <div class="content">
+    <h2 class="title">Dashboard</h2>
+    <div class="inner">
+
+        <% @audits.each do |audit|%>
+          <%= l(audit.created_at, :format=>"%d/%m %I:%M")%>
+          <%= raw (audit.comment )%>
+          <%= simple_format (audit.audited_changes )%>
+          <br/>
+        <% end %>
+
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

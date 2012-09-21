@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Teacher < ActiveRecord::Base
+    audited
   has_many :groups
   has_many :program, :through=>:groups
   validates_presence_of :full_photo, :message => "не может быть пустым"

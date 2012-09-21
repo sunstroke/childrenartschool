@@ -11,6 +11,7 @@ gem 'sorcery'
 gem 'curb-fu'
 gem "acts_as_list"
 gem 'sms24x7'
+gem "audited-activerecord"
 # gem 'sqlite3'
 
 gem "compass", ">= 0.11.5"

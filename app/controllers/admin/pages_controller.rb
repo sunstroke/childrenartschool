@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Admin::PagesController < ApplicationController
   before_filter :require_login
+  after_filter :comment_audit, :only=>[:create, :update, :destroy]
   # GET /admin/pages
   # GET /admin/pages.xml
    layout'admin'
@@ -43,6 +44,7 @@ class Admin::PagesController < ApplicationController
   # POST /admin/pages
   # POST /admin/pages.xml
   def create
+    current_user.email
     @page = Page.new(params[:page])
 
     respond_to do |format|
@@ -83,4 +85,5 @@ class Admin::PagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end

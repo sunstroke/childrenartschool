@@ -11,6 +11,7 @@ Schoolf::Application.config.session = {
   
   :secret      => 'cb8e1ac9dd5f4d08974f9f4d74abb45239a98b6cc3c59829ce6b61280160c421b4c18b0a721c26e0b4f43c1195875902...'
 }
+
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")

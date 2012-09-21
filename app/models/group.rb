@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Group < ActiveRecord::Base
+    audited
   belongs_to :program
   has_many :people, :class_name => "Person" ,:foreign_key => "current_group", :conditions=>["failure != ? ",true]
   belongs_to :teacher

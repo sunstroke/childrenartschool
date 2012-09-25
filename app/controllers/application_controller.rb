@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   
   def comment_audit
     audit=Audit.last
-    if User.exists?(audit.user_id)
+    if audit.user_id&&User.exists?(audit.user_id)
       audit.username=User.find(audit.user_id).email
     else
       audit.username= "с сайта"

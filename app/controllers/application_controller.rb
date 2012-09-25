@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
   
   def comment_audit
     audit=Audit.last
-    audit.username=current_user.email
+    if User.exists?(audit.user_id)
+      audit.username=User.find(audit.user_id).email
+    else
+      audit.username= "с сайта"
+    end
     audit.comment= "Пользователь "+audit.username+" "+t(audit.action)+" "+ t(audit.auditable_type)
     audit.save
   end

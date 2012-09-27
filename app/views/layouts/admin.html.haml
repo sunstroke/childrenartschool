@@ -26,7 +26,7 @@
         #main-navigation
           %ul.wat-cf
             %li{:class => controller.controller_path == 'dashboards' ? 'active' : '' }
-              %a{:href => admin_programs_path} Dashboard          
+              %a{:href => dashboards_path} Dashboard          
             %li{:class => controller.controller_path == 'admin/programs' ? 'active' : '' }
               %a{:href => admin_programs_path} Учебные программы
             %li{:class => controller.controller_path == 'admin/teachers' ? 'active' : '' }

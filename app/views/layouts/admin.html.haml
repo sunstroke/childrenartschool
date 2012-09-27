@@ -25,8 +25,8 @@
               %a.logout{:href => logout_path }= t("web-app-theme.logout", :default => "Выдох")
         #main-navigation
           %ul.wat-cf
-            %li{:class => controller.controller_path == 'dashboards' ? 'active' : '' }
-              %a{:href => dashboards_path} Dashboard          
+            %li{:class => controller.controller_path == 'dashboard' ? 'active' : '' }
+              %a{:href => "/dashboard"} Dashboard          
             %li{:class => controller.controller_path == 'admin/programs' ? 'active' : '' }
               %a{:href => admin_programs_path} Учебные программы
             %li{:class => controller.controller_path == 'admin/teachers' ? 'active' : '' }

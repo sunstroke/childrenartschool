@@ -3,22 +3,22 @@
     #slider.nivoSlider
       -@banners.each do |b|
         -if b.url?
-          =link_to image_tag(b.image_url, :alt=>b.name, :title=>"#b#{b.id}"), b.url
+          =link_to image_tag(b.image_url, :alt=>b.name, :title=>"#b#{b.id}"), b.url if b.image_url
         -else
-          =image_tag(b.image_url, :alt=>b.name, :title=>"#b#{b.id}")
+          =image_tag(b.image_url, :alt=>b.name, :title=>"#b#{b.id}") if b.image_url
     -@banners.each do |b|
       %div{:id=>"b#{b.id}", :class=>"nivo-html-caption"}
         -if b.text!=""
           -if b.style_text==""
             %div{:id=>"#text_1", :style=>"position: absolute; top: 50px;left: 50px;background: white;opacity: 0.6; color:black; font-size: 18pt;padding: 10px;"}
               -if b.url?
-                =link_to b.text, b.url, :style=>"text-decoration: none; display:block;"
+                =link_to b.text, b.url, :style=>"text-decoration: none; display:block;" 
               -else
                 =simple_format b.text
           - else
             %div{:id=>"#text_1", :style=>"#{b.style_text}"}
               -if b.url?
-                =link_to b.text, b.url, :style=>"text-decoration: none; display:block;"
+                =link_to b.text, b.url, :style=>"text-decoration: none; display:block;" 
               -else
                 =simple_format b.text
         -if b.second_text!=""

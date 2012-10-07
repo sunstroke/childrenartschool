@@ -8,9 +8,6 @@
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
     %link{:href => "/stylesheets/default.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/stylesheets/nivo-slider.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
-    %script{:src => "http://use.typekit.com/oxc1rpe.js", :type => "text/javascript"}
-    :javascript
-      try{Typekit.load();}catch(e){}    
     :css
       body {
           font-family: "pt-sans-narrow",sans-serif;
@@ -201,7 +198,6 @@
     В вашем браузере отключен Javascript. При выключенном Javascript сайт может работать не корректно.
     Рекомендуем 
     %a{:href=>"http://www.enable-javascript.com/ru/"}включить поддержку Javascript в вашем браузере!
-  %script{:src => "/javascripts/jquery.nivo.slider.pack.js", :type => "text/javascript"}
   :javascript
     $(window).load(function() {
         $('#slider').nivoSlider();

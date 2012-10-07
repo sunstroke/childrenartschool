@@ -1,8 +1,14 @@
 # -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
   after_filter :comment_audit, :only=>[:create, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, :with => :rescue_not_found  
   protect_from_forgery
 
+
+  protected
+  def rescue_not_found
+    render :template => 'application/not_found', :status => :not_found
+  end
  
   private
   

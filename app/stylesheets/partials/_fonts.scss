@@ -2,5 +2,45 @@
 // see http://compass-style.org/docs/reference/compass/css3/font_face/
 
 @import "compass/css3/font-face";
+@font-face {
+    font-family: 'DaxlineProMedium';
+    src: url('/fonts/DaxlinePro-Medium.eot');
+    src: local('☺'),
+         url('/fonts/DaxlinePro-Medium.woff') format('woff'),
+         url('/fonts/DaxlinePro-Medium.ttf') format('truetype'),
+         url('/fonts/DaxlinePro-Medium.svg') format('svg');
+    font-weight: medium;
+    font-style: medium;
+}
+@font-face {
+    font-family: 'DaxlineProRegular';
+    src: url('/fonts/DaxlinePro-Regular.eot');
+    src: local('☺'),
+         url('/fonts/DaxlinePro-Regular.woff') format('woff'),
+         url('/fonts/DaxlinePro-Regular.ttf') format('truetype'),
+         url('/fonts/DaxlinePro-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'DINProMedium';
+    src: url('/fonts/DINPro-Medium.eot');
+    src: local('☺'),
+         url('/fonts/DINPro-Medium.woff') format('woff'),
+         url('/fonts/DINPro-Medium.ttf') format('truetype'),
+         url('/fonts/DINPro-Medium.svg') format('svg');
+    font-weight: medium;
+    font-style: medium;
+}
+@font-face {
+    font-family: 'DINProRegular';
+    src: url('/fonts/DINPro-Regular.eot');
+    src: local('☺'),
+         url('/fonts/DINPro-Regular.woff') format('woff'),
+         url('/fonts/DINPro-Regular.ttf') format('truetype'),
+         url('/fonts/DINPro-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 

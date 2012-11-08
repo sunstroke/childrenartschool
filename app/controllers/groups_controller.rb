@@ -30,7 +30,7 @@ before_filter :setup_negative_captcha, :only => [:show, :view]
   end
   def view
     @group = Group.find_by_label(params[:label])
-    @person = Person.new(:group=>@group)    
+    @person = Person.new(:group_id=>@group.id)    
     @title=@group.name+", "+@group.program.name
     # render :layout => 'admin'           
     render :action=>"show"

@@ -2,26 +2,29 @@
   %h2
     Заявка принята
   .inner
-    %p
-      %b
-        = t("activerecord.attributes.person.fullname", :default => t("activerecord.labels.fullname", :default => "Полное имя"))
-        \:
-      = @person.fullname
-    %p
-      %b
-        = t("activerecord.attributes.person.current_group", :default => t("activerecord.labels.zachetka", :default => "группа"))
-        \:
-      = @person.group.name
+    -if @person.fullname
+      %p
+        %b
+          = t("activerecord.attributes.person.fullname", :default => t("activerecord.labels.fullname", :default => "Полное имя"))
+          \:
+        = @person.fullname
+    - if @person.group.name 
+      %p
+        %b
+          = t("activerecord.attributes.person.current_group", :default => t("activerecord.labels.zachetka", :default => "группа"))
+          \:
+        = @person.group.name
     -# %p
       #   %b
       #     = t("activerecord.attributes.person.tel", :default => t("activerecord.labels.tel", :default => "Номер телефона для связи"))
       #     \:
       #   = @person.tel
-    %p
-      %b
-        = t("activerecord.attributes.person.birthday", :default => t("activerecord.labels.birthday", :default => "Дата рождения"))
-        \:
-      = l @person.birthday , :format=>:brth if @person.birthday
+    - if @person.group.name       
+      %p
+        %b
+          = t("activerecord.attributes.person.birthday", :default => t("activerecord.labels.birthday", :default => "Дата рождения"))
+          \:
+        = l @person.birthday , :format=>:brth if @person.birthday
     -# %p
       #   %b
       #     = t("activerecord.attributes.person.about", :default => t("activerecord.labels.about", :default => "Дополнительная информация"))

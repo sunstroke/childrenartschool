@@ -46,16 +46,10 @@
               = f.negative_text_field @captcha, :tel, :class => 'text_field'
               = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class => :label              
             %br
-            Или
-            %br
-            .group
-              = f.label :mail, t("activerecord.attributes.person.mail", :default => "Адрес электронной почты"), :class => :label
-              = f.text_field :mail, :class => 'text_field'
-              %span.description Ex: mail@mail.com  
             .group
               = redactor("#person_about")
               = f.label :about, t("activerecord.attributes.person.about", :default => "Дополнительная информация"), :class => :label
-              = f.text_area :about, :class => 'text_area'              
+              = f.text_area :about, :class => 'text_area', :style=>"width: 200px; height: 50px;"
             .group.navform.wat-cf
               %button.button{:type => "submit"}
                 = image_tag("web-app-theme/icons/tick.png", :alt => "Отправить заявку", :default => "Отправить заявку")

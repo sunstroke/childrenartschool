@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def welcome_email(user)
     @user = user
     mail(:to => "k.sunstroke@gmail.com, alexandra@school-f.ru, alexey.tkachev@school-f.ru,  mashafoto@mail.ru ",
-         :subject => "Новая заявка в группу #{@user.group.name}")
+         :subject => "Новая заявка в группу #{@user.group.name if @user.group}")
   end  
   def reset_password_email(user)
     @user = user

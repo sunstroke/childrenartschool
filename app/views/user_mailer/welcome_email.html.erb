@@ -5,13 +5,13 @@
   </head>
   <body>
 
-    <h1>На сайте новая заявка от <%= @user.fullname %></h1>
+    <h1>На сайте новая заявка от <%= @user.fullname||"Noname" %></h1>
     <p>Поздравляем!</p>    
-    <p>Возраст: <%= @user.birthday %></p>
+    <p>Возраст: <%= @user.birthday||"Noname" %></p>
     <p><%= @user.tel %></p>
     <p><%= @user.about %></p>
     <p>Чтобы посмотреть более полную информацию пройдите по ссылке    </p>
-    <p><%= link_to @user.fullname, admin_person_url(@user)%>
+    <p><%= link_to @user.fullname||"Noname", admin_person_url(@user)%>
     </p>
 
   </body>

@@ -28,7 +28,7 @@ before_filter :setup_negative_captcha, :only => [:new, :create]
   # GET /people/new
   # GET /people/new.xml
   def new
-
+    
     @group = Group.find(params[:group_id])
     @title="Подать заявку на обучение в группе: "+@group.name        
     @person = Person.new(:group=>@group)

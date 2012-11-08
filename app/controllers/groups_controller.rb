@@ -102,7 +102,7 @@ before_filter :setup_negative_captcha, :only => [:show, :view]
          @captcha = NegativeCaptcha.new(
            :secret => '90f36c6e333640f5a8fc2016fa4637062c3fdc23636ee03d8974d3b251090d8981dc759c36fe12bff820dd33f1cf993f029bfc62ac9d908b352309a2d2129862', #A secret key entered in environment.rb.  'rake secret' will give you a good one.
            :spinner => request.remote_ip, 
-           :fields => [:fullname,:current_group,:tel,:mail,:about], #Whatever fields are in your form 
+           :fields => [:tel,:mail,:about], #Whatever fields are in your form 
            :params => params)
        end
   

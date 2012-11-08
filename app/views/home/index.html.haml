@@ -103,9 +103,9 @@
         -#%td{:style=>"border: 1px solid black;"}
 
         %td{:style=>"border: 1px solid black; padding:3px;"}      
-          = number_to_currency(group.price.abs, :precision => 0) if group.price?
+          %b= number_to_currency(group.price.abs, :precision => 0) if group.price?
         %td.last{:style=>"border: 1px solid black; padding:3px;"}
-          = link_to "Подать заявку", new_group_person_path(group)
+          = link_to "Записаться", new_group_person_path(group), :class=>"button"
 -#buttons
   %a.prev{:href=>"#"}Назад
   %a.next{:href=>"#"}Вперед

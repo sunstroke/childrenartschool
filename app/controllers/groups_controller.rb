@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class GroupsController < ApplicationController
+before_filter :setup_negative_captcha, :only => [:show, :view]  
   # GET /groups
   # GET /groups.xml
   def index
@@ -16,6 +17,7 @@ class GroupsController < ApplicationController
   # GET /groups/1.xml
   def show
     @group = Group.find(params[:id])
+    @person = Person.new(:group=>@group)    
     @title=@group.name+", "+@group.program.name
     # render :layout => 'admin'
      respond_to do |format|
@@ -28,6 +30,7 @@ class GroupsController < ApplicationController
   end
   def view
     @group = Group.find_by_label(params[:label])
+    @person = Person.new(:group=>@group)    
     @title=@group.name+", "+@group.program.name
     # render :layout => 'admin'           
     render :action=>"show"
@@ -93,4 +96,14 @@ class GroupsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  private
+
+       def setup_negative_captcha
+         @captcha = NegativeCaptcha.new(
+           :secret => '90f36c6e333640f5a8fc2016fa4637062c3fdc23636ee03d8974d3b251090d8981dc759c36fe12bff820dd33f1cf993f029bfc62ac9d908b352309a2d2129862', #A secret key entered in environment.rb.  'rake secret' will give you a good one.
+           :spinner => request.remote_ip, 
+           :fields => [:fullname,:current_group,:tel,:mail,:about], #Whatever fields are in your form 
+           :params => params)
+       end
+  
 end

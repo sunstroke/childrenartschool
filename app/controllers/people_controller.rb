@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
 
-
 class PeopleController < ApplicationController
 before_filter :setup_negative_captcha, :only => [:new, :create]  
   # GET /people
@@ -58,11 +57,11 @@ before_filter :setup_negative_captcha, :only => [:new, :create]
       if @captcha.valid? && @person.save
         @person.update_attributes(params[:person])
         UserMailer.welcome_email(@person).deliver        
-        format.html { redirect_to(@person, :notice => 'Person was successfully created.') }
+        format.html { redirect_to(:back, :notice => 'заявка подана') }
         format.xml  { render :xml => @person, :status => :created, :location => @person }
       else
         flash[:notice] = @captcha.error if @captcha.error 
-        format.html { render :action => "new" }
+        format.html { redirect_to(:back, :notice => 'Поле номер обязательно для заполнения') }
         format.xml  { render :xml => @captcha.errors, :status => :unprocessable_entity }
       end
     end

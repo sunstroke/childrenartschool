@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class PagesController < ApplicationController
+
   # GET /pages
   # GET /pages.xml
   def index

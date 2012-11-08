@@ -1,3 +1,4 @@
+
 %section#section
   #info
     %h1
@@ -6,8 +7,9 @@
       = @group.name
     -if @group.prim?
       = raw(@group.prim)
-      - if current_user
-        = link_to "Редактировать группу", edit_admin_group_path(@group) , :class=>"button"      
+      %hr      
+    - if current_user
+      = link_to "Редактировать группу", edit_admin_group_path(@group) , :class=>"button"      
       %hr      
     .col{:style=>"float:left; width: 450px; text-align: left;"}
       - if @group.program_id? 
@@ -37,7 +39,16 @@
       - if @group.open?      
         %h2
           Хочу учиться
-        = link_to "Подать заявку", new_group_person_path(@group), :class=>"button"    
+        .inner
+          = form_for [@group,@person], :html => { :class => :form }  do |f|
+            = raw negative_captcha(@captcha) 
+            .group
+              = f.negative_text_field @captcha, :tel, :class => 'text_field'
+              = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class => :label              
+            .group.navform.wat-cf
+              %button.button{:type => "submit"}
+                = image_tag("web-app-theme/icons/tick.png", :alt => "Отправить заявку", :default => "Отправить заявку")
+                Отправить заявку
     
   %aside#side.clearfix
     = image_tag @group.teacher.avatar.url, :style=>"width: 300px; padding-bottom: 10px;"

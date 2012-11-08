@@ -162,43 +162,44 @@
           text-align: right;
         }
 
-      %body{:style => "margin: 0 auto; width: 1024px;", :class => "#{controller.controller_name}" }
-  %header{:style => "height: 100px; position: relative; margin: 0 auto; background: #fff; padding:0; width: 1024px;"}
-    #logo{:style => "left: 30px;top: 15px; position: absolute; width: 140px; height: 70px;"}
-      %a{:href=>"/"}
-        %img{:src => "/images/logo.png", :style => " width: 130px;"}/
-    %nav
-      %ul
-        %li
-          = link_to_unless_current 'ШКОЛА',"/school"
-        %li
-          = link_to_unless_current 'КУРСЫ',"/courses"
-        %li
-          = link_to_unless_current "СЕМИНАРЫ", "/workshop"
-        - if current_user
+  %body{:style => "margin: 0 auto; width: 1024px;", :class => "#{controller.controller_name}" }
+    = render "layouts/fb"
+    %header{:style => "height: 100px; position: relative; margin: 0 auto; background: #fff; padding:0; width: 1024px;"}
+      #logo{:style => "left: 30px;top: 15px; position: absolute; width: 140px; height: 70px;"}
+        %a{:href=>"/"}
+          %img{:src => "/images/logo.png", :style => " width: 130px;"}/
+      %nav
+        %ul
           %li
-            = link_to_unless_current "Админка", "/dashboard"
+            = link_to_unless_current 'ШКОЛА',"/school"
+          %li
+            = link_to_unless_current 'КУРСЫ',"/courses"
+          %li
+            = link_to_unless_current "СЕМИНАРЫ", "/workshop"
+          - if current_user
+            %li
+              = link_to_unless_current "Админка", "/dashboard"
           
-    #contacts
-      #tel{:style => "font-size: 24px;margin: 5px 0;"} +7 (495) 722-77-59
-      %div
-        %a{:href => "/contacts", :style => "color: black;font-size: 15px; "} другие контакты
-  #container
-    #main{ :role => 'main' }
-      = render "layouts/flashes"
-      = yield
-    #container-footer        
-  %footer#footer
-    = render "layouts/footer"
+      #contacts
+        #tel{:style => "font-size: 24px;margin: 5px 0;"} +7 (495) 722-77-59
+        %div
+          %a{:href => "/contacts", :style => "color: black;font-size: 15px; "} другие контакты
+    #container
+      #main{ :role => 'main' }
+        = render "layouts/flashes"
+        = yield
+      #container-footer        
+    %footer#footer
+      = render "layouts/footer"
 
-  -# Javascript at the bottom for fast page loading
-  = render "layouts/javascripts"
-  = render :partial => "layouts/analytics"    
-  #jsnotice{:style=>"position: absolute; top: 0;"}
-    В вашем браузере отключен Javascript. При выключенном Javascript сайт может работать не корректно.
-    Рекомендуем 
-    %a{:href=>"http://www.enable-javascript.com/ru/"}включить поддержку Javascript в вашем браузере!
-  :javascript
-    $(window).load(function() {
-        $('#slider').nivoSlider();
-    });
+    -# Javascript at the bottom for fast page loading
+    = render "layouts/javascripts"
+    = render :partial => "layouts/analytics"    
+    #jsnotice{:style=>"position: absolute; top: 0;"}
+      В вашем браузере отключен Javascript. При выключенном Javascript сайт может работать не корректно.
+      Рекомендуем 
+      %a{:href=>"http://www.enable-javascript.com/ru/"}включить поддержку Javascript в вашем браузере!
+    :javascript
+      $(window).load(function() {
+          $('#slider').nivoSlider();
+      });

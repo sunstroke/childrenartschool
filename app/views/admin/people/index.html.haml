@@ -26,11 +26,11 @@
             %td
               = person.id
             %td
-              = l person.created_at , :format=>:brth
+              = l person.created_at , :format=>:brth 
             %td
               = link_to person.fullname, admin_person_path(person) if person.fullname
             %td
-              = age(person.birthday) if person
+              = age(person.birthday) if person.birthday
             %td
               = link_to person.group.name, admin_group_path(person.group)              
             %td.last

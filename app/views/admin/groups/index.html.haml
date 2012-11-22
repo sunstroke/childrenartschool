@@ -3,8 +3,8 @@
     %ul.wat-cf
       %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admin_groups_path
       %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_group_path
-      %li= link_to "#{t("web-app-theme.actual", :default => "Актуальные")}", admin_actual_group_path
-      %li= link_to "#{t("web-app-theme.old", :default => "Старые")}", admin_old_group_path
+      %li= link_to "#{t("web-app-theme.actual", :default => "Актуальные")}", admin_actual_groups_path
+      %li= link_to "#{t("web-app-theme.old", :default => "Старые")}", admin_old_groups_path
   .content
     %h2.title
       = t("web-app-theme.all", :default => "All")

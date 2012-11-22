@@ -36,6 +36,8 @@ namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   resources :users
+  match 'groups/actual', :to=>'groups#actual', :as=>"actual"              
+  match 'groups/old', :to=>'groups#old', :as=>"old"  
   resources :groups
   resources :pages
     resources :menus do
@@ -48,6 +50,7 @@ namespace :admin do
   
   match 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"      
   match 'people/archive', :to=>'people#archive', :as=>"archive"            
+              
   resources :people
   resources :programs
   match 'welcomes/noactive', :to=>'welcomes#noactive', :as=>"noactive_banner"        

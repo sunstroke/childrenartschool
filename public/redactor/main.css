@@ -33,7 +33,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 }
 /* ~~ This fixed width container surrounds all other blocks ~~ */
 .container {
-	width: 1265px;
+	width: 1024px;
 	color:#000;
 	margin: 200px auto 40px; /* the auto value on the sides, coupled with the width, centers the layout */
 
@@ -181,5 +181,5 @@ section {
 .slide img {
 	display: block;
 	float: left;
-	width: 1265px;
+	width: 1024px;
 }

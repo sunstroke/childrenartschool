@@ -68,7 +68,7 @@ jQuery(function( $ ){
 					$('#footer .menu').width($(window).width()*0.9);									
 				 */
 
-					$('#slider').width($(window).width());
+					$('#slider').width(1024);
 					$('#buttons').width($(window).width()*0.9);
 					$('#caption li,#slider ul li, #slider ul li img').width($('#slider').width());	
 					$('#slider ul li img,#slider ul li').height((1000*$(window).width())/1600);

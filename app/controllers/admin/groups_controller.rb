@@ -28,10 +28,6 @@ class Admin::GroupsController < ApplicationController
     else      
       @groups = Group.find(:all,:order=>["open DESC, program_id ASC, position ASC"],:conditions=>['finish>?',Time.now])
     end
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @groups }
-    end
     render "index"
   end
   def old
@@ -41,10 +37,6 @@ class Admin::GroupsController < ApplicationController
       @groups = Group.find(:all,:order=>["program_id ASC, position ASC"], :conditions=>['program_id IN (?) and finish<?',@program, Time.now])      
     else      
       @groups = Group.find(:all,:order=>["open DESC, program_id ASC, position ASC"],:conditions=>['finish<?',Time.now])
-    end
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @groups }
     end
     render "index"
   end

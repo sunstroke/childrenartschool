@@ -1,0 +1,33 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admin_record_books_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_record_book_path
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      RecordBooks
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+            = t("activerecord.attributes.admin_record_book.person_id", :default => t("activerecord.labels.person_id", :default => "Person_id"))
+          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th.last &nbsp;
+        - @record_books.each do |record_book|
+          %tr{:class => cycle("odd", "even")}
+            %td
+              = record_book.id
+            %td
+              = link_to record_book.person_id, admin_record_book_path(record_book)
+            %td
+              = record_book.created_at
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_record_book_path(record_book)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_record_book_path(record_book)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_record_book_path(record_book), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+      .actions-bar.wat-cf
+        .actions
+- content_for :sidebar, render(:partial => 'sidebar')

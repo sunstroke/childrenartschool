@@ -1,0 +1,47 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admin_record_books_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_record_book_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_record_book_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.admin_record_book.person_id", :default => t("activerecord.labels.person_id", :default => "Person"))
+          \:
+        = @record_book.person_id
+      %p
+        %b
+          = t("activerecord.attributes.admin_record_book.group_id", :default => t("activerecord.labels.group_id", :default => "Group"))
+          \:
+        = @record_book.group_id
+      %p
+        %b
+          = t("activerecord.attributes.admin_record_book.price", :default => t("activerecord.labels.price", :default => "Price"))
+          \:
+        = @record_book.price
+      %p
+        %b
+          = t("activerecord.attributes.admin_record_book.payment_all", :default => t("activerecord.labels.payment_all", :default => "Payment all"))
+          \:
+        = @record_book.payment_all
+      %p
+        %b
+          = t("activerecord.attributes.admin_record_book.contract", :default => t("activerecord.labels.contract", :default => "Contract"))
+          \:
+        = @record_book.contract
+      %p
+        %b
+          = t("activerecord.attributes.admin_record_book.is_contract", :default => t("activerecord.labels.is_contract", :default => "Is contract"))
+          \:
+        = @record_book.is_contract
+      %p
+        %b
+          = t("activerecord.attributes.admin_record_book.status", :default => t("activerecord.labels.status", :default => "Status"))
+          \:
+        = @record_book.status
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_record_book_path(@record_book), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_record_book_path(@record_book), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

@@ -1,0 +1,46 @@
+.group
+  = f.label :group_id, t("activerecord.attributes.lessons_log.group_id", :default => "Group"), :class => :label
+  = f.text_field :group_id, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :lesson_num, t("activerecord.attributes.lessons_log.lesson_num", :default => "Lesson num"), :class => :label
+  = f.text_field :lesson_num, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :teacher_id, t("activerecord.attributes.lessons_log.teacher_id", :default => "Teacher"), :class => :label
+  = f.text_field :teacher_id, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :location_id, t("activerecord.attributes.lessons_log.location_id", :default => "Location"), :class => :label
+  = f.text_field :location_id, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :date_lesson, t("activerecord.attributes.lessons_log.date_lesson", :default => "Date lesson"), :class => :label
+  = f.datetime_select :date_lesson, :class => 'datetime_select'
+  %span.description Ex: a simple text
+.group
+  = f.label :count_hours, t("activerecord.attributes.lessons_log.count_hours", :default => "Count hours"), :class => :label
+  = f.text_field :count_hours, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :theme_lesson, t("activerecord.attributes.lessons_log.theme_lesson", :default => "Theme lesson"), :class => :label
+  = f.text_area :theme_lesson, :class => 'text_area'
+  %span.description Ex: a simple text
+.group
+  = f.label :descript, t("activerecord.attributes.lessons_log.descript", :default => "Descript"), :class => :label
+  = f.text_area :descript, :class => 'text_area'
+  %span.description Ex: a simple text
+.group
+  = f.label :replachement, t("activerecord.attributes.lessons_log.replachement", :default => "Replachement"), :class => :label
+  = f.check_box :replachement, :class => 'check_box'
+  %span.description Ex: a simple text
+.group
+  = f.label :replachement_pay, t("activerecord.attributes.lessons_log.replachement_pay", :default => "Replachement pay"), :class => :label
+  = f.text_field :replachement_pay, :class => 'text_field'
+  %span.description Ex: a simple text
+.group.navform.wat-cf
+  %button.button{:type => "submit"}
+    = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
+    = t("web-app-theme.save", :default => "Save")
+  %span.text_button_padding= t("web-app-theme.or", :default => "or")
+  = link_to t("web-app-theme.cancel", :default => "Cancel"), admin_lessons_logs_path, :class => "text_button_padding link_button"

@@ -1,0 +1,30 @@
+.group
+  = f.label :lessonslog_id, t("activerecord.attributes.attendance.lessonslog_id", :default => "Lessonslog"), :class => :label
+  = f.text_field :lessonslog_id, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :group_id, t("activerecord.attributes.attendance.group_id", :default => "Group"), :class => :label
+  = f.text_field :group_id, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :person_id, t("activerecord.attributes.attendance.person_id", :default => "Person"), :class => :label
+  = f.text_field :person_id, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :attendance, t("activerecord.attributes.attendance.attendance", :default => "Attendance"), :class => :label
+  = f.check_box :attendance, :class => 'check_box'
+  %span.description Ex: a simple text
+.group
+  = f.label :lateness, t("activerecord.attributes.attendance.lateness", :default => "Lateness"), :class => :label
+  = f.check_box :lateness, :class => 'check_box'
+  %span.description Ex: a simple text
+.group
+  = f.label :reason, t("activerecord.attributes.attendance.reason", :default => "Reason"), :class => :label
+  = f.text_field :reason, :class => 'text_field'
+  %span.description Ex: a simple text
+.group.navform.wat-cf
+  %button.button{:type => "submit"}
+    = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
+    = t("web-app-theme.save", :default => "Save")
+  %span.text_button_padding= t("web-app-theme.or", :default => "or")
+  = link_to t("web-app-theme.cancel", :default => "Cancel"), admin_attendances_path, :class => "text_button_padding link_button"

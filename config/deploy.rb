@@ -53,7 +53,7 @@ namespace :deploy do
   end
   
   before "deploy:restart", :roles => :app do
-    run "cd #{deploy_to}; rm -f public/stylesheets/cache/*.css public/stylesheets/style.css public/javascripts/cache/*.js"
+    run "cd #{deploy_to}; rm -f public/stylesheets/cache/*.css public/javascripts/cache/*.js"
   end
   
   desc "Restart application"

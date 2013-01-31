@@ -10,7 +10,7 @@
     %link{:href => "/stylesheets/nivo-slider.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     :css
       body {
-          font-family: "DINProRegular",sans-serif;
+          font-family: "DINPro-Regular",sans-serif;
           width: 1024px;
           margin: 0 auto;
       }
@@ -26,7 +26,7 @@
           width: 200px;
           color: #fff;
           font-size: 20px;
-          font-family: "DINProRegular",sans-serif;
+          font-family: "DINPro-Regular",sans-serif;
           font-style: normal;
           font-weight: 500;
         }
@@ -144,7 +144,7 @@
         }
         article.more_item h1 {
           font-size: 18px;
-          font-family: "DINProRegular",sans-serif;
+          font-family: "DINPro-Regular",sans-serif;
           font-style: normal;
           font-weight: 500; 
           padding: 0 40px;   
@@ -195,10 +195,7 @@
     -# Javascript at the bottom for fast page loading
     = render "layouts/javascripts"
     = render :partial => "layouts/analytics"    
-    #jsnotice{:style=>"position: absolute; top: 0;"}
-      В вашем браузере отключен Javascript. При выключенном Javascript сайт может работать не корректно.
-      Рекомендуем 
-      %a{:href=>"http://www.enable-javascript.com/ru/"}включить поддержку Javascript в вашем браузере!
+
     :javascript
       $(window).load(function() {
           $('#slider').nivoSlider();

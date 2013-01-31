@@ -47,6 +47,16 @@
               %a{:href => admin_live_news_index_url} LiveNews
             %li{:class => controller.controller_path == 'admin/menus' ? 'active' : '' }
               %a{:href => admin_menus_path} Menus
+            %li{:class => controller.controller_path == 'admin/attendances' ? 'active' : '' }
+              %a{:href => admin_attendances_path} Attendances
+            %li{:class => controller.controller_path == 'admin/lessons_logs' ? 'active' : '' }
+              %a{:href => admin_lessons_logs_path} LessonsLogs
+            %li{:class => controller.controller_path == 'admin/locations' ? 'active' : '' }
+              %a{:href => admin_locations_path} Locations
+            %li{:class => controller.controller_path == 'admin/payments' ? 'active' : '' }
+              %a{:href => admin_payments_path} Payments
+            %li{:class => controller.controller_path == 'admin/record_books' ? 'active' : '' }
+              %a{:href => admin_record_books_path} RecordBooks
       #wrapper.wat-cf
         .flash
           - flash.each do |type, message|

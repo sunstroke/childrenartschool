@@ -56,7 +56,7 @@
                 Отправить заявку
     
   %aside#side.clearfix
-    = image_tag @group.teacher.avatar.url, :style=>"width: 300px; padding-bottom: 10px;"
+    = image_tag @group.img.url || @group.teacher.avatar.url || "", :style=>"width: 300px; padding-bottom: 10px;"
     %br/
     = @group.teacher.fullname
     -if @group.vk?

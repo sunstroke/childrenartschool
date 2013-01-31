@@ -1,6 +1,16 @@
 # -*- encoding : utf-8 -*-
 Schoolf::Application.routes.draw do
   
+  namespace(:admin){ resources :record_books }
+
+  namespace(:admin){ resources :payments }
+
+  namespace(:admin){ resources :locations }
+
+  namespace(:admin){ resources :lessons_logs }
+
+  namespace(:admin){ resources :attendances }
+
   resource :dashboard
 
   resources :menus 

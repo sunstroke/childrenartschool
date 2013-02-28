@@ -1,7 +1,7 @@
 %section#section
   -@teachers.each do |teacher|
     %h2= teacher.fullname
-    = image_tag teacher.avatar.url if teacher.avatar.url
+    = image_tag teacher.avatar.url(:small) if teacher.avatar.url
     %p= raw(simple_format(teacher.about))
     -if teacher.groups.count>0
       %h3

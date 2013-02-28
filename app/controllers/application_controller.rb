@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     if audit.user_id&&User.exists?(audit.user_id)
       audit.username=User.find(audit.user_id).email
     else
-      audit.username= "с сайта"
+      audit.username= "с сайта URL < a href='"+request.url+"' >"
     end
     audit.comment= "Пользователь "+audit.username+" "+t(audit.action)+" "+ t(audit.auditable_type)
     audit.save

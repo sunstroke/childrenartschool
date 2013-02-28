@@ -1,9 +1,9 @@
 %section#section
   -@teachers.each do |teacher|
-    %h2= teacher.fullname
-    = image_tag teacher.avatar.url(:small) if teacher.avatar.url
-    %p= raw(simple_format(teacher.about))
-    -if teacher.groups.count>0
+    -if teacher.groups.count>0    
+      %h2= teacher.fullname
+      = image_tag teacher.full_photo.url(:small) if teacher.avatar.url
+      %p= raw(simple_format(teacher.about))
       %h3
         Ведет группы:
       -teacher.groups.each do |group|

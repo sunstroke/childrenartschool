@@ -1,0 +1,11 @@
+%section#section
+  -@teachers.each do |teacher|
+    %h2= teacher.fullname
+    = image_tag teacher.avatar.url if teacher.avatar.url
+    %p= raw(simple_format(teacher.about))
+    -if teacher.groups.count>0
+      %h3
+        Ведет группы:
+      -teacher.groups.each do |group|
+        = link_to group.name+" "+((I18n.localize(group.start, :format=>"%d.%m")+"-"+ I18n.localize(group.finish, :format=>"%d.%m") ) if group.start&&group.finish?)  , view_group_path(group.label)
+  

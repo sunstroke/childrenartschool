@@ -50,9 +50,10 @@ before_filter :setup_negative_captcha, :only => [:new, :create]
   # POST /people.xml
   def create
     
-#    @group = Group.find(params[:group_id])    
+    @group = Group.find(params[:group_id])    
 #    @person = Person.new(params[:person])
     @person = Person.new(@captcha.values) #Decrypted params   
+    @person.groups<<@group
     respond_to do |format|
       if @captcha.valid? && @person.save
         @person.update_attributes(params[:person])

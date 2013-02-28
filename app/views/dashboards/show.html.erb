@@ -5,6 +5,9 @@
 
         <% @audits.each do |audit|%>
           <%= l(audit.created_at, :format=>"%d/%m %I:%M")%>
+          <br/>
+          Адрес источника:
+          <%= simple_format (audit.remote_address) %>
           <%= raw (audit.comment )%>
           <%= simple_format (audit.audited_changes.html_safe )%>
           <br/>

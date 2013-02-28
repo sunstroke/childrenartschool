@@ -50,6 +50,7 @@
               = redactor("#person_about")
               = f.label :about, t("activerecord.attributes.person.about", :default => "Дополнительная информация"), :class => :label
               = f.text_area :about, :class => 'text_area', :style=>"width: 200px; height: 50px;"
+              = f.hidden_field :current_group, :value=>@group.id
             .group.navform.wat-cf
               %button.button{:type => "submit"}
                 = image_tag("web-app-theme/icons/tick.png", :alt => "Отправить заявку", :default => "Отправить заявку")

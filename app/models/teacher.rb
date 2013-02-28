@@ -2,7 +2,7 @@
 class Teacher < ActiveRecord::Base
     audited
   attr_accessible :fullname, :link, :about, :portfolio_id, :video, :full_photo_file_name, :avatar_file_name
-  has_many :groups
+  has_many :groups, :conditions=>['open=?',true], :order=>["position ASC"]
   has_many :program, :through=>:groups
   validates_presence_of :full_photo, :message => "не может быть пустым"
   mount_uploader :full_photo, TeacherphotoUploader, :mount_on => :full_photo_file_name  

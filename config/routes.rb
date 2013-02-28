@@ -36,7 +36,7 @@ Schoolf::Application.routes.draw do
   resources :password_resets
   
   # Sample resource route within a namespace:
-match '/teachers' , :to => redirect("http://2010.school-f.ru/teachers")
+# match '/teachers' , :to => redirect("http://2010.school-f.ru/teachers")
 match '/photocourses' , :to => redirect("http://2010.school-f.ru/photocourses")
 match '/news' , :to => redirect("http://2010.school-f.ru/news")
 match '/admin', :to => redirect("http://school-f.ru/")

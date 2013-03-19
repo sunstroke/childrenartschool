@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class GroupsController < ApplicationController
-before_filter :setup_negative_captcha, :only => [:show, :view]  
+before_filter :setup_negative_captcha, :only => [:show, :view, :smart]  
   # GET /groups
   # GET /groups.xml
   def index
@@ -12,6 +12,16 @@ before_filter :setup_negative_captcha, :only => [:show, :view]
     #   format.xml  { render :xml => @groups }
     # end
   end
+
+  def smart
+    @group = Group.find_by_label(params[:label])
+    @person = Person.new        
+     respond_to do |format|
+       format.html { render :layout => false }# show.html.erb
+       format.xml  { render :xml => @group}
+     end
+  end
+
 
   # GET /groups/1
   # GET /groups/1.xml

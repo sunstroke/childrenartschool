@@ -1,4 +1,5 @@
-
+= content_for :head do
+  = javascript_include_tag "remote_add"
 %section#section
   #info
     %h1
@@ -40,7 +41,7 @@
         %h2
           Хочу учиться
         .inner
-          = form_for [@group,@person], :html => { :class => :form }  do |f|
+          = form_for [@group,@person],:remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
             = raw negative_captcha(@captcha) 
             .group
               = f.negative_text_field @captcha, :tel, :class => 'text_field'
@@ -55,7 +56,7 @@
               %button.button{:type => "submit"}
                 = image_tag("web-app-theme/icons/tick.png", :alt => "Отправить заявку", :default => "Отправить заявку")
                 Отправить заявку
-    
+          #persons
   %aside#side.clearfix
     = image_tag @group.img.url || @group.teacher.avatar.url || "", :style=>"width: 300px; padding-bottom: 10px;"
     %br/

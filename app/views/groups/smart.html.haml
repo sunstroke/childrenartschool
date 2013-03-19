@@ -1,0 +1,34 @@
+!!! 5
+-ie_html :class => 'no-js', :lang => 'ru' do
+  %head
+    = javascript_include_tag  "http://code.jquery.com/jquery-1.9.1.min.js", "jquery_ujs", "remote_add"
+    = csrf_meta_tag 
+  %body
+    #flash
+      - flash.each do |key, value|
+        .message{ :class => key }
+          %p= value
+    = form_for [@group,@person], :remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
+      = raw negative_captcha(@captcha)
+      - if @person.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@person.errors.count, "error")} prohibited this person from being saved:"
+          %ul
+            - @person.errors.full_messages.each do |msg|
+              %li= msg
+      .group
+        = f.negative_text_field @captcha, :tel, :class => 'text_field'
+        %br
+        = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class => :label              
+      %br
+      .group
+        = f.label :about, t("activerecord.attributes.person.about", :default => "Дополнительная информация"), :class => :label
+        %br
+        = f.text_area :about, :class => 'text_area', :style=>"width: 200px; height: 50px;"
+        %br
+        = f.hidden_field :current_group, :value=>@group.id
+      .group.navform.wat-cf
+        %button.button{:type => "submit"}
+          = image_tag("web-app-theme/icons/tick.png", :alt => "Отправить заявку", :default => "Отправить заявку")
+          Отправить заявку
+    #persons

@@ -71,7 +71,7 @@ namespace :admin do
   end
   
 end
-
+  match 'groups/:label/smart', :to=>'groups#smart'
   match 'groups/:label', :to=>'groups#view', :as=>"view_group"        
 
   resources :groups do

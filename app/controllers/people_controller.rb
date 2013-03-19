@@ -2,6 +2,7 @@
 
 class PeopleController < ApplicationController
 before_filter :setup_negative_captcha, :only => [:new, :create]  
+respond_to :html, :xml, :json
   # GET /people
   # GET /people.xml
   def index
@@ -46,6 +47,8 @@ before_filter :setup_negative_captcha, :only => [:new, :create]
     @person = Person.find(params[:id])
   end
 
+
+
   # POST /people
   # POST /people.xml
   def create
@@ -54,15 +57,27 @@ before_filter :setup_negative_captcha, :only => [:new, :create]
 #    @person = Person.new(params[:person])
     @person = Person.new(@captcha.values) #Decrypted params   
     @person.groups<<@group
-    respond_to do |format|
+    respond_with do |format|
       if @captcha.valid? && @person.save
         @person.update_attributes(params[:person])
         UserMailer.welcome_email(@person).deliver        
-        format.html { redirect_to(:back, :notice => 'заявка подана') }
+        format.html do
+          if request.xhr?
+            render :partial => "people/show", :locals => { :person => @person }, :layout => false, :status => :created, notice: 'Заявка успешно отправлена менеджеру.'
+          else
+            redirect_to(:back, :notice => 'заявка подана')
+          end
+        end        
         format.xml  { render :xml => @person, :status => :created, :location => @person }
       else
         flash[:notice] = @captcha.error if @captcha.error 
-        format.html { redirect_to(:back, :notice => 'Поле номер обязательно для заполнения') }
+        format.html do
+          if request.xhr?
+            render :json => @person.errors, :status => :unprocessable_entity
+          else
+            redirect_to(:back, :notice => 'Поле номер обязательно для заполнения', :status => :unprocessable_entity)
+          end
+        end        
         format.xml  { render :xml => @captcha.errors, :status => :unprocessable_entity }
       end
     end

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '>=3.2.0'
+gem 'rails', '4.0.0'
 
 gem "magic_encoding"
 
@@ -33,8 +33,8 @@ gem 'capistrano'
 #gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :assets do
-  gem 'sass-rails', "  ~> 3.2.3"
-  gem 'coffee-rails', "~> 3.2.1"
+  gem 'sass-rails', "  ~> 4.0.0"
+  gem 'coffee-rails', "~> 4.0.0"
   gem 'compass-rails'
   gem 'uglifier', '>=1.0.3'
 end

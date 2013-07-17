@@ -11,7 +11,7 @@ gem 'sorcery'
 gem 'curb-fu'
 gem "acts_as_list"
 gem 'sms24x7'
-gem "audited-activerecord"
+#gem "audited-activerecord"
 # gem 'sqlite3'
 #gem 'vimeo'
 gem "compass", ">= 0.11.5"
@@ -55,7 +55,7 @@ group :development, :test do
   #   gem 'webrat'
   gem "nifty-generators"  
   gem 'sqlite3'
-  gem 'web-app-theme', '>= 0.6.2'
+  gem 'web-app-theme'
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'rspec-rails'
@@ -65,14 +65,14 @@ end
  
 group :production do
   gem 'pg', '>=0.11.0'
-  gem 'web-app-theme', '>= 0.6.2'
+  gem 'web-app-theme'
   gem 'hpricot'
   gem 'ruby_parser'
 end
 
 
 group :test do
-  gem 'capybara'
+ # gem 'capybara'
   gem 'database_cleaner'
 #  gem 'factory_girl_rails'
   gem 'email_spec'

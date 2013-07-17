@@ -15,23 +15,37 @@
 -#.group
   = f.label :zachetka, t("activerecord.attributes.person.zachetka", :default => "Зачетка"), :class => :label
   = f.text_field :zachetka, :class => 'text_field'
-  %span.description Ex: 254 Иванов Иван (пока не работает, не заполнять!!)
+
 .group
-  = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона"), :class => :label
+  = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона ребенка"), :class => :label
   = f.text_field :tel, :class => 'text_field'
   %span.description Ex: +79265554433
 .group
-  = f.label :mail, t("activerecord.attributes.person.mail", :default => "Адрес электронной почты"), :class => :label
+  = f.label :mail, t("activerecord.attributes.person.mail", :default => "Адрес электронной почты ребенка"), :class => :label
   = f.email_field :mail, :class => 'text_field'
+  %span.description Ex: mail@mail.com  
+.group
+  = f.label :tel_mother, t("activerecord.attributes.person.tel_mother", :default => "Номер телефона ребенка мамы"), :class => :label
+  = f.text_field :tel_mother, :class => 'text_field'
+  %span.description Ex: +79265554433
+.group
+  = f.label :mail_mother, t("activerecord.attributes.person.mail_mother", :default => "Адрес электронной почты ребенка мамы"), :class => :label
+  = f.email_field :mail_mother, :class => 'text_field'
+  %span.description Ex: mail@mail.com  
+.group
+  = f.label :tel_father, t("activerecord.attributes.person.tel_father", :default => "Номер телефона  папы"), :class => :label
+  = f.text_field :tel_father, :class => 'text_field'
+  %span.description Ex: +79265554433
+.group
+  = f.label :mail_father, t("activerecord.attributes.person.mail_father", :default => "Адрес электронной почты  папы"), :class => :label
+  = f.email_field :mail_father, :class => 'text_field'
   %span.description Ex: mail@mail.com  
 .group
   = f.label :sub_group, t("activerecord.attributes.group.sub_group", :default => "Подписка на новости группы"), :class => :label
   = f.check_box :sub_group, :class => 'check_box'
-  %span.description Вам на почту будут приходить актуальные новости группы. Любые изменения или дополнения. Вы всегда будете в курсе последних событий.
 .group
   = f.label :sub_all, t("activerecord.attributes.group.sub_all", :default => "Подписка на новости школы"), :class => :label
   = f.check_box :sub_all, :class => 'check_box'
-  %span.description  Вам на почту будут приходить новости школы. Информация о новых группах, курсах, акциях и спецпредложениях.                     
 .group
   = f.label :birthday, t("activerecord.attributes.person.birthday", :default => "Дата рождения"), :class => :label
   = f.date_select :birthday,:start_year=>Time.now.year-21, :end_year=>Time.now.year, :class => 'datetime_select'

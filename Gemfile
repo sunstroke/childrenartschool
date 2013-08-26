@@ -8,6 +8,7 @@ gem "magic_encoding"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem "negative_captcha"
 gem 'sorcery'
+gem 'protected_attributes'
 gem 'curb-fu'
 gem "acts_as_list"
 gem 'sms24x7'
@@ -32,12 +33,12 @@ gem 'capistrano'
 # gem 'ruby-debug'
 #gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :assets do
+
   gem 'sass-rails', "  ~> 4.0.0"
   gem 'coffee-rails', "~> 4.0.0"
-  gem 'compass-rails'
+#  gem 'compass-rails'
   gem 'uglifier', '>=1.0.3'
-end
+
 
 
 gem 'carrierwave', ">= 0.5.6"
@@ -45,7 +46,7 @@ gem 'mini_magick'
 gem 'flash_cookie_session'
 gem "paperclip", "~> 2.3"
 gem 'jquery-rails', '>= 1.0.12'
-gem "ckeditor", "3.6.3"
+gem 'ckeditor_rails'
 #gem 'omniauth',">= 0.2.6"
 gem "cancan"
 gem "russian"

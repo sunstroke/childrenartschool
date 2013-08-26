@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Person < ActiveRecord::Base
-    audited
+    # audited
   attr_accessible   :fullname, :role_type, :zachetka, :tel, :birthday, :about, :current_group, :mail, :sub_all, :sub_group, :failure, :group_id, :tel_mother, :email_mother, :tel_father, :email_father
   belongs_to :group, :class_name => "Group" ,:foreign_key => "current_group"
   has_many :record_books

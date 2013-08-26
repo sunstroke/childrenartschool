@@ -1,5 +1,5 @@
 class Slideshow < ActiveRecord::Base
-    audited
+    # audited
   has_many :photos,  :dependent => :destroy
   attr_accessible :name, :theme_id 
 end

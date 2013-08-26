@@ -37,17 +37,17 @@ Schoolf::Application.routes.draw do
   
   # Sample resource route within a namespace:
 # match '/teachers' , :to => redirect("http://2010.school-f.ru/teachers")
-match '/photocourses' , :to => redirect("http://2010.school-f.ru/photocourses")
-match '/news' , :to => redirect("http://2010.school-f.ru/news")
-match '/admin', :to => redirect("http://school-f.ru/")
+get '/photocourses' , :to => redirect("http://2010.school-f.ru/photocourses")
+get '/news' , :to => redirect("http://2010.school-f.ru/news")
+get '/admin', :to => redirect("http://school-f.ru/")
 
 
 namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   resources :users
-  match 'groups/actual', :to=>'groups#actual', :as=>"actual"              
-  match 'groups/old', :to=>'groups#old', :as=>"old"  
+  get 'groups/actual', :to=>'groups#actual', :as=>"actual"              
+  get 'groups/old', :to=>'groups#old', :as=>"old"  
   resources :groups
   resources :pages
     resources :menus do
@@ -58,12 +58,12 @@ namespace :admin do
   resources :live_news
   resources :directions
   
-  match 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"      
-  match 'people/archive', :to=>'people#archive', :as=>"archive"            
+  get 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"      
+  get 'people/archive', :to=>'people#archive', :as=>"archive"            
               
   resources :people
   resources :programs
-  match 'welcomes/noactive', :to=>'welcomes#noactive', :as=>"noactive_banner"        
+  get 'welcomes/noactive', :to=>'welcomes#noactive', :as=>"noactive_banner"        
   resources :welcomes
   resources :teachers
   resources :slideshows do
@@ -71,8 +71,8 @@ namespace :admin do
   end
   
 end
-  match 'groups/:label/smart', :to=>'groups#smart'
-  match 'groups/:label', :to=>'groups#view', :as=>"view_group"        
+  get 'groups/:label/smart', :to=>'groups#smart'
+  get 'groups/:label', :to=>'groups#view', :as=>"view_group"        
 
   resources :groups do
     resources :people
@@ -87,7 +87,7 @@ end
   resources :teachers
 #  get "admin"
 
-  match ':label', :to=>'pages#view', :as=>"view_page"
+  get ':label', :to=>'pages#view', :as=>"view_page"
 
   get "home/index"
 
@@ -147,5 +147,5 @@ end
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id(.:format)))'
+  get ':controller(/:action(/:id(.:format)))'
 end

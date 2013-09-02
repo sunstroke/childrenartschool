@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.0.0'
+gem 'rails', '3.2.14'
 
 gem "magic_encoding"
 
@@ -8,7 +8,7 @@ gem "magic_encoding"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem "negative_captcha"
 gem 'sorcery'
-gem 'protected_attributes'
+#gem 'protected_attributes'
 gem 'curb-fu'
 gem "acts_as_list"
 gem 'sms24x7'
@@ -34,8 +34,8 @@ gem 'capistrano'
 #gem 'ruby-debug19', :require => 'ruby-debug'
 
 
-  gem 'sass-rails', "  ~> 4.0.0"
-  gem 'coffee-rails', "~> 4.0.0"
+  gem 'sass-rails', "  ~> 3.2.2"
+  gem 'coffee-rails', "~> 3.2.2"
 #  gem 'compass-rails'
   gem 'uglifier', '>=1.0.3'
 

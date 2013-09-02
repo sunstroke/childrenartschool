@@ -18,6 +18,8 @@ gem 'sms24x7'
 gem "compass", ">= 0.11.5"
 gem "haml"
 gem "html5-boilerplate"
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
 
 gem "gritter", "0.6.3"
 gem 'wicked_pdf'

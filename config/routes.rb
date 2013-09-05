@@ -27,27 +27,27 @@ Schoolf::Application.routes.draw do
 
   get "password_resets/update"
 
-  get "logout" => "sessions#destroy", :as => "logout"
-  get "login" => "sessions#new", :as => "login"
-  get "signup" => "users#new", :as => "signup"
+  match "logout" => "sessions#destroy", :as => "logout"
+  match "login" => "sessions#new", :as => "login"
+  match "signup" => "users#new", :as => "signup"
   resources :users
   resources :sessions
-  get "secret" => "home#secret", :as => "secret"
+  match "secret" => "home#secret", :as => "secret"
   resources :password_resets
   
   # Sample resource route within a namespace:
 # match '/teachers' , :to => redirect("http://2010.school-f.ru/teachers")
-get '/photocourses' , :to => redirect("http://2010.school-f.ru/photocourses")
-get '/news' , :to => redirect("http://2010.school-f.ru/news")
-get '/admin', :to => redirect("http://school-f.ru/")
+match '/photocourses' , :to => redirect("http://2010.school-f.ru/photocourses")
+match '/news' , :to => redirect("http://2010.school-f.ru/news")
+match '/admin', :to => redirect("http://school-f.ru/")
 
 
 namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   resources :users
-  get 'groups/actual', :to=>'groups#actual', :as=>"actual"              
-  get 'groups/old', :to=>'groups#old', :as=>"old"  
+  match 'groups/actual', :to=>'groups#actual', :as=>"actual"              
+  match 'groups/old', :to=>'groups#old', :as=>"old"  
   resources :groups
   resources :pages
     resources :menus do
@@ -58,12 +58,12 @@ namespace :admin do
   resources :live_news
   resources :directions
   
-  get 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"      
-  get 'people/archive', :to=>'people#archive', :as=>"archive"            
+  match 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"      
+  match 'people/archive', :to=>'people#archive', :as=>"archive"            
               
   resources :people
   resources :programs
-  get 'welcomes/noactive', :to=>'welcomes#noactive', :as=>"noactive_banner"        
+  match 'welcomes/noactive', :to=>'welcomes#noactive', :as=>"noactive_banner"        
   resources :welcomes
   resources :teachers
   resources :slideshows do
@@ -71,8 +71,8 @@ namespace :admin do
   end
   
 end
-  get 'groups/:label/smart', :to=>'groups#smart'
-  get 'groups/:label', :to=>'groups#view', :as=>"view_group"        
+  match 'groups/:label/smart', :to=>'groups#smart'
+  match 'groups/:label', :to=>'groups#view', :as=>"view_group"        
 
   resources :groups do
     resources :people
@@ -87,9 +87,9 @@ end
   resources :teachers
 #  get "admin"
 
-  get ':label', :to=>'pages#view', :as=>"view_page"
+  match ':label', :to=>'pages#view', :as=>"view_page"
 
-  get "home/index"
+  match "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -147,5 +147,5 @@ end
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  get ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
 end

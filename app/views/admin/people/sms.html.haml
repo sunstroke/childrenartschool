@@ -16,6 +16,8 @@
           %th.first ID
           %th
             Дата создания
+          %th
+            Группа
           %th          
             Телефон
         - @people.each do |person|
@@ -23,7 +25,9 @@
             %td
               = person.id
             %td
-              = l person.created_at , :format=>:brth 
+              = l person.created_at , :format=>:brth
+            %td
+              = link_to person.group.name, admin_group_path(person.group) if  person.group
             %td
               = person.tel
       .actions-bar.wat-cf

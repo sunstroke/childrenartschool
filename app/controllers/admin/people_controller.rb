@@ -12,6 +12,15 @@ class Admin::PeopleController < ApplicationController
       format.xml  { render :xml => @people }
     end
   end
+  def sms
+    @people = Person.order("created_at Desc")
+    # render :layout => 'admin'
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @people }
+    end
+  end
+  
   def archive
     @people = Person.find(:all, :order=>["current_group ASC"],:conditions=>["failure = ?",true])
     @count=@people.count

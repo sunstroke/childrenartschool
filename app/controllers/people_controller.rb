@@ -14,7 +14,6 @@ respond_to :html, :xml, :json
       format.xml  { render :xml => @people }
     end
   end
-
   # GET /people/1
   # GET /people/1.xml
   def show

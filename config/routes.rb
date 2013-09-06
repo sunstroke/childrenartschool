@@ -60,6 +60,7 @@ namespace :admin do
   
   match 'people/subscribe', :to=>'people#subscribe', :as=>"subscribe"      
   match 'people/archive', :to=>'people#archive', :as=>"archive"            
+  match 'people/sms', :to=>'people#sms', :as=>"sms"              
               
   resources :people
   resources :programs

@@ -1,0 +1,35 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admin_people_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_person_path
+      %li= link_to "Подписчики", admin_subscribe_path
+      %li= link_to "Архив", admin_archive_path      
+    %nav#filter
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      ученики
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+            Дата создания
+          %th          
+            Телефон
+        - @people.each do |person|
+          %tr{:class => cycle("odd", "even")+" g"+person.current_group.to_s}
+            %td
+              = person.id
+            %td
+              = l person.created_at , :format=>:brth 
+            %td
+              = person.tel
+      .actions-bar.wat-cf
+        .actions
+    %h2.title
+      = @count 
+      записалось
+
+- content_for :sidebar, render(:partial => 'sidebar')

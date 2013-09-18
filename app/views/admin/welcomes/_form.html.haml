@@ -22,6 +22,32 @@
 .group
   = f.label :second_text, t("activerecord.attributes.welcome.second_text", :default => "Текст на цветной плашке"), :class => :label
   = f.text_area :second_text, :class => 'text_area', :style=>"height: 20px;"
+  %br/
+  :javascript
+    window.onload = function() {
+        var oTextbox = document.getElementById('welcome_second_text');
+        for (var i = 0; i < document.images.length; i++) {
+            var image = document.images[i];
+            if (image.className === "clickable" || image.className.indexOf("clickable ") >= 0 || image.className.indexOf(" clickable") >= 0) {
+                image.onclick = function() {
+                    oTextbox.value = this.src;
+                    image.style.border='5px black solid';
+                };
+            }
+        }
+    };
+  %img.clickable{src: "/images/backgrounds/mango.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/aqua.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/flower.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/baby-blue.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/black.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/color-splash.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/deep-green.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/indigo.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/mint.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/ocean.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/silver.jpg", width: "200"}/
+  %img.clickable{src: "/images/backgrounds/water.jpg", width: "200"}/
   %span.description Ex: здесь нужен очень короткий текст, 10 - 20 символов, он показывается на баннере, на подложке.. 
 .group
   = f.label :style_second_text, t("activerecord.attributes.welcome.style_second_text", :default => "Стиль цветной плашки"), :class => :label

@@ -1,6 +1,6 @@
 %section#feature_slider.lol
   -@banners.each do |b|
-    %article#showcasing.slide{style: "background: url('/images/backgrounds/mango.jpg') repeat-x top center;"}
+    %article#showcasing.slide{style: "background: url('#{b.second_text}') repeat-x top center;"}
       %img{:class=>"#{b.style_second_text}", src: "#{b.image_url}"}
       .info
         %h2=b.text 

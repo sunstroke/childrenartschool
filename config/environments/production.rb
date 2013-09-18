@@ -12,6 +12,7 @@ Schoolf::Application.configure do
   config.assets.precompile += %w( polyfills.js )
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
+  config.assets.compile = true  
 
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'

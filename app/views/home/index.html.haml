@@ -1,128 +1,36 @@
-= content_for :javascripts do
-  = javascript_include_tag "jquery.nivo.slider.pack"
-#banner_slide
-  .slider-wrapper.theme-orman
-    #slider.nivoSlider
-      -@banners.each do |b|
-        -if b.url?
-          =link_to image_tag(b.image_url, :alt=>b.name, :title=>"#b#{b.id}"), b.url if b.image_url
-        -else
-          =image_tag(b.image_url, :alt=>b.name, :title=>"#b#{b.id}") if b.image_url
-    -@banners.each do |b|
-      %div{:id=>"b#{b.id}", :class=>"nivo-html-caption"}
-        -if b.text!=""
-          -if b.style_text==""
-            %div{:id=>"#text_1", :style=>"position: absolute; top: 50px;left: 50px;background: white;opacity: 0.6; color:black; font-size: 18pt;padding: 10px;"}
-              -if b.url?
-                =link_to b.text, b.url, :style=>"text-decoration: none; display:block;" 
-              -else
-                =simple_format b.text
-          - else
-            %div{:id=>"#text_1", :style=>"#{b.style_text}"}
-              -if b.url?
-                =link_to b.text, b.url, :style=>"text-decoration: none; display:block;" 
-              -else
-                =simple_format b.text
-        -if b.second_text!=""
-          -if b.style_second_text==""
-            %div{:id=>"#text_2", :style=>"position: absolute; top: 150px;left: 50px;background: #FC8100;opacity: 0.6; color: white; font-size: 12pt;padding: 10px;"}
-              -if b.url?
-                =link_to b.second_text, b.url, :style=>"text-decoration: none; display:block;"
-              -else
-                =b.second_text          
-          - else
-            %div{:id=>"#text_2", :style=>"#{b.style_second_text}"}
-              -if b.url?
-                =link_to b.second_text, b.url, :style=>"text-decoration: none; display:block;"
-              -else
-                =b.second_text          
-
-#direction
-  .h Направления
-  -@directions.each do |direction|
-    %article.more_item
-      %h1 
-        =link_to direction.name, direction.link, :style=>"color: #FC8100;"
-      .img_direction
-        =link_to image_tag(direction.img_url(:thumb)),direction.link
-      %p.text_more
-        = direction.desc
-
-#next_course
-  .h Ближайшие курсы
-  -@groups.each do |group|
-    %article.item_event{:style=>"height: 120px;"}
-      .date
-        .month= I18n.localize(group.start, :format=>"%B")
-        .day= I18n.localize(group.start, :format=>"%d")
+%section#feature_slider.lol
+  -@banners.each do |b|
+    %article#showcasing.slide{style: "background: url('/images/backgrounds/mango.jpg') repeat-x top center;"}
+      %img.asset.left0.sp600.t120.z1{src: "#{b.image_url}"}
       .info
-        %h1
-          =link_to group.name, view_group_path(group.label)
-        =simple_format(group.calendar)
-        
-#more
-  .h Live view
-  -@news.each do |news|
-    %article.more_item
-      %h1= news.name
-      .img_more{:style => "background: url('#{news.img_url(:thumb)}');"}
-      .text_more
-        = news.desc
-      = link_to "Читать дальше", news.link, :class=>"link_more" if news.link?
-#next_course
-  .h Список групп
-  %table.table{:style=>"margin:2px;"}
-    %tr
-      %th.first Название
-      %th
-        Дни занятий
-      %th
-        Период обучения            
-      %th
-        Педагог
-      %th
-        Возраст детей
-      -# %th
-      -#  Навыки
-      %th
-        Цена
-      %th.last &nbsp;
-    - @groups.each do |group|
-      %tr{:class => cycle("odd", "even")} 
-        %td{:style=>"border: 1px solid black; padding:3px;"}
-          = link_to group.name, view_group_path(group.label)
-        %td{:style=>"border: 1px solid black; padding:3px;"}
-          = simple_format(group.calendar)
-        %td{:style=>"border: 1px solid black; padding:3px;"}
+        %h2=b.text 
+#showcase
+  .container
+    .section_header
+      %h3 Наши направления
+    .row.feature_wrapper
+      .features_op1_row
+        -@directions.each do |direction|
+          .col-sm-4.feature
+            .img_box
+              %a{href: "#{direction.link}"}
+                =image_tag(direction.img_url(:thumb))
+                %span.circle
+                  %span.plus +
+            .text
+              %h6=direction.name
+              %p=direction.desc
+#features
+  .container
+    .section_header
+      %h3 Live view
+    -@news.each do |news|  
+      .row.feature
+        .col-sm-6{:class => cycle("", "pic-right")}
+          %img.img-responsive{src: "#{news.img_url(:thumb)}"}/
+        .col-sm-6{:class => cycle("info", "info-left")}
+          %h3
+            %img{src: "/images/features-ico1.png"}/
+            =news.name
+          %p=news.desc
 
-          #{I18n.localize(group.start, :format=>"%d.%m")} - #{I18n.localize(group.finish, :format=>"%d.%m") if group.start&&group.finish?} 
-        %td{:style=>"border: 1px solid black; padding:3px;"}
-          = group.teacher.fullname        
-        %td{:style=>"border: 1px solid black; padding:3px;"}
-          #{group.age_start} - #{group.age_finish} лет              
-        -#%td{:style=>"border: 1px solid black;"}
-
-        %td{:style=>"border: 1px solid black; padding:3px;"}      
-          %b= number_to_currency(group.price.abs, :precision => 0) if group.price?
-        %td.last{:style=>"border: 1px solid black; padding:3px;"}
-          = link_to "Записаться", new_group_person_path(group), :class=>"button"
--#buttons
-  %a.prev{:href=>"#"}Назад
-  %a.next{:href=>"#"}Вперед
-  %br.clear/
--#slider{:style=>"position: absolute;"}
-  %ul
-    -@banners.each do |b|    
-      %li{:style=>"position: relative;"}
-        =image_tag b.image_url, :alt=>b.name
-        .caption_wrapper{:style=>"position: absolute; top: 200px;z-index:200;"}
-          .caption
-            -if b.url?          
-              =link_to simple_format(b.text),  b.url
-            -else
-              = simple_format(b.text)
-            .link_to_banner
-              -if b.url?
-                =link_to b.name, b.url
-              -else
-                =b.name

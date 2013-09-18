@@ -8,7 +8,7 @@
   %span.description Ex: vika
 .group
   = f.label :about, t("activerecord.attributes.teacher.about", :default => "Информация о преподавателе"), :class => :label
-  = f.cktext_area :about, :class => 'text_area'
+  = f.text_area :about, :class => 'text_area'
   %span.description Ex: родился/учился/женился
 .group
   = f.label :portfolio_id, t("activerecord.attributes.teacher.portfolio_id", :default => "Портфолио"), :class => :label

@@ -1,202 +1,118 @@
-!!! 5
--# http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither
--ie_html :class => 'no-js', :lang => 'ru' do
+!!!
+%html
   %head
-    -# To render a different stylesheet partial inside the head (i.e. for admin layout)
-    -# just copy _stylesheets.html.haml, and point to that partial instead.
-    = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
-    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
-    %link{:href => "/stylesheets/default.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "/stylesheets/nivo-slider.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
-    :css
-      body {
-          font-family: "DINPro-Regular",sans-serif;
-          width: 1024px;
-          margin: 0 auto;
-      }
-        .h{
-          text-align: center;
-          background:url(/images/slider.png) no-repeat  #f68d76;
-      		background-position: center top;      
-          padding: 5px;
-          margin: 0 auto;
-          margin-bottom: 30px;
-          margin-top: 0px;
-          z-index: 1000;
-          width: 200px;
-          color: #fff;
-          font-size: 20px;
-          font-family: "DINPro-Regular",sans-serif;
-          font-style: normal;
-          font-weight: 500;
-        }
-        .more_item {
-          width: 33%;
-          float: left;
-          text-align: left;
-          background: #ededee;
-          position: relative;
-        }
-        .img_direction {
-          margin: 0 0px 10px 40px;
-          width: 250px;
-          height: 200px;
-          
-        }
-        .item_event {
-          margin: 15px 30px 15px 0px;
-          position: relative;
-          float: left;
-        }
-        .date {
-          border: 0px solid black;
-          margin: 0 5px;
-          height: 75px;
-          width: 75px;
-          text-align: center;
-          float: left;
-          border-radius: 15px;      
-          -moz-border-radius: 15px;
-          -khtml-border-radius: 15px;
-          -webkit-border-radius: 15px;      
-        }
-        .month {
-          font-size: 14px;
-          padding: 5px 0;
-          background: #f9a870;
-          width: 75px;
-          border-radius: 15px 15px 0 0 / 15px 15px 0 0;
-          -moz-border-radius: 15px 15px 0 0 / 15px 15px 0 0;
-          -khtml-border-radius: 15px 15px 0 0 / 15px 15px 0 0;
-          -webkit-border-radius: 15px 15px 0 0 / 15px 15px 0 0;      
-          color: #fff;
-          font-style: normal;
-          font-weight: 500; 
-          
-        }
-        .day {
-          font-size: 39px;
-          background: #fec779;
-          width: 75px;      
-          border-radius: 0 0 15px 15px/ 0 0 15px 15px;      
-          -moz-border-radius: 0 0 15px 15px/ 0 0 15px 15px;
-          -khtml-border-radius: 0 0 15px 15px/ 0 0 15px 15px;
-          -webkit-border-radius: 0 0 15px 15px/ 0 0 15px 15px;
-          color: #fff;  
-          font-style: normal;
-          font-weight: 500; 
-              
-        }
-        .img_more {
-          margin: 20px auto;
-          border: 0px solid black;
-          border-radius: 125px;
-          -moz-border-radius: 125px;
-          -khtml-border-radius: 125px;
-          -webkit-border-radius: 125px;
-          width: 250px;
-          height: 250px;
-        }
-        .text_more {
-          text-align: left;
-          padding: 0 40px;
-          font-size: 14px;
-        }
-        .link_more {
-          text-align: right;
-          float: right;
-          padding-right: 40px;
-        }
-        .info ,.info a{
-          font-size: 14px;
-          color: #000;
-          width: 130px;
-          float: left;
-        }
-        
-        #more, #direction, #next_course, #container {
-          background:url(/images/slider.png) no-repeat #ededee;
-      		background-position: center top;
-          width: 100%;
-          position: relative;
-          overflow: hidden;
-          padding-bottom: 30px;          
-        }
-        #next_course {
-          background:url(/images/slider.png) no-repeat #fff;
-        }
-        nav {
-          position: relative; 
-          margin: 0 auto; 
-          width: 400px; 
-          top: 30px;
-          display: block;
-        }
-        nav ul {
-          font-size: 15px;
-        }
-        nav ul li {
-          float: left; 
-          margin-right: 50px;
-        }
-        nav ul li a {
-          color: black;
-        }
-        article.more_item h1 {
-          font-size: 18px;
-          font-family: "DINPro-Regular",sans-serif;
-          font-style: normal;
-          font-weight: 500; 
-          padding: 0 40px;   
-        }
-        article.item_event h1 {
-          padding:0;
-          margin: 0;
-          font-weight: normal;
-        }
-        #contacts {
-          position: absolute; 
-          right: 30px; 
-          top: 15px; 
-          width: 230px; 
-          text-align: right;
-        }
-
-  %body{:style => "margin: 0 auto; width: 1024px;", :class => "#{controller.controller_name}" }
-    = render "layouts/fb"
-    %header{:style => "height: 100px; position: relative; margin: 0 auto; background: #fff; padding:0; width: 1024px;"}
-      #logo{:style => "left: 30px;top: 15px; position: absolute; width: 140px; height: 70px;"}
-        %a{:href=>"/"}
-          %img{:src => "/images/logo.png", :style => " width: 130px;"}/
-      %nav
-        %ul
-          %li
-            = link_to_unless_current 'ШКОЛА',"/school?menu"
-          %li
-            = link_to_unless_current 'КУРСЫ',"/courses?menu"
-          %li
-            = link_to_unless_current "ПРАЗДНИКИ", "/birthday?menu"
-          - if current_user
+    %title Детская школа искусств
+    %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    / Styles
+    %link{href: "/assets/bootstrap.min.css", rel: "stylesheet"}/
+    %link{href: "/assets/bootstrap-overrides.css", rel: "stylesheet", type: "text/css"}/
+    %link{href: "/assets/theme.css", rel: "stylesheet", type: "text/css"}/
+    %link{href: "http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic", rel: "stylesheet", type: "text/css"}/
+    %link{href: "/assets/index.css", media: "screen", rel: "stylesheet", type: "text/css"}/
+    %link{href: "/assets/animate.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}/
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  %body.pull_top
+    .navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle.pull-right{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "index.html"}
+            %strong{:style=>"font-size:24px;"} Детская школа искусств
+            .span3{:style=>"font-size:12px;"}
+              Фотография, анимация, кино для детей от 7 до 17 лет
+        .span12.collapse.navbar-collapse.navbar-ex1-collapse{role: "navigation"}
+          %ul.nav.navbar-nav.navbar-left
+            %li.active
+              %a{href: "/school"} Школа
             %li
-              = link_to_unless_current "Админка", "/dashboard"
-          
-      #contacts
-        #tel{:style => "font-size: 24px;margin: 5px 0;"} +7 (926) 3-920-920
-        %div
-          %a{:href => "/contacts", :style => "color: black;font-size: 15px; "} другие контакты
-    #container
-      #main{ :role => 'main' }
-        = render "layouts/flashes"
-        = yield
-      #container-footer        
+              %a{href: "/course"} Курсы
+            %li
+              %a{href: "/animation"} Мультклуб
+          .span7{:style=>"color: white; float: right; font-size: 22px;", :class=>""}
+            .span6{:style=>"font-size: 14px;"}
+              Есть вопросы? Звони!
+            .span3
+              (495) 507-07-58
+            .span6{:style=>"font-size: 14px;"}
+              Мы работаем с 9:00 до 22:00
+    = yield
     %footer#footer
-      = render "layouts/footer"
-
-    -# Javascript at the bottom for fast page loading
-    = render "layouts/javascripts"
-    = render :partial => "layouts/analytics"    
-
-    :javascript
-      $(window).load(function() {
-          $('#slider').nivoSlider({effect: 'slideInRight'});
-      });
+      .container
+        .row.sections
+          .col-sm-4.recent_posts
+            %h3.footer_header
+              Recent Posts
+            .post
+              %a{href: "blogpost.html"}
+                %img.img-circle{src: "/images/recent_post1.png"}/
+              .date
+                Wed, 12 Dec
+              %a.title{href: "blogpost.html"}
+                Randomised words which don't look embarrasing hidden.
+            .post
+              %a{href: "blogpost.html"}
+                %img.img-circle{src: "/images/recent_post2.png"}/
+              .date
+                Mon, 12 Dec
+              %a.title{href: "blogpost.html"}
+                Randomised words which don't look embarrasing hidden.
+          .col-sm-4.testimonials
+            %h3.footer_header
+              Testimonials
+            .wrapper
+              .quote
+                %span “
+                There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
+                %span
+              .author
+                %img{src: "/images/user-display.png"}/
+                .name Alejandra Galvan Castillo
+                .info
+                  Details Canvas
+          .col-sm-4.contact
+            %h3.footer_header
+              Contact
+            %form{action: "#", method: "post"}
+              %input{placeholder: "Your name", type: "text"}/
+              %input{placeholder: "Your email", type: "text"}/
+              %textarea{placeholder: "Message", rows: "3"}
+              %input{type: "submit", value: "Send"}/
+        .row.credits
+          .col-md-12
+            .row.social
+              .col-md-12
+                %a.facebook{href: "#"}
+                  %span.socialicons.ico1
+                  %span.socialicons_h.ico1h
+                %a.twitter{href: "#"}
+                  %span.socialicons.ico2
+                  %span.socialicons_h.ico2h
+                %a.gplus{href: "#"}
+                  %span.socialicons.ico3
+                  %span.socialicons_h.ico3h
+                %a.flickr{href: "#"}
+                  %span.socialicons.ico4
+                  %span.socialicons_h.ico4h
+                %a.pinterest{href: "#"}
+                  %span.socialicons.ico5
+                  %span.socialicons_h.ico5h
+                %a.dribble{href: "#"}
+                  %span.socialicons.ico6
+                  %span.socialicons_h.ico6h
+                %a.behance{href: "#"}
+                  %span.socialicons.ico7
+                  %span.socialicons_h.ico7h
+            .row.copyright
+              .col-md-12
+                © 2013 Clean Canvas. All rights reserved. Theme by Detail Canvas.
+    / Scripts
+    %script{src: "http://code.jquery.com/jquery-latest.js"}
+    %script{src: "/assets/bootstrap.min.js"}
+    %script{src: "/assets/theme.js"}
+    %script{src: "/assets/index-slider.js", type: "text/javascript"}

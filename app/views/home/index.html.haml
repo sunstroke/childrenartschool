@@ -1,7 +1,7 @@
 %section#feature_slider.lol
   -@banners.each do |b|
     %article#showcasing.slide{style: "background: url('/images/backgrounds/mango.jpg') repeat-x top center;"}
-      %img.asset.left0.sp600.t120.z1{src: "#{b.image_url}"}
+      %img{:class=>"#{b.style_second_text}", src: "#{b.image_url}"}
       .info
         %h2=b.text 
 #showcase

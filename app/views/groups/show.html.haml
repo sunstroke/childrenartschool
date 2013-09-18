@@ -1,67 +1,68 @@
 = content_for :head do
   = javascript_include_tag "remote_add"
-%section#section
-  #info
-    %h1
-      = @group.program.name
-      %br
-      = @group.name
-    -if @group.prim?
-      = raw(@group.prim)
-      %hr      
-    - if current_user
-      = link_to "Редактировать группу", edit_admin_group_path(@group) , :class=>"button"      
-      %hr      
-    .col{:style=>"float:left; width: 450px; text-align: left;"}
-      - if @group.program_id? 
-        %h2
-          Учебная программа
-        = raw(@group.program.annotation) if @group.program_id?
-        %br/
+.container
+  %section#section{:style=>"margin-top:100px;"}  
+    #info
+      %h1
+        = @group.program.name
+        %br
+        = @group.name
+      -if @group.prim?
+        = raw(@group.prim)
+        %hr      
+      - if current_user
+        = link_to "Редактировать группу", edit_admin_group_path(@group) , :class=>"button"      
+        %hr      
+      .col{:style=>"float:left; width: 450px; text-align: left;"}
+        - if @group.program_id? 
+          %h2
+            Учебная программа
+          = raw(@group.program.annotation) if @group.program_id?
+          %br/
         
-    .col{:style=>"float:left; width: 200px;"}
-      - if @group.calendar?
+      .col{:style=>"float:left; width: 200px;"}
+        - if @group.calendar?
+          %h2
+            Расписание занятий
+          = simple_format(@group.calendar)
+          %br/
+        - if @group.price?        
+          %h2
+            Стоимость обучения
+          = number_to_currency(@group.price.abs, :precision => 0) if @group.price?
+          =raw( @group.desc)
+          %br/
+          %br/
         %h2
-          Расписание занятий
-        = simple_format(@group.calendar)
-        %br/
-      - if @group.price?        
-        %h2
-          Стоимость обучения
-        = number_to_currency(@group.price.abs, :precision => 0) if @group.price?
-        =raw( @group.desc)
+          Возраст учеников
+        #{@group.age_start} - #{@group.age_finish} лет
         %br/
         %br/
-      %h2
-        Возраст учеников
-      #{@group.age_start} - #{@group.age_finish} лет
+        - if @group.open?      
+          %h2
+            Хочу учиться
+          .inner
+            = form_for [@group,@person],:remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
+              = raw negative_captcha(@captcha) 
+              .group
+                = f.negative_text_field @captcha, :tel, :class => 'text_field'
+                = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class => :label              
+              %br
+              .group
+                = redactor("#person_about")
+                = f.label :about, t("activerecord.attributes.person.about", :default => "Дополнительная информация"), :class => :label
+                = f.text_area :about, :class => 'text_area', :style=>"width: 200px; height: 50px;"
+                = f.hidden_field :current_group, :value=>@group.id
+              .group.navform.wat-cf
+                %button.button{:type => "submit"}
+                  = image_tag("web-app-theme/icons/tick.png", :alt => "Отправить заявку", :default => "Отправить заявку")
+                  Отправить заявку
+            #persons
+    %aside#side.clearfix
+      = image_tag @group.img.url || @group.teacher.avatar.url || "", :style=>"width: 300px; padding-bottom: 10px;"
       %br/
-      %br/
-      - if @group.open?      
-        %h2
-          Хочу учиться
-        .inner
-          = form_for [@group,@person],:remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
-            = raw negative_captcha(@captcha) 
-            .group
-              = f.negative_text_field @captcha, :tel, :class => 'text_field'
-              = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class => :label              
-            %br
-            .group
-              = redactor("#person_about")
-              = f.label :about, t("activerecord.attributes.person.about", :default => "Дополнительная информация"), :class => :label
-              = f.text_area :about, :class => 'text_area', :style=>"width: 200px; height: 50px;"
-              = f.hidden_field :current_group, :value=>@group.id
-            .group.navform.wat-cf
-              %button.button{:type => "submit"}
-                = image_tag("web-app-theme/icons/tick.png", :alt => "Отправить заявку", :default => "Отправить заявку")
-                Отправить заявку
-          #persons
-  %aside#side.clearfix
-    = image_tag @group.img.url || @group.teacher.avatar.url || "", :style=>"width: 300px; padding-bottom: 10px;"
-    %br/
-    = @group.teacher.fullname
-    -if @group.vk?
-      %br.clearfix
-      = render "vk", :object => @group
-  .clearfix
+      = @group.teacher.fullname
+      -if @group.vk?
+        %br.clearfix
+        = render "vk", :object => @group
+    .clearfix

@@ -5,6 +5,7 @@
     %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     / Styles
+    = stylesheet_link_tag "application", :media => "all"      
     %link{href: "/assets/bootstrap.min.css", rel: "stylesheet"}/
     %link{href: "/assets/bootstrap-overrides.css", rel: "stylesheet", type: "text/css"}/
     %link{href: "/assets/theme.css", rel: "stylesheet", type: "text/css"}/
@@ -111,3 +112,4 @@
             .row.copyright
               .col-md-12
                 © 2013 Clean Canvas. All rights reserved. Theme by Detail Canvas.
+    = javascript_include_tag  "http://code.jquery.com/jquery-latest.js", "application"

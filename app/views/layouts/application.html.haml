@@ -4,6 +4,7 @@
     %title Детская школа искусств
     %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    = stylesheet_link_tag 'application'
     / Styles
     %link{href: "/assets/bootstrap.min.css", rel: "stylesheet"}/
     %link{href: "/assets/bootstrap-overrides.css", rel: "stylesheet", type: "text/css"}/
@@ -46,9 +47,16 @@
               Есть вопросы? Звони!
             .span3
               (495) 507-07-58
-            .span6{:style=>"font-size: 14px;"}
-              Мы работаем с 9:00 до 22:00
+            .span6{:style=>"font-size: 12px;"}
+              ул. Нижняя Сыромятническая д. 10 к7
     = yield
+    #teams.section.text-center
+      .container
+        .section_header
+          %h3 Наша команда
+      
+    #contact.section
+      =render "layouts/maps"
     %footer#footer
       .container
         .row.sections

@@ -42,7 +42,7 @@ gem 'capistrano'
   gem 'uglifier', '>=1.0.3'
 
 
-
+gem "font-awesome-rails"
 gem 'carrierwave', ">= 0.5.6"
 gem 'mini_magick'
 gem 'flash_cookie_session'

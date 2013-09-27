@@ -1,3 +1,4 @@
+
 %section#feature_slider.lol
   -@banners.each do |b|
     %article#showcasing.slide{style: "background: url('#{b.second_text}') repeat-x top center;"}
@@ -5,7 +6,49 @@
         %img{:class=>"#{b.style_second_text}", src: "#{b.image_url}"}
         .info
           %h2=b.text 
-#showcase
+
+#login_form
+  .container
+    .section.text-center
+      .section_header{:style=>"margin-bottom:10px;"}
+        %h3 Запишитесь на бесплатное пробное занятие
+      = form_for [@group,@person], :remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
+        = raw negative_captcha(@captcha)
+        - if @person.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@person.errors.count, "error")} prohibited this person from being saved:"
+            %ul
+              - @person.errors.full_messages.each do |msg|
+                %li= msg
+        = f.negative_text_field @captcha, :tel, :class => 'text_field', :placeholder=>'Телефон'
+        = f.text_field :about, :class => 'text_field', :placeholder=>'Дополнительная информация'
+        = f.hidden_field :current_group, :value=>@group.id
+        %button.button{:type => "submit" ,:class=>"btn btn-success"}
+          Записаться на пробное занятие
+-#eggs.span9{:style=>"margin-top:10px;"}
+  .container.section
+    %ul.text-center{:style=>"list-style-type: none;"}
+      %li.text-center{:style=>"  width: 100px; display:block; float:left; margin-left:10px;"}
+        = fa_icon "building 4x"
+        .span3{:style=>"font: Georgia; font-size: 24pt;"}
+          2006
+        .span
+          Основана        
+      %li.text-center{:style=>"  width: 100px; display:block; float:left; margin-left:10px;"}
+        = fa_icon "thumbs-up 4x"
+        .span3{:style=>"font: Georgia; font-size: 24pt;"}
+          6845
+        .span
+          детей выбрали нас
+      %li.text-center{:style=>"width: 100px;display:block; float:left; margin-left:10px;"}
+        = fa_icon "picture 4x"
+        .span3{:style=>"font: Georgia; font-size: 24pt;"}
+          11
+        .span
+          выставок в крупных ТЦ        
+        
+  %hr{:style=>"clear:both;"}          
+#showcase.section.text-center
   .container
     .section_header
       %h3 Наши направления
@@ -21,7 +64,8 @@
             .text
               %h6=direction.name
               %p=direction.desc
-#features
+
+#features.section.text-center
   .container
     .section_header
       %h3 Live view

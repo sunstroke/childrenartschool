@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 set :application, "schoolf"
 #set :repository,  "git@fcross.ru:photocross.git"
-set :repository,  "git://gitorious.org/school-f/school2011.git"
+set :repository,  "git://gitorious.org/childrenartschool/school2011.git"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location

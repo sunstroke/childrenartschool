@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   private
   
   def set_teacher
-    @teachers=Teacher.all
+    @teachers=Teacher.where("visible=true")
     
   end
   

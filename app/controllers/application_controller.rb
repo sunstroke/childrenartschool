@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
+  before_filter :set_teacher
   after_filter :comment_audit, :only=>[:create, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, :with => :rescue_not_found  
   protect_from_forgery
@@ -11,6 +12,11 @@ class ApplicationController < ActionController::Base
   end
  
   private
+  
+  def set_teacher
+    @teachers=Teacher.all
+    
+  end
   
   def comment_audit
     audit=Audit.last

@@ -55,6 +55,7 @@
         .section_header
           %h3 Наша команда
         -@teachers.each do |teacher|
+          -teacher.avatar.recreate_versions!
           =image_tag teacher.avatar.url(:small_c), :class=>"img-circle"
       
     #contact.section

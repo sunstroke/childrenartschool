@@ -55,7 +55,7 @@
         .section_header
           %h3 Наша команда
         -@teachers.each do |teacher|
-          =image_tag teacher.avatar.url, :class=>"img-circle", :style=>"width: 200px;"
+          =image_tag teacher.avatar.url(:small), :class=>"img-circle"
       
     #contact.section
       =render "layouts/maps"

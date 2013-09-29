@@ -16,7 +16,7 @@
         #user-navigation{:style=>"position: absolute; top:5px; right: 5px; height: 30px;"}
           %ul.wat-cf
             %li
-              = current_user.email.to_s + current_user.name.to_s
+              = current_user.email.to_s + current_user.name.to_s if current_user
             %li
               %a{:href => "#"}= t("web-app-theme.profile", :default => "Profile")
             %li

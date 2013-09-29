@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Admin::TeachersController < ApplicationController
-  before_filter :require_login
+  # before_filter :require_login
   # GET /admin/teachers
   # GET /admin/teachers.xml
  layout'admin'  

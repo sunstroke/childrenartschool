@@ -3,6 +3,11 @@
   = f.text_field :fullname, :class => 'text_field'
   %span.description Ex: Виктория Сикрет
 .group
+  = f.label :visible, t("activerecord.attributes.teacher.fullname", :default => "Полное имя"), :class => :label
+  = f.check_box :visible
+  %span.description Ex: Виктория Сикрет
+  
+.group
   = f.label :link, t("activerecord.attributes.teacher.link", :default => "Короткая ссылка"), :class => :label
   = f.text_field :link, :class => 'text_field'
   %span.description Ex: vika

@@ -20,7 +20,7 @@
             %ul
               - @person.errors.full_messages.each do |msg|
                 %li= msg
-        = f.negative_text_field @captcha, :tel, :class => 'text_field', :placeholder=>'Телефон'
+        = f.negative_text_field @captcha, :tel, :class => 'text_field tel', :placeholder=>'Телефон'
         = f.text_field :about, :class => 'text_field', :placeholder=>'Дополнительная информация'
         = f.hidden_field :current_group, :value=>@group.id
         %button.button{:type => "submit" ,:class=>"btn btn-success"}

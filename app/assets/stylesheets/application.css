@@ -1,4 +1,9 @@
 /*
+
+*= require bootstrap.min
+*= require bootstrap-overrides
+*= require theme
 *= require index
+*= require animate
 *= require font-awesome
 */

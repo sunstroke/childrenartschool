@@ -5,20 +5,13 @@
     %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     = stylesheet_link_tag 'application'
-    / Styles
-    %link{href: "/assets/bootstrap.min.css", rel: "stylesheet"}/
-    %link{href: "/assets/bootstrap-overrides.css", rel: "stylesheet", type: "text/css"}/
-    %link{href: "/assets/theme.css", rel: "stylesheet", type: "text/css"}/
+
     %link{href: "http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic", rel: "stylesheet", type: "text/css"}/
-    %link{href: "/assets/index.css", media: "screen", rel: "stylesheet", type: "text/css"}/
-    %link{href: "/assets/animate.css", media: "screen, projection", rel: "stylesheet", type: "text/css"}/
+
     /[if lt IE 9]
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     / Scripts
     %script{src: "http://code.jquery.com/jquery-latest.js"}
-    %script{src: "/assets/bootstrap.min.js"}
-    %script{src: "/assets/theme.js"}
-    %script{src: "/assets/index-slider.js", type: "text/javascript"}
     =render "layouts/analytics"
   %body.pull_top
     .navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
@@ -51,7 +44,7 @@
             .span6{:style=>"font-size: 12px;"}
               ул. Нижняя Сыромятническая д. 10 к7
     = yield
-    #teams.section.text-center
+    -#teams.section.text-center
       .container
         .section_header
           %h3 Наша команда
@@ -59,7 +52,7 @@
           -teacher.avatar.recreate_versions!
           =image_tag teacher.avatar.url(:small_c), :class=>"img-circle"
       
-    #contact.section
+    -#contact.section
       =render "layouts/maps"
     %footer#footer
       .container

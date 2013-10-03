@@ -11,6 +11,7 @@ gem 'sorcery'
 #gem 'protected_attributes'
 gem 'curb-fu'
 gem "acts_as_list"
+gem 'smspilot'
 gem 'sms24x7'
 #gem "audited-activerecord"
 # gem 'sqlite3'

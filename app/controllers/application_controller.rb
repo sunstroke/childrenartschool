@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   
   def set_teacher
     @teachers=Teacher.where("visible=true")
+    @apikey = 'XXXXXXXXXXXXYYYYYYYYYYYYZZZZZZZZXXXXXXXXXXXXYYYYYYYYYYYYZZZZZZZZ';
     
   end
   

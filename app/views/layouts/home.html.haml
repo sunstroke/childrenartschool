@@ -1,0 +1,93 @@
+!!!
+%html
+  %head
+    %title Детская школа искусств
+    %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    = stylesheet_link_tag 'application'
+
+    %link{href: "http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic", rel: "stylesheet", type: "text/css"}/
+
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    / Scripts
+    %script{src: "http://code.jquery.com/jquery-latest.js"}
+    = javascript_include_tag 'application','bootstrap.min','theme','index-slider','maskedinput.min'
+    = render 'layouts/analytics'
+    %script
+      jQuery(function($){
+      $(".tel").mask("(999)999-99-99",{placeholder:" "});
+      });
+  %body.pull_top
+    .navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle.pull-right{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "/"}
+            %strong{:style=>"font-size:24px;"} Детская школа искусств на ARTPLAY
+            .span3{:style=>"font-size:12px;"}
+              Фотография, анимация, кино для детей от 7 до 17 лет
+        .span12.collapse.navbar-collapse.navbar-ex1-collapse{role: "navigation"}
+          -#
+            %ul.nav.navbar-nav.navbar-left
+              %li.active
+                %a{href: "/school"} Школа
+              %li
+                %a{href: "/courses"} Курсы
+              %li
+                %a{href: "/animation"} Мультклуб
+          .span7{:style=>"color: white; float: right; font-size: 22px;", :class=>""}
+            .span6{:style=>"font-size: 14px;"}
+              Есть вопросы? Звони!
+            .span3
+              (495) 777-54-06
+              -#(495) 507-07-58
+            .span6{:style=>"font-size: 12px;"}
+              ул. Нижняя Сыромятническая д. 10 к7
+    = yield
+    -#teams.section.text-center
+      .container
+        .section_header
+          %h3 Наша команда
+        -@teachers.each do |teacher|
+          -teacher.avatar.recreate_versions!
+          =image_tag teacher.avatar.url(:small_c), :class=>"img-circle"
+      
+    -#contact.section
+      =render "layouts/maps"
+    %footer#footer
+      .container
+        .row.sections
+        .row.credits
+          .col-md-12
+            .row.social
+              .col-md-12
+                %a.facebook{href: "#"}
+                  %span.socialicons.ico1
+                  %span.socialicons_h.ico1h
+                %a.twitter{href: "#"}
+                  %span.socialicons.ico2
+                  %span.socialicons_h.ico2h
+                %a.gplus{href: "#"}
+                  %span.socialicons.ico3
+                  %span.socialicons_h.ico3h
+                %a.flickr{href: "#"}
+                  %span.socialicons.ico4
+                  %span.socialicons_h.ico4h
+                %a.pinterest{href: "#"}
+                  %span.socialicons.ico5
+                  %span.socialicons_h.ico5h
+                %a.dribble{href: "#"}
+                  %span.socialicons.ico6
+                  %span.socialicons_h.ico6h
+                %a.behance{href: "#"}
+                  %span.socialicons.ico7
+                  %span.socialicons_h.ico7h
+            .row.copyright
+              .col-md-12
+                © 2013 ООО "Игра Фотокросс". Все права защищены.
+

@@ -5,7 +5,7 @@
       %a{href:"#{b.url}"}
         %img{:class=>"#{b.style_second_text}", src: "#{b.image_url}"}
         .info
-          %h2=b.text 
+          %h2=raw(b.text )
 
 #login_form
   .container

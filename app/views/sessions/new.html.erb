@@ -1,23 +1,32 @@
-<section id="section">
-<h1>Вдох</h1>
-
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
+<div id="sign_in1">
+<section id="section" class="container">
+  <div class="row">
+      <div class="span12 header">
+        <h1>Вдох</h1>
+      </div>
+      <div class="span12 footer">
+        <%= form_tag sessions_path do %>
+          <div class="field">
+            <%= label_tag :email %>
+            <%= text_field_tag :email, params[:email] %>
+          </div>
+          <div class="field">
+            <%= label_tag "Пароль" %>
+            <%= password_field_tag :password %>
+          </div>
+          <div class="field">
+            <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+            <%= label_tag "Запомни меня" %>
+          </div>
+          <div class="actions"><%= submit_tag "Вдох" %></div>
+        <% end %>
+        <div> Или <%= link_to "Зарегистрируйтесь", signup_path %></div>
+      </div>
+      <div class="span3 division">
+        <h1>Забыли пароль?</h1>
+      </div>
+        <%= render 'forgot_password_form' %>
+      </div>
   </div>
-  <div class="field">
-    <%= label_tag "Пароль" %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="field">
-    <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-    <%= label_tag "Запомни меня" %>
-  </div>
-  <div class="actions"><%= submit_tag "Вдох" %></div>
-<% end %>
-<div> Или <%= link_to "Зарегистрируйтесь", signup_path %></div>
-<h1>Забыли пароль?</h1>
-<%= render 'forgot_password_form' %>
-
 </section>
+</div>

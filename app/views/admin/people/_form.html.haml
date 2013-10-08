@@ -29,16 +29,16 @@
   = f.text_field :tel_mother, :class => 'text_field'
   %span.description Ex: +79265554433
 .group
-  = f.label :mail_mother, t("activerecord.attributes.person.mail_mother", :default => "Адрес электронной почты ребенка мамы"), :class => :label
-  = f.email_field :mail_mother, :class => 'text_field'
+  = f.label :email_mother, t("activerecord.attributes.person.mail_mother", :default => "Адрес электронной почты ребенка мамы"), :class => :label
+  = f.email_field :email_mother, :class => 'text_field'
   %span.description Ex: mail@mail.com  
 .group
   = f.label :tel_father, t("activerecord.attributes.person.tel_father", :default => "Номер телефона  папы"), :class => :label
   = f.text_field :tel_father, :class => 'text_field'
   %span.description Ex: +79265554433
 .group
-  = f.label :mail_father, t("activerecord.attributes.person.mail_father", :default => "Адрес электронной почты  папы"), :class => :label
-  = f.email_field :mail_father, :class => 'text_field'
+  = f.label :email_father, t("activerecord.attributes.person.mail_father", :default => "Адрес электронной почты  папы"), :class => :label
+  = f.email_field :email_father, :class => 'text_field'
   %span.description Ex: mail@mail.com  
 .group
   = f.label :sub_group, t("activerecord.attributes.group.sub_group", :default => "Подписка на новости группы"), :class => :label

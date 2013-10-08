@@ -14,8 +14,8 @@
       </div>
       <div class="span12 proof">
         <div class="span5 remember"> 
-          <%= label_tag "Запомни меня" %>
-          <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+          <%= label_tag "Запомни меня", :class=>"checkbox" %>
+            <%= check_box_tag :remember_me, 1, params[:remember_me] %>
 
         </div>
         <div class="span3 dosnt"> 

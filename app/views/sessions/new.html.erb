@@ -6,22 +6,22 @@
       </div>
       <%= form_tag sessions_path do %>
       <div class="span12 footer">
-          <div class="field">
-            <%= label_tag :email %>
-            <%= text_field_tag :email, params[:email] %>
-          </div>
-          <div class="field">
-            <%= label_tag "Пароль" %>
-            <%= password_field_tag :password %>
-          </div>
+
+            <%= text_field_tag :email, params[:email], :placeholder=>"Email" %>
+            <%= password_field_tag :password, :placeholder=>"Пароль" %>
+            <%= submit_tag "Вдох" %>
+          
       </div>
       <div class="span12 proof">
-        <div class="field">
-          <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+        <div class="span5 remember"> 
           <%= label_tag "Запомни меня" %>
+          <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+
         </div>
-        <div class="actions"><%= submit_tag "Вдох" %></div>
-        <div> Или <%= link_to "Зарегистрируйтесь", signup_path %></div>
+        <div class="span3 dosnt"> 
+          <span>НЕ зарегистрирован?</span> 
+          <%= link_to "Зарегистрируйся", signup_path %>
+        </div>
       </div>
       <% end %>
       <div class="span3 division">

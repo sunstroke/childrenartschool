@@ -48,4 +48,12 @@ Schoolf::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :log
+  
+  
 end
+Schoolf::Application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[childrenartschool] ",
+    :sender_address => %{"notifier" <notifier@childrenartschool.ru>},
+    :exception_recipients => %w{k.sunstroke@gmail.com}
+  }

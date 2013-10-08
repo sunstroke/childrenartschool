@@ -13,6 +13,7 @@ gem 'curb-fu'
 gem "acts_as_list"
 gem 'smspilot'
 gem 'sms24x7'
+gem 'exception_notification'
 #gem "audited-activerecord"
 # gem 'sqlite3'
 #gem 'vimeo'

@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
+  before_filter :log_additional_data
   before_filter :set_teacher
   after_filter :comment_audit, :only=>[:create, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, :with => :rescue_not_found  
@@ -7,6 +8,9 @@ class ApplicationController < ActionController::Base
 
 
   protected
+  def log_additional_data
+    request.env["exception_notifier.exception_data"] 
+  end
   def rescue_not_found
     render :template => 'application/not_found', :status => :not_found
   end

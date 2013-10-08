@@ -12,12 +12,6 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     / Scripts
     %script{src: "http://code.jquery.com/jquery-latest.js"}
-    = javascript_include_tag 'application','bootstrap.min','theme','index-slider','maskedinput.min'
-    = render 'layouts/analytics'
-    %script
-      jQuery(function($){
-      $(".tel").mask("(999)999-99-99",{placeholder:" "});
-      });
   %body.pull_top
     .navbar.navbar-inverse.navbar-static-top{role: "navigation"}
       .container
@@ -91,4 +85,9 @@
               .col-md-12
                 © 2013 ООО "Игра Фотокросс". Все права защищены.
 
-    
+    = javascript_include_tag 'application','bootstrap.min','theme','index-slider','maskedinput.min'
+    = render 'layouts/analytics'
+    %script
+      jQuery(function($){
+      $(".tel").mask("(999)999-99-99",{placeholder:" "});
+      });

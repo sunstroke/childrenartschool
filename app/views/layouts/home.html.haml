@@ -25,23 +25,22 @@
             %strong{:style=>"font-size:24px;"} Детская школа искусств на ARTPLAY
             .span3{:style=>"font-size:12px;"}
               Фотография, анимация, кино для детей от 7 до 17 лет
-        .span12.collapse.navbar-collapse.navbar-ex1-collapse{role: "navigation"}
-          -#
-            %ul.nav.navbar-nav.navbar-left
-              %li.active
-                %a{href: "/school"} Школа
-              %li
-                %a{href: "/courses"} Курсы
-              %li
-                %a{href: "/animation"} Мультклуб
-          .span7{:style=>"color: white; float: right; font-size: 22px;", :class=>""}
-            .span6{:style=>"font-size: 14px;"}
-              Есть вопросы? Звони!
-            .span3
-              (495) 777-54-06
-              -#(495) 507-07-58
-            .span6{:style=>"font-size: 12px;"}
-              ул. Нижняя Сыромятническая д. 10 к7
+        -#.span12.collapse.navbar-collapse.navbar-ex1-collapse{role: "navigation"}          
+          %ul.nav.navbar-nav.navbar-left
+            %li.active
+              %a{href: "/school"} Школа
+            %li
+              %a{href: "/courses"} Курсы
+            %li
+              %a{href: "/animation"} Мультклуб
+        .span7{:style=>"color: white; float: right; font-size: 22px;", :class=>""}
+          .span6{:style=>"font-size: 14px;"}
+            Есть вопросы? Звони!
+          .span3
+            (495) 777-54-06
+            -#(495) 507-07-58
+          .span6{:style=>"font-size: 12px;"}
+            ул. Нижняя Сыромятническая д. 10 к7
     = yield
     -#teams.section.text-center
       .container

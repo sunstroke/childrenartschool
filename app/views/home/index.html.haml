@@ -1,9 +1,10 @@
 
-%section#feature_slider.lol
+%section#feature_slider
   -@banners.each do |b|
     %article#showcasing.slide{style: "background: url('#{b.second_text}') repeat-x top center;"}
       %a{href:"#{b.url}"}
         %img{:class=>"#{b.style_second_text}", src: "#{b.image_url}"}
+      %a{href:"#{b.url}"}        
         .info
           %h2=raw(b.text )
 

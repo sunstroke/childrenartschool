@@ -74,7 +74,7 @@
         -@news.each do |news|  
           .span4.feature
             .img_box
-              %img.img-responsive.img-circle{src: "#{news.img_url(:thumb)}"}
+              %img.img-responsive.img-circle{src: "#{news.img_url(:thumb)}", :style=>"-webkit-border-radius: 500px; -moz-border-radius: 500px; border-radius: 500px;"}
             .text
               %h6
                 =news.name

@@ -13,35 +13,35 @@
     / Scripts
     %script{src: "http://code.jquery.com/jquery-latest.js"}
   %body.pull_top
-    .navbar.navbar-inverse.navbar-static-top{role: "navigation"}
-      .container
-        .navbar-header
-          %button.navbar-toggle.pull-right{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
-            %span.sr-only Toggle navigation
+    .navbar.transparent.navbar-inverse.navbar-static-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{href: "/"}
-            %strong{:style=>"font-size:24px;"} Детская школа искусств на ARTPLAY
-            .span3{:style=>"font-size:12px;"}
+          %a.brand{href: "/"}
+            %strong Детская школа искусств
+            %br
+            %strong{:style=>"font-size:12px;"}
               Фотография, анимация, кино для детей от 7 до 17 лет
-        .span12.collapse.navbar-collapse.navbar-ex1-collapse{role: "navigation"}
-          -#
-            %ul.nav.navbar-nav.navbar-left
-              %li.active
+          .nav-collapse.collapse         
+            %ul.nav.pull-right
+              %li
                 %a{href: "/school"} Школа
               %li
                 %a{href: "/courses"} Курсы
               %li
                 %a{href: "/animation"} Мультклуб
-          .span7{:style=>"color: white; float: right; font-size: 22px;", :class=>""}
-            .span6{:style=>"font-size: 14px;"}
-              Есть вопросы? Звони!
-            .span3
-              (495) 777-54-06
-              -#(495) 507-07-58
-            .span6{:style=>"font-size: 12px;"}
-              ул. Нижняя Сыромятническая д. 10 к7
+              %li.text-center{:style=>"color:white;"}
+                .span
+                  Есть вопросы? Звони!
+                %br
+                .span{:style=>"font-size:22px;"}
+                  (495) 777-54-06
+                -#(495) 507-07-58
+              -#.span6{:style=>"font-size: 12px;"}
+                ул. Нижняя Сыромятническая д. 10 к7
     = yield
     -#teams.section.text-center
       .container

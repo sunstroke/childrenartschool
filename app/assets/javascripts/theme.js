@@ -1,10 +1,10 @@
 $(function () {
     $(window).scroll(function() {
         if ($(".navbar").offset().top>30) {
-            $(".navbar-fixed-top").addClass("sticky");
+            $(".navbar-inner").addClass("sticky");
         }
         else {
-            $(".navbar-fixed-top").removeClass("sticky");
+            $(".navbar-inner").removeClass("sticky");
         }
     });
 
@@ -18,18 +18,6 @@ $(function () {
     staticHeader.initialize();
 
     portfolioItem.initialize();
-
-
-    // segun esto corrige el pedo del dropdown en tablets and such
-    // hay que testearlo!
-    $('.dropdown-toggle').click(function(e) {
-        e.preventDefault();
-        setTimeout($.proxy(function() {
-            if ('ontouchstart' in document.documentElement) {
-                $(this).siblings('.dropdown-backdrop').off().remove();
-            }
-        }, this), 0);
-    });
 });
 
 var portfolioItem = {

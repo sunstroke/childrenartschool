@@ -1,12 +1,11 @@
 /*
-*= require_self
-*= require bootstrap.min
-*= require bootstrap-overrides
+
+*= require bootstrap
 *= require theme
 *= require index
 *= require animate
 *= require font-awesome
-
+*= require_self
 */
 
 #team{

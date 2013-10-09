@@ -9,9 +9,9 @@
 
 #showcase
   .container
-    .section.text-center
-      .section_header{:style=>"margin-bottom:10px;"}
-        %h3 Запишитесь на бесплатное пробное занятие
+    .section_header.text-center{:style=>"margin-bottom:10px;"}
+      %h3 Запишитесь на бесплатное пробное занятие
+    .row
       = form_for [@group,@person], :remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
         = raw negative_captcha(@captcha)
         - if @person.errors.any?

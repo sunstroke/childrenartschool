@@ -9,7 +9,7 @@
 
 #showcase
   .container
-    .section_header.text-center{:style=>"margin-bottom:10px;"}
+    .section_header.text-center
       %h3 Запишитесь на бесплатное пробное занятие
     .row
       = form_for [@group,@person], :remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|

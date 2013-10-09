@@ -65,16 +65,18 @@
               %h6=direction.name
               %p=direction.desc
 
-#features.section.text-center
+#showcase
   .container
     .section_header
       %h3 Live view
-    -@news.each do |news|  
-      .row.feature
-        .col-sm-6{:class => cycle("", "pic-right")}
-          %img.img-responsive{src: "#{news.img_url(:thumb)}"}/
-        .col-sm-6{:class => cycle("info", "info-left")}
-          %h3
-            =news.name
-          %p=news.desc
+    .row.feature_wrapper
+      .features_op1_row
+        -@news.each do |news|  
+          .span4.feature
+            .img_box
+              %img.img-responsive{src: "#{news.img_url(:thumb)}"}/
+            .text
+              %h6
+                =news.name
+              %p=news.desc
 

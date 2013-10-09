@@ -422,7 +422,7 @@
 -------------------------------------------------- */
 @media (max-width: 991px) {
   #showcase .features_op1_row .feature .img_box span.circle {
-    top: 35%; }
+    top: 40%; }
 
   #clients .row {
     text-align: center; }
@@ -466,7 +466,7 @@
     text-align: center; }
 
   #showcase {
-    margin-top: 200px; }
+    margin-top: 150px; }
     #showcase .section_header {
       text-align: center; }
     #showcase .features_op1_row .feature {

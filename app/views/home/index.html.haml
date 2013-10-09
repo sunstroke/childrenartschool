@@ -21,7 +21,7 @@
               - @person.errors.full_messages.each do |msg|
                 %li= msg
         = f.negative_text_field @captcha, :tel, :class => 'text_field tel', :placeholder=>'Телефон'
-        = f.text_field :about, :class => 'text_field', :placeholder=>'Дополнительная информация'
+        = f.text_field :about, :class => 'text_field', :placeholder=>'Имя'
         = f.hidden_field :current_group, :value=>@group.id
         %button.button{:type => "submit" ,:class=>"btn btn-success"}
           Записаться на пробное занятие
@@ -48,14 +48,14 @@
           выставок в крупных ТЦ        
         
   %hr{:style=>"clear:both;"}          
-#showcase.section.text-center
+#showcase
   .container
     .section_header
       %h3 Наши направления
     .row.feature_wrapper
       .features_op1_row
         -@directions.each do |direction|
-          .col-sm-4.feature
+          .span4.feature
             .img_box
               %a{href: "#{direction.link}"}
                 =image_tag(direction.img_url(:thumb))

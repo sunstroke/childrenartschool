@@ -25,6 +25,7 @@ gem 'therubyracer', :platforms => :ruby
 
 gem "gritter", "0.6.3"
 gem 'wicked_pdf'
+gem 'ckeditor'
 
 # Use unicorn as the web server
 # gem 'unicorn'

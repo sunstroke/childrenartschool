@@ -51,7 +51,7 @@
 .group
   = redactor("#group_prim")
   = f.label :prim, t("activerecord.attributes.group.prim", :default => "Примечание"), :class => :label
-  = f.text_area :prim, :class => 'text_area', :style=>"height: 300px; width: 99%;"
+  = f.cktext_area :prim, :class => 'text_area ckeditor', :style=>"height: 300px; width: 99%;"
   %span.description Ex: Информация об открытых уроках и пр
 .group
   = f.label :calendar, t("activerecord.attributes.group.calendar", :default => "Расписание занятий"), :class => :label

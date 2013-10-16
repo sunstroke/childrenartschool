@@ -45,8 +45,8 @@
             = form_for [@group,@person],:remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
               = raw negative_captcha(@captcha) 
               .group
-                = f.negative_text_field @captcha, :tel, :class => 'text_field'
-                = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class =>"tel"            
+                = f.negative_text_field @captcha, :tel, :class => 'tel'
+                = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class =>:label          
               %br
               .group
                 = redactor("#person_about")

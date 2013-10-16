@@ -12,7 +12,7 @@
   %span.description Ex: учебные программы упорядочиваются по возрастанию номеров, при отображении на странице, н.п. /school 
 .group
   = f.label :annotation, t("activerecord.attributes.program.annotation", :default => "Аннотация"), :class => :label
-  = f.text_area :annotation, :class => 'text_area'
+  = f.cktext_area :annotation, :class => 'text_area ckeditor'
   %span.description Ex: краткое содержание программы
 .group
   = f.label :program_type, t("activerecord.attributes.program.type", :default => "Тип "), :class => :label

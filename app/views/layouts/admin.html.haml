@@ -7,6 +7,10 @@
 
     = include_gritter 
     = render "layouts/redactor"
+    %script
+      var CKEDITOR_BASEPATH = '/assets/ckeditor/';
+      var APPLICATION_CSS   = '#{asset_path("application.css") }';
+    =javascript_include_tag "ckeditor/ckeditor"    
     = csrf_meta_tag
   %body
     #container

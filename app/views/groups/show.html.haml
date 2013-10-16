@@ -46,7 +46,7 @@
               = raw negative_captcha(@captcha) 
               .group
                 = f.negative_text_field @captcha, :tel, :class => 'text_field'
-                = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class => :label              
+                = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class =>"tel"            
               %br
               .group
                 = redactor("#person_about")

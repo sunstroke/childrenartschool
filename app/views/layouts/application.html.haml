@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Детская школа искусств
+    %title Children Art School
     %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     = stylesheet_link_tag 'application',controller_name
@@ -83,7 +83,7 @@
                   %span.socialicons_h.ico7h
             .row.copyright
               .col-md-12
-                © 2013 ООО "Игра Фотокросс". Все права защищены.
+                Copyright &copy; #{Time.now.year}  ООО "Игра Фотокросс". Все права защищены.
 
     = javascript_include_tag 'application','bootstrap.min','theme','index-slider','maskedinput.min', controller_name
     = render 'layouts/analytics'

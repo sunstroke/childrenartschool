@@ -51,6 +51,7 @@ gem 'mini_magick'
 gem 'flash_cookie_session'
 gem "paperclip", "~> 2.3"
 gem 'jquery-rails', '~> 2.1'
+gem 'jquery-ui-rails'
 gem 'ckeditor_rails'
 #gem 'omniauth',">= 0.2.6"
 gem "cancan"

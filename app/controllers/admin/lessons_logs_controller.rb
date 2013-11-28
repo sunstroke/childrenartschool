@@ -1,4 +1,5 @@
 class Admin::LessonsLogsController < ApplicationController
+     layout'admin' 
   def index
     @lessons_logs = LessonsLog.all
   end

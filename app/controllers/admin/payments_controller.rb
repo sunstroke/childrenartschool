@@ -1,4 +1,5 @@
 class Admin::PaymentsController < ApplicationController
+     layout'admin' 
   def index
     @payments = Payment.all
   end

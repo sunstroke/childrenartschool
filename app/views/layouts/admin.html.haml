@@ -44,23 +44,23 @@
             %li{:class => controller.controller_path == 'admin/pages' ? 'active' : '' }
               %a{:href => admin_pages_path} Страницы
             %li{:class => controller.controller_path == 'admin/slideshows' ? 'active' : '' }
-              %a{:href => admin_slideshows_path} Slideshows
+              %a{:href => admin_slideshows_path} Слайдшоу
             %li{:class => controller.controller_path == 'admin/directions' ? 'active' : '' }
-              %a{:href => admin_directions_path} Directions
+              %a{:href => admin_directions_path} Направления
             %li{:class => controller.controller_path == 'admin/live_news' ? 'active' : '' }
               %a{:href => admin_live_news_index_url} LiveNews
             %li{:class => controller.controller_path == 'admin/menus' ? 'active' : '' }
-              %a{:href => admin_menus_path} Menus
+              %a{:href => admin_menus_path} Футерменю
             %li{:class => controller.controller_path == 'admin/attendances' ? 'active' : '' }
-              %a{:href => admin_attendances_path} Attendances
+              %a{:href => admin_attendances_path} Посещения детей
             %li{:class => controller.controller_path == 'admin/lessons_logs' ? 'active' : '' }
-              %a{:href => admin_lessons_logs_path} LessonsLogs
+              %a{:href => admin_lessons_logs_path} Прошедшие занятия
             %li{:class => controller.controller_path == 'admin/locations' ? 'active' : '' }
-              %a{:href => admin_locations_path} Locations
+              %a{:href => admin_locations_path} Локации
             %li{:class => controller.controller_path == 'admin/payments' ? 'active' : '' }
-              %a{:href => admin_payments_path} Payments
+              %a{:href => admin_payments_path} Оплата
             %li{:class => controller.controller_path == 'admin/record_books' ? 'active' : '' }
-              %a{:href => admin_record_books_path} RecordBooks
+              %a{:href => admin_record_books_path} Зачетка
       #wrapper.wat-cf
         .flash
           - flash.each do |type, message|

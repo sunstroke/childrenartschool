@@ -1,4 +1,5 @@
 class Admin::LocationsController < ApplicationController
+     layout'admin' 
   def index
     @locations = Location.all
   end

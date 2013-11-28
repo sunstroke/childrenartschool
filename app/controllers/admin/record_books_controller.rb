@@ -1,4 +1,5 @@
 class Admin::RecordBooksController < ApplicationController
+     layout'admin' 
   def index
     @record_books = RecordBook.all
   end

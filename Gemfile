@@ -50,7 +50,7 @@ gem 'carrierwave', ">= 0.5.6"
 gem 'mini_magick'
 gem 'flash_cookie_session'
 gem "paperclip", "~> 2.3"
-gem 'jquery-rails', '>= 1.0.12'
+gem 'jquery-rails'
 gem 'ckeditor_rails'
 #gem 'omniauth',">= 0.2.6"
 gem "cancan"

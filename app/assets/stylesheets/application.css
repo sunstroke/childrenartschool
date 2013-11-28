@@ -7,6 +7,10 @@
 *= require font-awesome
 *= require_self
 */
+/*
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
+ */
 
 #team{
 	padding: 35px 0 25px;

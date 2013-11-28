@@ -23,11 +23,13 @@
   = f.text_field :finish, :class=>"date", :style=>"width: 100px;"
   %span.description Ex: 1 апреля 1995 года  
 %script
-  $(":date").dateinput();
-  $(":range").rangeinput();  
+  $(function() {
+    $(".date").dateinput();
+    $(":range").rangeinput();  
+  });
 .group
   = f.label "Возраст", :class => :label
-  %input{:type=>"text",:id=>"amount", :style=>"border:0; color:#f6931f; font-weight:bold;"}
+  %input{:type=>"range",:id=>"amount", :style=>"border:0; color:#f6931f; font-weight:bold;"}
   #slider-range
   %span.description Ex: диапазон возрастов детей в группе  
   = f.hidden_field :age_start

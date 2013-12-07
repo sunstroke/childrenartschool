@@ -1,182 +1,43 @@
-#copyright    
-  Copyright &copy; #{Date.today.year}
-#footmen.menu
-  %ul{:style=>"margin-left: 10px;"}
-    - Menu.where("parent is ?", nil).order("position").each do |menu|
-      %li{:style=>"float:left; width: 220px; margin-bottom:10px; list-style-type: none;"}
-        = link_to menu.name, menu.link
-        - if menu.children.exists?
+%footer#footer
+  .container
+    .row.sections
+    .row.credits
+      .col-md-12
+        .row.social
+          .col-md-12
+            %a.facebook{href: "http://www.facebook.com/charschool"}
+              %span.socialicons.ico1
+              %span.socialicons_h.ico1h
+            %a.twitter{href: "http://twitter.com/school_f"}
+              %span.socialicons.ico2
+              %span.socialicons_h.ico2h
+            %a.gplus{href: "https://plus.google.com/105178323799000662791"}
+              %span.socialicons.ico3
+              %span.socialicons_h.ico3h
+        .row.menu
           %ul{:style=>"margin-left: 10px;"}
-            - menu.children.each do |children|
-              %li
-                = link_to children.name, children.link
-                - if children.children.exists?
-                  %ul
-                    - children.children.each do |subchildren|
+            - Menu.where("parent is ?", nil).order("position").each do |menu|
+              %li{:style=>"float:left; width: 220px; margin-bottom:10px; list-style-type: none;"}
+                = link_to menu.name, menu.link
+                - if menu.children.exists?
+                  %ul{:style=>"margin-left: 10px;"}
+                    - menu.children.each do |children|
                       %li
-                        = link_to subchildren.name, subchildren.link
--#
-  .column
-    %p
-      =link_to "ШКОЛА","/school"
-    %ul
-      %li
-        = link_to "Первый год","/programs/1"
-        %ul
-          %li
-            = link_to "Гаврилов","/groups/sh14"
-          %li
-            = link_to "Зеленский","/groups/sh13"
-          %li
-            = link_to "Лиховид","/groups/sh12"
-          %li
-            = link_to "Паромов","/groups/sh18"
-          %li
-            = link_to "Симон","/groups/sh11"
-    %ul
-      %li
-        = link_to "Второй год","/programs/2"
-        %ul
-          %li        
-            = link_to "Гаврилов","/groups/sh24"        
-          %li
-            = link_to "Паромов","/groups/sh28"
-          %li
-            = link_to "Лиховид","/groups/sh22"
-          %li
-            = link_to "Зеленский","/groups/sh23"
-    -#%ul
-      %li
-        = link_to "Третий год","/programs/3"
-        %ul
-          -#%dd
-            = link_to "Лиховид","/groups/sh32"
-          %li
-            = link_to "Симон","/groups/sh31"
-  .column
-    %p
-      = link_to "ФОТОКУРСЫ","/courses"
-    %ul
-      %li
-        = link_to "Первая ступень","/programs/6"
-        %ul
-          %li
-            =link_to "По выходным", "/groups/cours14"
-          %li
-            =link_to "По рабочим","/groups/cours15"
-      %li
-        = link_to "Вторая ступень","/programs/5"
-        %ul
-          %li
-            = link_to "По выходным", "/groups/cours22"
-          %li
-            = link_to "По рабочим","/groups/cours21"
-      %li
-        Авторские курсы
-        %ul
-          %li
-            =link_to "«Непостановочная фотография»","/groups/22"
-          %li
-            =link_to "«Портрет в атмосфере»", "/groups/portret"
-          %li
-            =link_to "«Свадебная фотография»","/groups/svadba"
-          %li
-            =link_to "«Аналоговая фотография»","/groups/analog"            
-  .column
-    %p
-      =link_to "МУЛЬТИПЛИКАЦИОННЫЕ КУРСЫ","/animation"
-    %ul
-      %li
-        = link_to "Песочная анимация","/groups/pesok"
-      %li
-        = link_to "Anime курс","/groups/anime"
-      %li
-        = link_to "Мультклуб","/groups/multclub"        
-    %p        
-      &nbsp;
-    %ul
-      %li
-        =link_to "Киношкола","/cinemacourse"
-    %ul
-      %li
-        Индивидуальные занятия        
-  .column
-    %p
-      =link_to "ПРЕПОДАВАТЕЛИ","/teachersall"
-    %ul  
-      %li
-        Максим СИМОН
-      %li
-        Мария ЛИХОВИД
-      %li
-        Сергей ГАВРИЛОВ
-      %li
-        Даниил ЗЕЛЕНСКИЙ
-      %li
-        Евгения МАРКОВА
-      %li
-        Александр ПАРОМОВ
-      %li
-        Виктория УШКАНОВА
-      %li
-        Виктория СПИРЯГИНА
-      %li
-        Дарья МАЛЫШЕВА
-      %li
-        Юрий ИВАЩЕНКО
-      %li
-        Антон ЕРОШИН
-  .column
-    %p
-      СВЯЗЬ
-    %ul  
-      %li
-        = link_to "Подписка на новости","/subscribe"
-      %li
-        = link_to "Страница ВКонтакте","http://vkontakte.ru/school_f"
-      %li
-        = link_to "Страница Facebook","http://www.facebook.com/schoolf"
-      %li
-        = link_to "Адрес в Москве","http://childrenartschool.ru/contacts"
-      %li
-        Обратный звонок
-      %li
-        Написать письмо
-      %li
-        = link_to "Вакансии", "/vacancies"        
-      %li
-        =link_to "СТАРАЯ ВЕРСИЯ САЙТА", "http://2010.childrenartschool.ru"
-    %br        
-    %p
-      ВЫСТАВКИ
-    %ul  
-      %li
-        =link_to "«Гагаринский» 2012", "/exibigagarino"
-      %li
-        =link_to  "«Филион» 2011", "http://2010.childrenartschool.ru/filion2011"
-      %li
-        =link_to "«Метрополис» 2010","http://2010.childrenartschool.ru/exhib_metropolis"
-      %li
-        =link_to "«Филион» 2010","http://2010.childrenartschool.ru/exhib_filion"
-  .column
-    %p
-      ПРОЕКТЫ
-    %ul
-      %li
-        =link_to "Орленок 2012","/groups/orlyonok"
-      %li
-        Лето 2012
-    %br
-    %p{:style=>"display:none;"}
-      СЕЗОНЫ
-    %ul{:style=>"display:none;"}  
-      %li
-        2011    
-      %li
-        =link_to "2010","http://2010.childrenartschool.ru"
-      %li
-        2009
-      %li
-        2008
-      %li
-        2007        
+                        = link_to children.name, children.link
+                        - if children.children.exists?
+                          %ul
+                            - children.children.each do |subchildren|
+                              %li
+                                = link_to subchildren.name, subchildren.link
+        .row.copyright
+          .col-md-12
+            Copyright &copy; #{Time.now.year}  ООО "Игра Фотокросс". Все права защищены.
+
+= javascript_include_tag 'application','bootstrap.min','theme','index-slider','maskedinput.min', controller_name
+= render 'layouts/analytics'
+%script
+  jQuery(function($){
+  $(".tel").mask("(999)999-99-99",{placeholder:" "});
+  });
+
+

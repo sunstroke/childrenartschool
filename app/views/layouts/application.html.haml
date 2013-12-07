@@ -10,8 +10,6 @@
 
     /[if lt IE 9]
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    / Scripts
-    %script{src: "http://code.jquery.com/jquery-latest.js"}
   %body.pull_top
     .navbar.transparent.navbar-inverse.navbar-static-top
       .navbar-inner
@@ -53,29 +51,4 @@
       
     -#contact.section
       =render "layouts/maps"
-    %footer#footer
-      .container
-        .row.sections
-        .row.credits
-          .col-md-12
-            .row.social
-              .col-md-12
-                %a.facebook{href: "http://www.facebook.com/charschool"}
-                  %span.socialicons.ico1
-                  %span.socialicons_h.ico1h
-                %a.twitter{href: "http://twitter.com/school_f"}
-                  %span.socialicons.ico2
-                  %span.socialicons_h.ico2h
-                %a.gplus{href: "https://plus.google.com/105178323799000662791"}
-                  %span.socialicons.ico3
-                  %span.socialicons_h.ico3h
-            .row.copyright
-              .col-md-12
-                Copyright &copy; #{Time.now.year}  ООО "Игра Фотокросс". Все права защищены.
-
-    = javascript_include_tag 'application','bootstrap.min','theme','index-slider','maskedinput.min', controller_name
-    = render 'layouts/analytics'
-    %script
-      jQuery(function($){
-      $(".tel").mask("(999)999-99-99",{placeholder:" "});
-      });
+    =render "layouts/footer"

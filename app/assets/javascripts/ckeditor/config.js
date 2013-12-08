@@ -9,6 +9,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.uiColor = '#AADC6E';
 	config.toolbar = 'Basic';
   config.contentsCss = APPLICATION_CSS;
+	config.allowedContent = true;
   // ...  
 return true;	
 };

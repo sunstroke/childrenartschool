@@ -29,7 +29,7 @@
   });
 .group
   = f.label "Возраст", :class => :label
-  %input{:type=>"range",:id=>"amount", :style=>"border:0; color:#f6931f; font-weight:bold;"}
+  %input{:type=>"text",:id=>"amount", :style=>"border:0; color:#f6931f; font-weight:bold;"}
   #slider-range
   %span.description Ex: диапазон возрастов детей в группе  
   = f.hidden_field :age_start

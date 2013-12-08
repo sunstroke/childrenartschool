@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui-slider
 //= require jquery.ui.all
 
 // Place your application-specific JavaScript functions and classes here

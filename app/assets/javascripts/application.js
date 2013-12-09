@@ -2,7 +2,6 @@
 //= require jquery_ujs
 //= require jquery.ui-slider
 //= require jquery.ui.all
-//= require galleria
 
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults

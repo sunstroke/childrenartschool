@@ -11,6 +11,9 @@
  *= require jquery.ui.core
  *= require jquery.ui.theme
  */
+.galleria{
+	height:600px;
+}
 
 #team{
 	padding: 35px 0 25px;

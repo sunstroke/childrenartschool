@@ -79,5 +79,5 @@
               %h6
                 =news.name
               %p= raw(news.desc)
-              = link_to "Читать дальше", @live_news.link, :class=>"link_more" if @live_news.link?
+              = link_to "Читать дальше", news.link, :class=>"link_more" if news.link?
 

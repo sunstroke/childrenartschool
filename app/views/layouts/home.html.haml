@@ -37,15 +37,16 @@
               %li
                 %a{href: "/animation"} Мультклуб
               %li.text-center{:style=>"color:white;"}
-                .span
-                  Есть вопросы? Звоните!
-                %br
-                .span{:style=>"font-size:22px;"}
-                  (495) 777-54-06
-                -#(495) 507-07-58
-                %br
-                .span4{:style=>"font-size: 12px;"}
-                  ул. Нижняя Сыромятническая д. 10 стр7
+                %a{href:"/contacts"}
+                  .span
+                    Есть вопросы? Звоните!
+                  %br
+                  .span{:style=>"font-size:22px;"}
+                    (495) 777-54-06
+                  -#(495) 507-07-58
+                  %br
+                  .span4{:style=>"font-size: 12px;"}
+                    ул. Нижняя Сыромятническая д. 10 стр7
     = yield
     -#teams.section.text-center
       .container

@@ -62,7 +62,8 @@
                 %span.circle
                   %span.plus +
             .text
-              %h6=direction.name
+              %a{href: "#{direction.link}"}
+                %h6=direction.name
               %p=direction.desc
 
 #showcase

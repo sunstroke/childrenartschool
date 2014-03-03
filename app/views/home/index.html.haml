@@ -1,8 +1,8 @@
 
 %section#feature_slider
   -@banners.each do |b|
-    %article.slide#showcasing{style: "background: url('#{b.second_text}') repeat-x top center;"}
-      %a{href:"#{b.url}"}
+    %a{href:"#{b.url}"}
+      %article.slide#showcasing{style: "background: url('#{b.second_text}') repeat-x top center;"}
         %img{:class=>"#{b.style_second_text}", src: "#{b.image_url}"}        
         .info
           %h2=raw(b.text )

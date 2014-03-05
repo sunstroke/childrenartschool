@@ -3,7 +3,8 @@ class HomeController < ApplicationController
 before_filter :setup_negative_captcha, :only => [:index]    
   def index
     @banners= Welcome.all(:conditions=>['visible=?',true], :order=>:position)
-    @directions= Direction.where('visible=?',true).order("position").limit(3)
+    #@directions= Direction.where('visible=?',true).order("position").limit(3)
+    @directions= Direction.where('visible=?',true).order("position")
     @groups = Group.all(:conditions=>['open=? and finish>?',true, Time.now], :order=>:start)
     @news=LiveNews.where('visible=?',true).order("position").limit(3)
     @title='Детская Школа Искусств'

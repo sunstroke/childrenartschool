@@ -52,19 +52,20 @@
   .container
     .section_header
       %h3 Наши направления
-    .row.feature_wrapper
-      .features_op1_row
-        -@directions.each do |direction|
-          .span4.feature
-            .img_box
-              %a{href: "#{direction.link}"}
-                =image_tag(direction.img_url(:thumb))
-                %span.circle
-                  %span.plus +
-            .text
-              %a{href: "#{direction.link}"}
-                %h6=direction.name
-              %p=direction.desc
+    -@directions.in_groups_of(3).each do |directions|
+      .row.feature_wrapper
+        .features_op1_row
+          -directions.each do |direction|
+            .span4.feature
+              .img_box
+                %a{href: "#{direction.link}"}
+                  =image_tag(direction.img_url(:thumb))
+                  %span.circle
+                    %span.plus +
+              .text
+                %a{href: "#{direction.link}"}
+                  %h6=direction.name
+                %p=direction.desc
 
 #showcase
   .container

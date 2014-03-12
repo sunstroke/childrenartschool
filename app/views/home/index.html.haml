@@ -7,11 +7,11 @@
         .info
           %h2=raw(b.text )
 
--#showcase
+#showcase
   .container
     .section_header.text-center
       %h3 Подпишитесь на нашу Афишу
-    =render "home/form"
+    =render "form"
     -#
       .row
         = form_for [@group,@person], :remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|

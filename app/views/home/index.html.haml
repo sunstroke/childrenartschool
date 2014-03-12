@@ -10,21 +10,23 @@
 -#showcase
   .container
     .section_header.text-center
-      %h3 Запишитесь на бесплатное пробное занятие
-    .row
-      = form_for [@group,@person], :remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
-        = raw negative_captcha(@captcha)
-        - if @person.errors.any?
-          #error_explanation
-            %h2= "#{pluralize(@person.errors.count, "error")} prohibited this person from being saved:"
-            %ul
-              - @person.errors.full_messages.each do |msg|
-                %li= msg
-        = f.negative_text_field @captcha, :tel, :class => 'text_field tel', :placeholder=>'Телефон'
-        = f.text_field :about, :class => 'text_field', :placeholder=>'Имя'
-        = f.hidden_field :current_group, :value=>@group.id
-        %button.button{:type => "submit" ,:class=>"btn btn-success"}
-          Записаться на пробное занятие
+      %h3 Подпишитесь на нашу Афишу
+    =render "home/form"
+    -#
+      .row
+        = form_for [@group,@person], :remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
+          = raw negative_captcha(@captcha)
+          - if @person.errors.any?
+            #error_explanation
+              %h2= "#{pluralize(@person.errors.count, "error")} prohibited this person from being saved:"
+              %ul
+                - @person.errors.full_messages.each do |msg|
+                  %li= msg
+          = f.negative_text_field @captcha, :tel, :class => 'text_field tel', :placeholder=>'Телефон'
+          = f.text_field :about, :class => 'text_field', :placeholder=>'Имя'
+          = f.hidden_field :current_group, :value=>@group.id
+          %button.button{:type => "submit" ,:class=>"btn btn-success"}
+            Записаться на пробное занятие
 -#eggs.span9{:style=>"margin-top:10px;"}
   .container.section
     %ul.text-center{:style=>"list-style-type: none;"}

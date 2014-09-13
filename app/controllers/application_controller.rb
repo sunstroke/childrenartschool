@@ -25,13 +25,15 @@ class ApplicationController < ActionController::Base
   
   def comment_audit
     audit=Audit.last
-    if audit.user_id&&User.exists?(audit.user_id)
-      audit.username=User.find(audit.user_id).email
-    else
-      audit.username= "с сайта URL " +request.url
+    if audit
+      if audit.user_id&&User.exists?(audit.user_id)
+        audit.username=User.find(audit.user_id).email
+      else
+        audit.username= "с сайта URL " +request.url
+      end
+      audit.comment= "Пользователь "+audit.username+" "+t(audit.action)+" "+ t(audit.auditable_type)
+      audit.save
     end
-    audit.comment= "Пользователь "+audit.username+" "+t(audit.action)+" "+ t(audit.auditable_type)
-    audit.save
   end
   
     def not_authenticated

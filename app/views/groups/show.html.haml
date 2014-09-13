@@ -42,7 +42,7 @@
           %h2
             Хочу учиться
           .inner
-            = form_for [@group,@person],:remote => true, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
+            = form_for [@group,@person],:remote => false, :html => { :'data-type' => 'html', :id => 'create_person_form' } do |f|
               = raw negative_captcha(@captcha) 
               .group
                 = f.label :tel, t("activerecord.attributes.person.tel", :default => "Номер телефона для связи (одного из родителей)"), :class =>:label                        

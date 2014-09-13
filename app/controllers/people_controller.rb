@@ -64,7 +64,7 @@ respond_to :html, :xml, :json
           if request.xhr?
             render :partial => "people/show", :locals => { :person => @person }, :layout => false, :status => :created, notice: 'Заявка успешно отправлена менеджеру.'
           else
-            redirect_to(:back, :notice => 'заявка подана')
+            redirect_to(:back, :notice => 'Ваша заявка подана, скоро с вами свяжется администратор')
           end
         end        
         format.xml  { render :xml => @person, :status => :created, :location => @person }

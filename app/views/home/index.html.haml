@@ -60,15 +60,16 @@
           -directions.each do |direction|
             -if direction          
               .span4.feature
+                .text
+                  %a{href: "#{direction.link}"}
+                    %h6=direction.name
+                  %p=direction.desc
                 .img_box
                   %a{href: "#{direction.link}"}
                     =image_tag(direction.img_url(:thumb)) if direction.img_url
                     %span.circle
                       %span.plus +
-                .text
-                  %a{href: "#{direction.link}"}
-                    %h6=direction.name
-                  %p=direction.desc
+                
 
 #showcase
   .container

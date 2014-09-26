@@ -40,7 +40,7 @@
               |
               \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_person_path(person)} 
               |
-              form_tag destroy_admin_person_path, :method => :delete, :id => "delete_person" 
+              =form_tag destroy_admin_person_path, :method => :delete, :id => "delete_person" 
                  link_to 'Удалить', "#delete", :onclick =>  "$('#delete_person').submit();"
               -#
                 \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_person_path(person), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}

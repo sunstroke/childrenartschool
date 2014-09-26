@@ -29,6 +29,8 @@
               = l person.created_at , :format=>:brth 
             %td
               = link_to person.fullname, admin_person_path(person) if person.fullname
+              %br
+              = person.tel
             %td
               = age(person.birthday) if person.birthday
             %td

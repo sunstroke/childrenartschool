@@ -1,8 +1,14 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.14'
+#gem "strong_parameters"
+
+gem 'simplecov', :require => false, :group => :test
+gem 'simplecov-rcov'
 
 gem "magic_encoding"
+
+#gem 'casein', '~>5.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -44,7 +50,7 @@ gem 'capistrano'
 #  gem 'compass-rails'
   gem 'uglifier', '>=1.0.3'
 
-
+gem 'foreman', '0.63.0'
 gem 'font-awesome-sass'
 gem 'carrierwave', ">= 0.5.6"
 gem 'mini_magick'
@@ -56,25 +62,22 @@ gem 'ckeditor_rails'
 #gem 'omniauth',">= 0.2.6"
 gem "cancan"
 gem "russian"
+gem 'web-app-theme'
+gem 'hpricot'
+gem 'ruby_parser'
+
 
 
 group :development, :test do
   #   gem 'webrat'
   gem "nifty-generators"  
   gem 'sqlite3'
-  gem 'web-app-theme'
-  gem 'hpricot'
-  gem 'ruby_parser'
-  gem 'rspec-rails'
-  gem 'cucumber-rails'  
+  gem 'rspec-rails' 
 end
  
  
 group :production do
   gem 'pg', '>=0.11.0'
-  gem 'web-app-theme'
-  gem 'hpricot'
-  gem 'ruby_parser'
 end
 
 
@@ -85,5 +88,6 @@ group :test do
   gem 'email_spec'
   gem 'timecop'
   gem 'launchy'
+  gem 'cucumber-rails', :require => false
 end
 gem "mocha", :group => :test

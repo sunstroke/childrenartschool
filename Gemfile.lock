@@ -119,10 +119,8 @@ GEM
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
     execjs (2.5.2)
-    faraday (0.8.9)
-      multipart-post (~> 1.2.0)
-    faraday_middleware (0.8.8)
-      faraday (>= 0.7.4, < 0.9)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.8)
     flash_cookie_session (1.1.6)
       rails (>= 3.0)
@@ -136,7 +134,6 @@ GEM
     gritter (0.6.3)
     haml (4.0.6)
       tilt
-    hashie (1.2.0)
     hike (1.2.3)
     hpricot (0.8.6)
     html5-boilerplate (2.1.0)
@@ -168,7 +165,7 @@ GEM
     multi_json (1.11.0)
     multi_test (0.1.2)
     multi_xml (0.5.5)
-    multipart-post (1.2.0)
+    multipart-post (2.0.0)
     negative_captcha (0.4)
       actionpack
       activesupport
@@ -261,10 +258,6 @@ GEM
       activesupport (>= 3.2.1)
       curb-fu
       json
-    smspilot (0.0.4)
-      faraday (~> 0.8.1)
-      faraday_middleware (~> 0.8.8)
-      hashie (~> 1.2.0)
     sorcery (0.9.1)
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
@@ -348,7 +341,6 @@ DEPENDENCIES
   simplecov
   simplecov-rcov
   sms24x7
-  smspilot
   sorcery
   sqlite3
   therubyracer

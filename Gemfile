@@ -17,7 +17,7 @@ gem 'sorcery'
 #gem 'protected_attributes'
 gem 'curb-fu'
 gem "acts_as_list"
-gem 'smspilot'
+#gem 'smspilot'
 gem 'sms24x7'
 gem 'exception_notification'
 #gem "audited-activerecord"

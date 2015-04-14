@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+SimpleCov.root('/my/app/root/directory/public')
 # -*- encoding : utf-8 -*-
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)

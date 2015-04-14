@@ -37,7 +37,7 @@ gem 'ckeditor'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+# gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 
@@ -50,6 +50,20 @@ gem 'capistrano'
 #  gem 'compass-rails'
   gem 'uglifier', '>=1.0.3'
 
+  group :production do
+      gem 'unicorn'
+      gem 'pg', '=0.17.0'
+  end
+
+
+  group :development do
+      gem 'capistrano', '3.1.0'
+      gem 'capistrano-rails'
+      gem 'capistrano-bundler'
+      gem 'capistrano-rvm'
+  end
+  
+  
 gem 'foreman', '0.63.0'
 gem 'font-awesome-sass'
 gem 'carrierwave', ">= 0.5.6"
@@ -75,10 +89,7 @@ group :development, :test do
   gem 'rspec-rails' 
 end
  
- 
-group :production do
-  gem 'pg', '>=0.11.0'
-end
+
 
 
 group :test do

@@ -1,7 +1,7 @@
 .bundle
 db/*.sqlite3
 log/*.log
-tmp/
+tmp
 public/ckeditor_assets/*
 db/schema.rb
 public/attachments/*
@@ -13,6 +13,6 @@ vendor/cache/*
 .rvmrc
 /config/database.yml # доступ к базе данным
 /Procfile # про него я еще расскажу
-/config/deploy/ # файлы Capistrano
-/shared/ # файлы, которых нет в репозитории, но они будут скопированы на сервер при первом деплое приложения
-
+/config/deploy  # файлы Capistrano
+/shared  # файлы, которых нет в репозитории, но они будут скопированы на сервер при первом деплое приложения
+/shared

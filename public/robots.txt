@@ -1,9 +1,5 @@
-# www.robotstxt.org/
-# www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
-
 User-agent: *
-Disallow: /admin/*
-Disallow: /groups/*/people
-Disallow: /people/*
-Host: childrenartschool.ru
+Disallow: /casein
+Disallow: /admin
 
+Allow: /

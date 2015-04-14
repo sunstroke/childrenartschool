@@ -31,7 +31,7 @@ module Schoolf
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)    
-
+    config.active_record.whitelist_attributes = false
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     config.assets.enabled = true
